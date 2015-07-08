@@ -7,9 +7,9 @@
 //
 
 #import "JBLoadSourceFilesOperation.h"
-//#import "XcodeEditor/XcodeEditor.h"
-//#import <XcodeEditor/XCProject.h>
-//#import "JBLoadRootFilesOperation.h"
+#import "XcodeEditor/XcodeEditor.h"
+#import <XcodeEditor/XCProject.h>
+#import "JBLoadRootFilesOperation.h"
 
 @interface JBLoadSourceFilesOperation ()
 
@@ -39,104 +39,107 @@
 
 - (void)execute {
 
-//    @autoreleasepool {
-//        
-//        NSString *projectFolder = [self.project.filePath stringByDeletingLastPathComponent];
-//        NSMutableDictionary *result = nil;
-//        
-//        if (self.root) {
-//            
-//            NSError *error = nil;
-//            NSString *targetDirectory = [projectFolder stringByAppendingString:self.root];
-//            
-//            NSArray *items = [self sourceFilesInDirectory:targetDirectory error:&error];
-//            
-//            if (items) {
-//                
-//                NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
-//                result[self.root] = items;
-//            }
-//            
-//            if (self.completionHandler) {
-//                self.completionHandler(result, error);
-//            }
-//        }
-//        else {
-//            
-//            result = [[NSMutableDictionary alloc] init];
-//            
-//            NSError *error = nil;
-//            NSArray *rootContent = [JBLoadRootFilesOperation rootDirectoriesInPath:projectFolder error:&error];
-//            
-//            if (error) {
-//                if (self.completionHandler) {
-//                    self.completionHandler(nil, error);
-//                }
-//                return;
-//            }
-//            
-//            NSString *targetDirectory = nil;
-//            for (NSString *item in rootContent) {
-//                
-//                targetDirectory = [projectFolder stringByAppendingPathComponent:item];
-//                
-//                NSArray *items = [self sourceFilesInDirectory:targetDirectory error:&error];
-//                
-//                if (items) {
-//                    result[item] = items;
-//                }
-//                else if (error) {
-//                    if (self.completionHandler) {
-//                        self.completionHandler(nil, error);
-//                    }
-//                    return;
-//                }
-//            }
-//            
-//            if (self.completionHandler) {
-//                self.completionHandler(result, error);
-//            }
-//        }
-//    }
+    @autoreleasepool {
+        
+        NSString *projectFolder = [self.project.filePath stringByDeletingLastPathComponent];
+        NSMutableDictionary *result = nil;
+        
+        if (self.root) {
+            
+            NSError *error = nil;
+            NSString *targetDirectory = [projectFolder stringByAppendingPathComponent:self.root];
+            
+            NSArray *items = [self sourceFilesInDirectory:targetDirectory error:&error];
+            
+            if (items) {
+                
+                result = [[NSMutableDictionary alloc] init];
+                result[self.root] = items;
+            }
+            
+            if (self.completionHandler) {
+                self.completionHandler(result, error);
+            }
+        }
+        else {
+            
+            result = [[NSMutableDictionary alloc] init];
+            
+            NSError *error = nil;
+            NSArray *rootContent = [JBLoadRootFilesOperation rootDirectoriesInPath:projectFolder error:&error];
+            
+            if (error) {
+                if (self.completionHandler) {
+                    self.completionHandler(nil, error);
+                }
+                return;
+            }
+            
+            NSString *targetDirectory = nil;
+            for (NSString *item in rootContent) {
+                
+                targetDirectory = [projectFolder stringByAppendingPathComponent:item];
+                
+                NSArray *items = [self sourceFilesInDirectory:targetDirectory error:&error];
+                
+                if (items) {
+                    result[item] = items;
+                }
+                else if (error) {
+                    if (self.completionHandler) {
+                        self.completionHandler(nil, error);
+                    }
+                    return;
+                }
+            }
+            
+            if (self.completionHandler) {
+                self.completionHandler(result, error);
+            }
+        }
+    }
 }
 
-//- (NSArray *)sourceFilesInDirectory:(NSString *)path error:(NSError * __autoreleasing *)error {
-//    
-//    NSMutableArray *array = [NSMutableArray array];
-//    NSArray *directoryContent = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:error];
-//    
-//    if (error) {
-//        return nil;
-//    }
-//    
-//    for (NSString *file in directoryContent) {
-//        BOOL isDirectory = NO;
-//        NSString *filePath = [path stringByAppendingPathComponent:file];
-//        BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
-//        
-//        if (exists) {
-//            if (isDirectory) {
-//                NSArray *directoryArray = [self sourceFilesInDirectory:filePath error:error];
-//                if (error) {
-//                    return nil;
-//                }
-//                
-//                if (directoryArray && directoryArray.count) {
-//                    [array addObjectsFromArray:directoryArray];
-//                }
-//            }
-//            else {
-//                if ([[file pathExtension] isEqualToString:@"m"] || [[file pathExtension] isEqualToString:@"mm"] ||
-//                    [[file pathExtension] isEqualToString:@"swift"]) {
-//                    
-//                    [array addObject:filePath];
-//                }
-//            }
-//        }
-//    }
-//    
-//    return array;
-//}
+- (NSArray *)sourceFilesInDirectory:(NSString *)path error:(NSError * __autoreleasing *)error {
+    
+    NSMutableArray *array = [NSMutableArray array];
+    NSError *anError = nil;
+    NSArray *directoryContent = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&anError];
+    
+    if (anError) {
+//        error = &anError;
+        return nil;
+    }
+    
+    for (NSString *file in directoryContent) {
+        BOOL isDirectory = NO;
+        NSString *filePath = [path stringByAppendingPathComponent:file];
+        BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
+        
+        if (exists) {
+            if (isDirectory) {
+                NSError *error2 = nil;
+                NSArray *directoryArray = [self sourceFilesInDirectory:filePath error:&error2];
+                if (error2) {
+                    return nil;
+                }
+                
+                if (directoryArray && directoryArray.count) {
+                    [array addObjectsFromArray:directoryArray];
+                }
+            }
+            else {
+                if ([[file pathExtension] isEqualToString:@"m"] || [[file pathExtension] isEqualToString:@"mm"] ||
+                    [[file pathExtension] isEqualToString:@"swift"]) {
+                    
+                    [array addObject:filePath];
+                }
+            }
+        }
+    }
+    
+    return array;
+}
 
 
 @end

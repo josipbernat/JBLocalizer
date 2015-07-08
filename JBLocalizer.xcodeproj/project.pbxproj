@@ -8,43 +8,73 @@
 
 /* Begin PBXBuildFile section */
 		3DCDD694DA7C8F8ABF7574D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CA02745D263DFEA2D3EFFB /* libPods.a */; };
+		41465EBAE75153FC54E4C0B5 /* libPods-JBLocalizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3B7ADF6B5469932203BFF7 /* libPods-JBLocalizer.a */; };
+		BE5A5E951B4D3CAD00FF0134 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A5E941B4D3CAD00FF0134 /* AppKit.framework */; };
+		BE5A5E971B4D3CB200FF0134 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A5E961B4D3CB200FF0134 /* Cocoa.framework */; };
+		BE5A5E9D1B4D47BB00FF0134 /* JBLocalizer-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = BE5A5E9C1B4D47BB00FF0134 /* JBLocalizer-Prefix.pch */; };
+		BE5A5EA81B4D487300FF0134 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EA71B4D487300FF0134 /* AppDelegate.m */; };
+		BE5A5EAA1B4D487300FF0134 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EA91B4D487300FF0134 /* main.m */; };
+		BE5A5EAD1B4D487300FF0134 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EAC1B4D487300FF0134 /* ViewController.m */; };
+		BE5A5EB01B4D487300FF0134 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EAF1B4D487300FF0134 /* Document.m */; };
+		BE5A5EB21B4D487300FF0134 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5A5EB11B4D487300FF0134 /* Images.xcassets */; };
+		BE5A5EB51B4D487300FF0134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5A5EB31B4D487300FF0134 /* Main.storyboard */; };
+		BE5A5EC11B4D487300FF0134 /* JBLocalizerAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EC01B4D487300FF0134 /* JBLocalizerAppTests.m */; };
+		BE5A5EC81B4D48C200FF0134 /* JBLocalizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD00C71B46809A0008AADF /* JBLocalizer.framework */; };
+		BE5A5EC91B4D48DC00FF0134 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A5E961B4D3CB200FF0134 /* Cocoa.framework */; };
+		BE5A5ECA1B4D4AEB00FF0134 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A5E941B4D3CAD00FF0134 /* AppKit.framework */; };
+		BE5A5ECB1B4D4B0100FF0134 /* JBLocalizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD00C71B46809A0008AADF /* JBLocalizer.framework */; };
 		BEFD00CD1B46809A0008AADF /* JBLocalizer.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00CC1B46809A0008AADF /* JBLocalizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BEFD00D31B46809A0008AADF /* JBLocalizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD00C71B46809A0008AADF /* JBLocalizer.framework */; };
-		BEFD00DA1B46809A0008AADF /* JBLocalizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00D91B46809A0008AADF /* JBLocalizerTests.m */; };
-		BEFD00F01B4680E20008AADF /* JBFileController.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00E41B4680E20008AADF /* JBFileController.h */; };
+		BEFD00F01B4680E20008AADF /* JBFileController.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00E41B4680E20008AADF /* JBFileController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEFD00F11B4680E20008AADF /* JBFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00E51B4680E20008AADF /* JBFileController.m */; };
-		BEFD00F21B4680E20008AADF /* JBFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00E51B4680E20008AADF /* JBFileController.m */; };
 		BEFD00F31B4680E20008AADF /* JBLoadRootFilesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00E81B4680E20008AADF /* JBLoadRootFilesOperation.h */; };
 		BEFD00F41B4680E20008AADF /* JBLoadRootFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00E91B4680E20008AADF /* JBLoadRootFilesOperation.m */; };
-		BEFD00F51B4680E20008AADF /* JBLoadRootFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00E91B4680E20008AADF /* JBLoadRootFilesOperation.m */; };
 		BEFD00F61B4680E20008AADF /* JBLoadSourceFilesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00EB1B4680E20008AADF /* JBLoadSourceFilesOperation.h */; };
 		BEFD00F71B4680E20008AADF /* JBLoadSourceFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00EC1B4680E20008AADF /* JBLoadSourceFilesOperation.m */; };
-		BEFD00F81B4680E20008AADF /* JBLoadSourceFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00EC1B4680E20008AADF /* JBLoadSourceFilesOperation.m */; };
 		BEFD00F91B4680E20008AADF /* JBOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00EE1B4680E20008AADF /* JBOperation.h */; };
 		BEFD00FA1B4680E20008AADF /* JBOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00EF1B4680E20008AADF /* JBOperation.m */; };
-		BEFD00FB1B4680E20008AADF /* JBOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00EF1B4680E20008AADF /* JBOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BEFD00D41B46809A0008AADF /* PBXContainerItemProxy */ = {
+		BE5A5EBB1B4D487300FF0134 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BEFD00BE1B46809A0008AADF /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BEFD00C61B46809A0008AADF;
-			remoteInfo = JBLocalizer;
+			remoteGlobalIDString = BE5A5EA11B4D487300FF0134;
+			remoteInfo = JBLocalizerApp;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A3B7ADF6B5469932203BFF7 /* libPods-JBLocalizer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JBLocalizer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AF196A1489D5BB830E8508E /* Pods-JBLocalizerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBLocalizerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JBLocalizerTests/Pods-JBLocalizerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		18D349E18920DB08EAD565F2 /* libPods-JBLocalizerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JBLocalizerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		219C1E377D0CDB2117884878 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		29CA02745D263DFEA2D3EFFB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AD656E4548D787BBB400E34 /* Pods-JBLocalizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBLocalizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-JBLocalizer/Pods-JBLocalizer.release.xcconfig"; sourceTree = "<group>"; };
+		606C0E60A4819BCE71C41A22 /* Pods-JBLocalizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBLocalizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JBLocalizer/Pods-JBLocalizer.debug.xcconfig"; sourceTree = "<group>"; };
 		6BBEB77BC28460535D52A421 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7146C79FB6FBC865F48231D9 /* Pods-JBLocalizerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBLocalizerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JBLocalizerTests/Pods-JBLocalizerTests.release.xcconfig"; sourceTree = "<group>"; };
+		BE5A5E941B4D3CAD00FF0134 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		BE5A5E961B4D3CB200FF0134 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		BE5A5E981B4D466F00FF0134 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		BE5A5E9C1B4D47BB00FF0134 /* JBLocalizer-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JBLocalizer-Prefix.pch"; sourceTree = "<group>"; };
+		BE5A5EA21B4D487300FF0134 /* JBLocalizerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JBLocalizerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE5A5EA51B4D487300FF0134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE5A5EA61B4D487300FF0134 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BE5A5EA71B4D487300FF0134 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BE5A5EA91B4D487300FF0134 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BE5A5EAB1B4D487300FF0134 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BE5A5EAC1B4D487300FF0134 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BE5A5EAE1B4D487300FF0134 /* Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		BE5A5EAF1B4D487300FF0134 /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		BE5A5EB11B4D487300FF0134 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BE5A5EB41B4D487300FF0134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE5A5EBA1B4D487300FF0134 /* JBLocalizerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JBLocalizerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE5A5EBF1B4D487300FF0134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE5A5EC01B4D487300FF0134 /* JBLocalizerAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBLocalizerAppTests.m; sourceTree = "<group>"; };
 		BEFD00C71B46809A0008AADF /* JBLocalizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JBLocalizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFD00CB1B46809A0008AADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFD00CC1B46809A0008AADF /* JBLocalizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBLocalizer.h; sourceTree = "<group>"; };
-		BEFD00D21B46809A0008AADF /* JBLocalizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JBLocalizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BEFD00D81B46809A0008AADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEFD00D91B46809A0008AADF /* JBLocalizerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBLocalizerTests.m; sourceTree = "<group>"; };
 		BEFD00E41B4680E20008AADF /* JBFileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBFileController.h; sourceTree = "<group>"; };
 		BEFD00E51B4680E20008AADF /* JBFileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBFileController.m; sourceTree = "<group>"; };
 		BEFD00E81B4680E20008AADF /* JBLoadRootFilesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLoadRootFilesOperation.h; sourceTree = "<group>"; };
@@ -56,19 +86,32 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BE5A5E9F1B4D487300FF0134 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE5A5ECA1B4D4AEB00FF0134 /* AppKit.framework in Frameworks */,
+				BE5A5EC91B4D48DC00FF0134 /* Cocoa.framework in Frameworks */,
+				BE5A5EC81B4D48C200FF0134 /* JBLocalizer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE5A5EB71B4D487300FF0134 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE5A5ECB1B4D4B0100FF0134 /* JBLocalizer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BEFD00C31B46809A0008AADF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE5A5E971B4D3CB200FF0134 /* Cocoa.framework in Frameworks */,
+				BE5A5E951B4D3CAD00FF0134 /* AppKit.framework in Frameworks */,
 				3DCDD694DA7C8F8ABF7574D8 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BEFD00CF1B46809A0008AADF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BEFD00D31B46809A0008AADF /* JBLocalizer.framework in Frameworks */,
+				41465EBAE75153FC54E4C0B5 /* libPods-JBLocalizer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +123,10 @@
 			children = (
 				219C1E377D0CDB2117884878 /* Pods.debug.xcconfig */,
 				6BBEB77BC28460535D52A421 /* Pods.release.xcconfig */,
+				606C0E60A4819BCE71C41A22 /* Pods-JBLocalizer.debug.xcconfig */,
+				5AD656E4548D787BBB400E34 /* Pods-JBLocalizer.release.xcconfig */,
+				0AF196A1489D5BB830E8508E /* Pods-JBLocalizerTests.debug.xcconfig */,
+				7146C79FB6FBC865F48231D9 /* Pods-JBLocalizerTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -87,16 +134,64 @@
 		B3C8C25A50AF3220E987AEBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE5A5E981B4D466F00FF0134 /* SenTestingKit.framework */,
+				BE5A5E961B4D3CB200FF0134 /* Cocoa.framework */,
+				BE5A5E941B4D3CAD00FF0134 /* AppKit.framework */,
 				29CA02745D263DFEA2D3EFFB /* libPods.a */,
+				0A3B7ADF6B5469932203BFF7 /* libPods-JBLocalizer.a */,
+				18D349E18920DB08EAD565F2 /* libPods-JBLocalizerTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE5A5EA31B4D487300FF0134 /* JBLocalizerApp */ = {
+			isa = PBXGroup;
+			children = (
+				BE5A5EA61B4D487300FF0134 /* AppDelegate.h */,
+				BE5A5EA71B4D487300FF0134 /* AppDelegate.m */,
+				BE5A5EAB1B4D487300FF0134 /* ViewController.h */,
+				BE5A5EAC1B4D487300FF0134 /* ViewController.m */,
+				BE5A5EAE1B4D487300FF0134 /* Document.h */,
+				BE5A5EAF1B4D487300FF0134 /* Document.m */,
+				BE5A5EB11B4D487300FF0134 /* Images.xcassets */,
+				BE5A5EB31B4D487300FF0134 /* Main.storyboard */,
+				BE5A5EA41B4D487300FF0134 /* Supporting Files */,
+			);
+			path = JBLocalizerApp;
+			sourceTree = "<group>";
+		};
+		BE5A5EA41B4D487300FF0134 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BE5A5EA51B4D487300FF0134 /* Info.plist */,
+				BE5A5EA91B4D487300FF0134 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE5A5EBD1B4D487300FF0134 /* JBLocalizerAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE5A5EC01B4D487300FF0134 /* JBLocalizerAppTests.m */,
+				BE5A5EBE1B4D487300FF0134 /* Supporting Files */,
+			);
+			path = JBLocalizerAppTests;
+			sourceTree = "<group>";
+		};
+		BE5A5EBE1B4D487300FF0134 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BE5A5EBF1B4D487300FF0134 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		BEFD00BD1B46809A0008AADF = {
 			isa = PBXGroup;
 			children = (
 				BEFD00C91B46809A0008AADF /* JBLocalizer */,
-				BEFD00D61B46809A0008AADF /* JBLocalizerTests */,
+				BE5A5EA31B4D487300FF0134 /* JBLocalizerApp */,
+				BE5A5EBD1B4D487300FF0134 /* JBLocalizerAppTests */,
 				BEFD00C81B46809A0008AADF /* Products */,
 				AE486CBCE6C2A31F15DFAB8C /* Pods */,
 				B3C8C25A50AF3220E987AEBA /* Frameworks */,
@@ -107,7 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				BEFD00C71B46809A0008AADF /* JBLocalizer.framework */,
-				BEFD00D21B46809A0008AADF /* JBLocalizerTests.xctest */,
+				BE5A5EA21B4D487300FF0134 /* JBLocalizerApp.app */,
+				BE5A5EBA1B4D487300FF0134 /* JBLocalizerAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,24 +222,8 @@
 		BEFD00CA1B46809A0008AADF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BE5A5E9C1B4D47BB00FF0134 /* JBLocalizer-Prefix.pch */,
 				BEFD00CB1B46809A0008AADF /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		BEFD00D61B46809A0008AADF /* JBLocalizerTests */ = {
-			isa = PBXGroup;
-			children = (
-				BEFD00D91B46809A0008AADF /* JBLocalizerTests.m */,
-				BEFD00D71B46809A0008AADF /* Supporting Files */,
-			);
-			path = JBLocalizerTests;
-			sourceTree = "<group>";
-		};
-		BEFD00D71B46809A0008AADF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				BEFD00D81B46809A0008AADF /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -203,6 +283,7 @@
 			files = (
 				BEFD00F91B4680E20008AADF /* JBOperation.h in Headers */,
 				BEFD00F01B4680E20008AADF /* JBFileController.h in Headers */,
+				BE5A5E9D1B4D47BB00FF0134 /* JBLocalizer-Prefix.pch in Headers */,
 				BEFD00CD1B46809A0008AADF /* JBLocalizer.h in Headers */,
 				BEFD00F31B4680E20008AADF /* JBLoadRootFilesOperation.h in Headers */,
 				BEFD00F61B4680E20008AADF /* JBLoadSourceFilesOperation.h in Headers */,
@@ -212,6 +293,41 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		BE5A5EA11B4D487300FF0134 /* JBLocalizerApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE5A5EC21B4D487300FF0134 /* Build configuration list for PBXNativeTarget "JBLocalizerApp" */;
+			buildPhases = (
+				BE5A5E9E1B4D487300FF0134 /* Sources */,
+				BE5A5E9F1B4D487300FF0134 /* Frameworks */,
+				BE5A5EA01B4D487300FF0134 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JBLocalizerApp;
+			productName = JBLocalizerApp;
+			productReference = BE5A5EA21B4D487300FF0134 /* JBLocalizerApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BE5A5EB91B4D487300FF0134 /* JBLocalizerAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE5A5EC51B4D487300FF0134 /* Build configuration list for PBXNativeTarget "JBLocalizerAppTests" */;
+			buildPhases = (
+				BE5A5EB61B4D487300FF0134 /* Sources */,
+				BE5A5EB71B4D487300FF0134 /* Frameworks */,
+				BE5A5EB81B4D487300FF0134 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE5A5EBC1B4D487300FF0134 /* PBXTargetDependency */,
+			);
+			name = JBLocalizerAppTests;
+			productName = JBLocalizerAppTests;
+			productReference = BE5A5EBA1B4D487300FF0134 /* JBLocalizerAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BEFD00C61B46809A0008AADF /* JBLocalizer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BEFD00DD1B46809A0008AADF /* Build configuration list for PBXNativeTarget "JBLocalizer" */;
@@ -232,24 +348,6 @@
 			productReference = BEFD00C71B46809A0008AADF /* JBLocalizer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BEFD00D11B46809A0008AADF /* JBLocalizerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BEFD00E01B46809A0008AADF /* Build configuration list for PBXNativeTarget "JBLocalizerTests" */;
-			buildPhases = (
-				BEFD00CE1B46809A0008AADF /* Sources */,
-				BEFD00CF1B46809A0008AADF /* Frameworks */,
-				BEFD00D01B46809A0008AADF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BEFD00D51B46809A0008AADF /* PBXTargetDependency */,
-			);
-			name = JBLocalizerTests;
-			productName = JBLocalizerTests;
-			productReference = BEFD00D21B46809A0008AADF /* JBLocalizerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -259,10 +357,14 @@
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Josip Bernat";
 				TargetAttributes = {
-					BEFD00C61B46809A0008AADF = {
+					BE5A5EA11B4D487300FF0134 = {
 						CreatedOnToolsVersion = 6.4;
 					};
-					BEFD00D11B46809A0008AADF = {
+					BE5A5EB91B4D487300FF0134 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = BE5A5EA11B4D487300FF0134;
+					};
+					BEFD00C61B46809A0008AADF = {
 						CreatedOnToolsVersion = 6.4;
 					};
 				};
@@ -273,6 +375,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = BEFD00BD1B46809A0008AADF;
 			productRefGroup = BEFD00C81B46809A0008AADF /* Products */;
@@ -280,20 +383,30 @@
 			projectRoot = "";
 			targets = (
 				BEFD00C61B46809A0008AADF /* JBLocalizer */,
-				BEFD00D11B46809A0008AADF /* JBLocalizerTests */,
+				BE5A5EA11B4D487300FF0134 /* JBLocalizerApp */,
+				BE5A5EB91B4D487300FF0134 /* JBLocalizerAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BEFD00C51B46809A0008AADF /* Resources */ = {
+		BE5A5EA01B4D487300FF0134 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE5A5EB21B4D487300FF0134 /* Images.xcassets in Resources */,
+				BE5A5EB51B4D487300FF0134 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE5A5EB81B4D487300FF0134 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BEFD00D01B46809A0008AADF /* Resources */ = {
+		BEFD00C51B46809A0008AADF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -330,12 +443,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JBLocalizer/Pods-JBLocalizer-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BE5A5E9E1B4D487300FF0134 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE5A5EB01B4D487300FF0134 /* Document.m in Sources */,
+				BE5A5EAD1B4D487300FF0134 /* ViewController.m in Sources */,
+				BE5A5EAA1B4D487300FF0134 /* main.m in Sources */,
+				BE5A5EA81B4D487300FF0134 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE5A5EB61B4D487300FF0134 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE5A5EC11B4D487300FF0134 /* JBLocalizerAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BEFD00C21B46809A0008AADF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,29 +479,96 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BEFD00CE1B46809A0008AADF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BEFD00FB1B4680E20008AADF /* JBOperation.m in Sources */,
-				BEFD00F81B4680E20008AADF /* JBLoadSourceFilesOperation.m in Sources */,
-				BEFD00F51B4680E20008AADF /* JBLoadRootFilesOperation.m in Sources */,
-				BEFD00DA1B46809A0008AADF /* JBLocalizerTests.m in Sources */,
-				BEFD00F21B4680E20008AADF /* JBFileController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BEFD00D51B46809A0008AADF /* PBXTargetDependency */ = {
+		BE5A5EBC1B4D487300FF0134 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BEFD00C61B46809A0008AADF /* JBLocalizer */;
-			targetProxy = BEFD00D41B46809A0008AADF /* PBXContainerItemProxy */;
+			target = BE5A5EA11B4D487300FF0134 /* JBLocalizerApp */;
+			targetProxy = BE5A5EBB1B4D487300FF0134 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		BE5A5EB31B4D487300FF0134 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE5A5EB41B4D487300FF0134 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		BE5A5EC31B4D487300FF0134 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JBLocalizerApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BE5A5EC41B4D487300FF0134 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = JBLocalizerApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BE5A5EC61B4D487300FF0134 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JBLocalizerAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JBLocalizerApp.app/Contents/MacOS/JBLocalizerApp";
+			};
+			name = Debug;
+		};
+		BE5A5EC71B4D487300FF0134 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JBLocalizerAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JBLocalizerApp.app/Contents/MacOS/JBLocalizerApp";
+			};
+			name = Release;
+		};
 		BEFD00DB1B46809A0008AADF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -455,77 +654,115 @@
 		};
 		BEFD00DE1B46809A0008AADF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 219C1E377D0CDB2117884878 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 606C0E60A4819BCE71C41A22 /* Pods-JBLocalizer.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
+				DEPLOYMENT_LOCATION = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
+					"$(inherited)",
+				);
 				FRAMEWORK_VERSION = A;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JBLocalizer/JBLocalizer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"${PODS_ROOT}/Headers/XcodeEditor\"",
+					"\"${PODS_ROOT}/Headers/Kiwi\"",
+				);
 				INFOPLIST_FILE = JBLocalizer/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Kiwi\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/XcodeEditor\"",
+				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "";
 			};
 			name = Debug;
 		};
 		BEFD00DF1B46809A0008AADF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BBEB77BC28460535D52A421 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 5AD656E4548D787BBB400E34 /* Pods-JBLocalizer.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
+				DEPLOYMENT_LOCATION = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
+					"$(inherited)",
+				);
 				FRAMEWORK_VERSION = A;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JBLocalizer/JBLocalizer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"${PODS_ROOT}/Headers/XcodeEditor\"",
+					"\"${PODS_ROOT}/Headers/Kiwi\"",
+				);
 				INFOPLIST_FILE = JBLocalizer/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Kiwi\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/XcodeEditor\"",
+				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		BEFD00E11B46809A0008AADF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 219C1E377D0CDB2117884878 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = JBLocalizerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		BEFD00E21B46809A0008AADF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BBEB77BC28460535D52A421 /* Pods.release.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = JBLocalizerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BE5A5EC21B4D487300FF0134 /* Build configuration list for PBXNativeTarget "JBLocalizerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE5A5EC31B4D487300FF0134 /* Debug */,
+				BE5A5EC41B4D487300FF0134 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BE5A5EC51B4D487300FF0134 /* Build configuration list for PBXNativeTarget "JBLocalizerAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE5A5EC61B4D487300FF0134 /* Debug */,
+				BE5A5EC71B4D487300FF0134 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		BEFD00C11B46809A0008AADF /* Build configuration list for PBXProject "JBLocalizer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -540,15 +777,6 @@
 			buildConfigurations = (
 				BEFD00DE1B46809A0008AADF /* Debug */,
 				BEFD00DF1B46809A0008AADF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BEFD00E01B46809A0008AADF /* Build configuration list for PBXNativeTarget "JBLocalizerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BEFD00E11B46809A0008AADF /* Debug */,
-				BEFD00E21B46809A0008AADF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

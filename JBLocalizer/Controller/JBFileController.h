@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XcodeEditor/XcodeEditor.h"
 
 @interface JBFileController : NSObject
 
@@ -17,7 +16,7 @@
  *
  *  @return Controllers shared instance.
  */
-+ (instancetype)sharedController;
++ (nonnull instancetype)sharedController;
 
 #pragma mark - Project
 /**
@@ -25,5 +24,6 @@
  *
  *  @param projectPath A file path where project is saved.
  */
-- (void)loadProjectFiles:(NSString *)projectPath;
+- (void)loadProjectFiles:(NSString * __nonnull)projectPath
+              completion:(void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion;
 @end

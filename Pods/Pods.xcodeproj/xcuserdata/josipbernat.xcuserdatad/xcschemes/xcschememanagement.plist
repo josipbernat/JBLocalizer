@@ -4,25 +4,53 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-XcodeEditor.xcscheme</key>
+		<key>Pods-JBLocalizer-XcodeEditor.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-JBLocalizer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Pods-JBLocalizerTests-Kiwi.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-JBLocalizerTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>65211FBD9D9660EDBEA46CC9</key>
+		<key>4A96AB4374989FFAF9708701</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8E291F79D2FCF7B25EECF50D</key>
+		<key>70CA117230D02474481B3950</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8CE981C6B5C69DB40A30DE2F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B1829E609BA7F8D0DE50D116</key>
 		<dict>
 			<key>primary</key>
 			<true/>

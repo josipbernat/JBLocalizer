@@ -1,3 +1,9 @@
 platform :osx, "10.9"
 
-pod 'XcodeEditor', '~> 1.6'
+target :JBLocalizer do
+    pod 'XcodeEditor'
+end
+
+target :JBLocalizerTests do
+    pod 'Kiwi', '~> 2.3'
+end

@@ -7,8 +7,8 @@
 //
 
 #import "JBFileController.h"
+#import "XcodeEditor/XcodeEditor.h"
 #import "JBLoadSourceFilesOperation.h"
-//#import "XcodeEditor/XcodeEditor.h"
 
 @interface JBFileController ()
 
@@ -44,7 +44,8 @@
 
 #pragma mark - Project
 
-- (void)loadProjectFiles:(NSString *)projectPath {
+- (void)loadProjectFiles:(NSString *)projectPath
+              completion:(void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion {
     NSParameterAssert(projectPath);
     
     XCProject *project = [XCProject projectWithFilePath:projectPath];
@@ -55,6 +56,10 @@
                                                                                         
                                                                                         NSLog(@"Result: %@", result);
                                                                                         NSLog(@"Error: %@", error);
+                                                                                        
+                                                                                        if (completion) {
+                                                                                            completion(result, error);
+                                                                                        }
                                                                                     }];
     
     [self.queue addOperation:operation];

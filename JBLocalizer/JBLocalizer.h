@@ -6,14 +6,15 @@
 //  Copyright (c) 2015 Josip Bernat. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+//#import <Cocoa/Cocoa.h>
 
 //! Project version number for JBLocalizer.
-FOUNDATION_EXPORT double JBLocalizerVersionNumber;
+//FOUNDATION_EXPORT double JBLocalizerVersionNumber;
 
 //! Project version string for JBLocalizer.
-FOUNDATION_EXPORT const unsigned char JBLocalizerVersionString[];
+//FOUNDATION_EXPORT const unsigned char JBLocalizerVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <JBLocalizer/PublicHeader.h>
+#import "JBFileController.h"
 
 
