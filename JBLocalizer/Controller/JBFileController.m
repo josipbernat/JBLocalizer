@@ -77,24 +77,39 @@
     
     for (NSString *file in files) {
         
+        void (^handler)(NSArray *, NSError *) = ^(NSArray *strings, NSError *error){
+        
+            counter++;
+            if (strings && strings.count) {
+                
+                NSString *fileName = [file lastPathComponent];
+                for (NSString *string in strings) {
+                    
+                    if (dict[string]) {
+                        NSMutableArray *array = dict[string];
+                        [array addObject:fileName];
+                    }
+                    else {
+                        NSMutableArray *array = [[NSMutableArray alloc] init];
+                        [array addObject:fileName];
+                        dict[string] = array;
+                    }
+                }
+            }
+            else if (error && !anError) {
+                anError = error;
+            }
+            
+            if (counter == count) {
+                
+                if (completion) {
+                    completion(dict, anError);
+                }
+            }
+        };
+        
         JBLoadFileStringsOperation *operation = [JBLoadFileStringsOperation loadStringsInFile:file
-                                                                                   completion:^(NSArray *strings, NSError *error) {
-                                                                                       
-                                                                                       counter++;
-                                                                                       if (strings && strings.count) {
-                                                                                           dict[file] = strings;
-                                                                                       }
-                                                                                       else if (error && !anError) {
-                                                                                           anError = error;
-                                                                                       }
-                                                                                       
-                                                                                       if (counter == count) {
-                                                                                           
-                                                                                           if (completion) {
-                                                                                               completion(dict, anError);
-                                                                                           }
-                                                                                       }
-                                                                                   }];
+                                                                                   completion:handler];
         [self.queue addOperation:operation];
     }
 }
