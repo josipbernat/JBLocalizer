@@ -35,19 +35,32 @@
     [[JBFileController sharedController] loadProjectFiles:@"/Users/josipbernat/Documents/Posao/iOS_projects/onetime/SpikaEnterprise.xcodeproj"
                                                completion:^(NSDictionary * result, NSError * error) {
                                                    
-                                                   if(error)
-                                                   {
+                                                   if(error) {
                                                        NSLog(@"error is: %@", error);
                                                    }
                                                    else {
                                                        
-                                                       NSLog(@"Result: %@", result);
-                                                       XCTAssert(YES, @"Pass");
-                                                       [expectation fulfill];
+//                                                       NSLog(@"Result: %@", result);
+                                                       
+                                                       [[JBFileController sharedController] loadLocalizableStringsInFiles:result[@"SpikaEnterprise"]
+                                                                                                               completion:^(NSDictionary * result1, NSError * error1) {
+                                                                                                                   
+                                                                                                                   if(error1) {
+                                                                                                                       NSLog(@"error is: %@", error1);
+                                                                                                                   }
+                                                                                                                   else {
+                                                                                                                       NSLog(@"Result: %@", result1);
+                                                                                                                       
+                                                                                                                       XCTAssert(YES, @"Pass");
+                                                                                                                       [expectation fulfill];
+                                                                                                                   }
+                                                                                                               }];
+//                                                       XCTAssert(YES, @"Pass");
+//                                                       [expectation fulfill];
                                                    }
                                                }];
     
-    [self waitForExpectationsWithTimeout:5.0f handler:^(NSError *error) {
+    [self waitForExpectationsWithTimeout:105.0f handler:^(NSError *error) {
         
         if(error)
         {

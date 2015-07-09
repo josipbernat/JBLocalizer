@@ -9,6 +9,7 @@
 #import "JBFileController.h"
 #import "XcodeEditor/XcodeEditor.h"
 #import "JBLoadSourceFilesOperation.h"
+#import "JBLoadFileStringsOperation.h"
 
 @interface JBFileController ()
 
@@ -54,15 +55,48 @@
                                                                                  rootDirectory:@"SpikaEnterprise"
                                                                                     completion:^(NSDictionary * result, NSError * error) {
                                                                                         
-                                                                                        NSLog(@"Result: %@", result);
-                                                                                        NSLog(@"Error: %@", error);
-                                                                                        
                                                                                         if (completion) {
                                                                                             completion(result, error);
                                                                                         }
                                                                                     }];
     
     [self.queue addOperation:operation];
+}
+
+#pragma mark - File Content
+
+- (void)loadLocalizableStringsInFiles:(NSArray * __nonnull)files
+                           completion:(void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion {
+
+    NSParameterAssert(files);
+    
+    __block NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    __block NSInteger counter = 0;
+    __block NSInteger count = files.count;
+    __block NSError *anError = nil;
+    
+    for (NSString *file in files) {
+        
+        JBLoadFileStringsOperation *operation = [JBLoadFileStringsOperation loadStringsInFile:file
+                                                                                   completion:^(NSArray *strings, NSError *error) {
+                                                                                       
+                                                                                       counter++;
+                                                                                       if (strings && strings.count) {
+                                                                                           dict[file] = strings;
+                                                                                       }
+                                                                                       else if (error && !anError) {
+                                                                                           anError = error;
+                                                                                       }
+                                                                                       
+                                                                                       if (counter == count) {
+                                                                                           
+                                                                                           if (completion) {
+                                                                                               completion(dict, anError);
+                                                                                           }
+                                                                                       }
+                                                                                   }];
+        [self.queue addOperation:operation];
+    }
 }
 
 @end

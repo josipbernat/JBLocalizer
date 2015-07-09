@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3DCDD694DA7C8F8ABF7574D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CA02745D263DFEA2D3EFFB /* libPods.a */; };
 		41465EBAE75153FC54E4C0B5 /* libPods-JBLocalizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3B7ADF6B5469932203BFF7 /* libPods-JBLocalizer.a */; };
+		BE37FAA51B4E903800F4BFF6 /* JBLoadFileStringsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE37FAA31B4E903800F4BFF6 /* JBLoadFileStringsOperation.h */; };
+		BE37FAA61B4E903800F4BFF6 /* JBLoadFileStringsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE37FAA41B4E903800F4BFF6 /* JBLoadFileStringsOperation.m */; };
 		BE5A5E951B4D3CAD00FF0134 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A5E941B4D3CAD00FF0134 /* AppKit.framework */; };
 		BE5A5E971B4D3CB200FF0134 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A5E961B4D3CB200FF0134 /* Cocoa.framework */; };
 		BE5A5E9D1B4D47BB00FF0134 /* JBLocalizer-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = BE5A5E9C1B4D47BB00FF0134 /* JBLocalizer-Prefix.pch */; };
@@ -54,6 +56,8 @@
 		606C0E60A4819BCE71C41A22 /* Pods-JBLocalizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBLocalizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JBLocalizer/Pods-JBLocalizer.debug.xcconfig"; sourceTree = "<group>"; };
 		6BBEB77BC28460535D52A421 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7146C79FB6FBC865F48231D9 /* Pods-JBLocalizerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBLocalizerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JBLocalizerTests/Pods-JBLocalizerTests.release.xcconfig"; sourceTree = "<group>"; };
+		BE37FAA31B4E903800F4BFF6 /* JBLoadFileStringsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLoadFileStringsOperation.h; sourceTree = "<group>"; };
+		BE37FAA41B4E903800F4BFF6 /* JBLoadFileStringsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLoadFileStringsOperation.m; sourceTree = "<group>"; };
 		BE5A5E941B4D3CAD00FF0134 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		BE5A5E961B4D3CB200FF0134 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		BE5A5E981B4D466F00FF0134 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -142,6 +146,15 @@
 				18D349E18920DB08EAD565F2 /* libPods-JBLocalizerTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE37FAA21B4E902D00F4BFF6 /* LoadFileStringsOperation */ = {
+			isa = PBXGroup;
+			children = (
+				BE37FAA31B4E903800F4BFF6 /* JBLoadFileStringsOperation.h */,
+				BE37FAA41B4E903800F4BFF6 /* JBLoadFileStringsOperation.m */,
+			);
+			path = LoadFileStringsOperation;
 			sourceTree = "<group>";
 		};
 		BE5A5EA31B4D487300FF0134 /* JBLocalizerApp */ = {
@@ -240,6 +253,7 @@
 		BEFD00E61B4680E20008AADF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BE37FAA21B4E902D00F4BFF6 /* LoadFileStringsOperation */,
 				BEFD00E71B4680E20008AADF /* LoadRootFilesOperation */,
 				BEFD00EA1B4680E20008AADF /* LoadSourceFilesOperation */,
 				BEFD00ED1B4680E20008AADF /* Operation */,
@@ -281,6 +295,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE37FAA51B4E903800F4BFF6 /* JBLoadFileStringsOperation.h in Headers */,
 				BEFD00F91B4680E20008AADF /* JBOperation.h in Headers */,
 				BEFD00F01B4680E20008AADF /* JBFileController.h in Headers */,
 				BE5A5E9D1B4D47BB00FF0134 /* JBLocalizer-Prefix.pch in Headers */,
@@ -475,6 +490,7 @@
 				BEFD00F71B4680E20008AADF /* JBLoadSourceFilesOperation.m in Sources */,
 				BEFD00FA1B4680E20008AADF /* JBOperation.m in Sources */,
 				BEFD00F11B4680E20008AADF /* JBFileController.m in Sources */,
+				BE37FAA61B4E903800F4BFF6 /* JBLoadFileStringsOperation.m in Sources */,
 				BEFD00F41B4680E20008AADF /* JBLoadRootFilesOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -754,6 +770,7 @@
 				BE5A5EC41B4D487300FF0134 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE5A5EC51B4D487300FF0134 /* Build configuration list for PBXNativeTarget "JBLocalizerAppTests" */ = {
 			isa = XCConfigurationList;
@@ -762,6 +779,7 @@
 				BE5A5EC71B4D487300FF0134 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BEFD00C11B46809A0008AADF /* Build configuration list for PBXProject "JBLocalizer" */ = {
 			isa = XCConfigurationList;

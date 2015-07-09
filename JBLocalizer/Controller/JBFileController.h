@@ -26,4 +26,9 @@
  */
 - (void)loadProjectFiles:(NSString * __nonnull)projectPath
               completion:(void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion;
+
+#pragma mark - File Content
+- (void)loadLocalizableStringsInFiles:(NSArray * __nonnull)files
+                           completion:(void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion;
+
 @end
