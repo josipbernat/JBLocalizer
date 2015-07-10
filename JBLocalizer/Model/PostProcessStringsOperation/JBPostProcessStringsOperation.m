@@ -41,6 +41,8 @@
 #pragma mark - Execution
 
 static NSString *shared = @"Shared";
+#define kFileCommentFormat(__NAME__) [NSString stringWithFormat:@"/**\n * %@\n */", (__NAME__)]
+#define kKeyValueFormat(__KEY__) [NSString stringWithFormat:@"\"%@\" = \"%@\";", (__KEY__), (__KEY__)]
 
 - (void)execute {
     
@@ -52,10 +54,11 @@ static NSString *shared = @"Shared";
         [self.strings enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSArray *obj, BOOL *stop) {
             
             if (obj.count > 1) {
-                result[shared] = key;
+                NSMutableArray *mutArray = result[shared];
+                [mutArray addObject:key];
             }
             else if (obj.count == 1) {
-                result[[obj firstObject]] = key;
+                result[[obj firstObject]] = @[key];
             }
             else {
                 NSAssert(NO, @"String doesn't belong to any file!");
@@ -63,10 +66,20 @@ static NSString *shared = @"Shared";
         }];
         
         NSMutableString *string = [[NSMutableString alloc] init];
-        [result enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [result enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSArray *obj, BOOL *stop) {
             
             // Continue here...
+            [string appendString:kFileCommentFormat(key)];
+            [obj enumerateObjectsUsingBlock:^(NSString *value, NSUInteger idx, BOOL *stop) {
+                [string appendString:@"\n"];
+                [string appendString:kKeyValueFormat(value)];
+            }];
+            [string appendString:@"\n"];
         }];
+        
+        if (self.completionHandler) {
+            self.completionHandler(string);
+        }
     }
 }
 

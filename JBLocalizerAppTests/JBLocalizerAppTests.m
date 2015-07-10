@@ -40,21 +40,19 @@
                                                    }
                                                    else {
                                                        
-//                                                       NSLog(@"Result: %@", result);
-                                                       
-                                                       [[JBFileController sharedController] loadLocalizableStringsInFiles:result[@"SpikaEnterprise"]
-                                                                                                               completion:^(NSDictionary * result1, NSError * error1) {
-                                                                                                                   
-                                                                                                                   if(error1) {
-                                                                                                                       NSLog(@"error is: %@", error1);
-                                                                                                                   }
-                                                                                                                   else {
-                                                                                                                       NSLog(@"Result: %@", result1);
-                                                                                                                       
-                                                                                                                       XCTAssert(YES, @"Pass");
-                                                                                                                       [expectation fulfill];
-                                                                                                                   }
-                                                                                                               }];
+                                                       [[JBFileController sharedController] loadAndProcessLocalizableStringsInFiles:result[@"SpikaEnterprise"]
+                                                                                                                         completion:^(NSString * result1, NSError * error1) {
+                                                                                                                            
+                                                                                                                             if(error1) {
+                                                                                                                                 NSLog(@"error is: %@", error1);
+                                                                                                                             }
+                                                                                                                             else {
+                                                                                                                                 NSLog(@"Result: %@", result1);
+                                                                                                                                 
+                                                                                                                                 XCTAssert(YES, @"Pass");
+                                                                                                                                 [expectation fulfill];
+                                                                                                                             }
+                                                                                                                         }];
 //                                                       XCTAssert(YES, @"Pass");
 //                                                       [expectation fulfill];
                                                    }

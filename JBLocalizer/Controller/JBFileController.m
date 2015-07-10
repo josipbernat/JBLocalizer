@@ -10,6 +10,7 @@
 #import "XcodeEditor/XcodeEditor.h"
 #import "JBLoadSourceFilesOperation.h"
 #import "JBLoadFileStringsOperation.h"
+#import "JBPostProcessStringsOperation.h"
 
 @interface JBFileController ()
 
@@ -112,6 +113,32 @@
                                                                                    completion:handler];
         [self.queue addOperation:operation];
     }
+}
+
+- (void)loadAndProcessLocalizableStringsInFiles:(NSArray * __nonnull)files
+                                     completion:(void(^ __nullable )(NSString * __nullable, NSError * __nullable))completion {
+
+    __weak id this = self;
+    [self loadLocalizableStringsInFiles:files
+                             completion:^(NSDictionary * strings, NSError * error) {
+                                 
+                                 if (error) {
+                                     if (completion) {
+                                         completion(nil, error);
+                                     }
+                                     return;
+                                 }
+                                 
+                                 __strong typeof(self) strongThis = this;
+                                 JBPostProcessStringsOperation *operation = [JBPostProcessStringsOperation processStrings:strings
+                                                                                                               completion:^(NSString *result) {
+                                                                                                                   
+                                                                                                                   if (completion) {
+                                                                                                                       completion(result, nil);
+                                                                                                                   }
+                                                                                                               }];
+                                 [strongThis.queue addOperation:operation];
+                             }];
 }
 
 @end

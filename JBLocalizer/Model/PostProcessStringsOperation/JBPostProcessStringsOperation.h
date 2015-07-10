@@ -14,7 +14,7 @@
 /**
  *  Postprocess given strings for printing suitable format.
  *
- *  @param strings    NSDictionary containing strings. String must be key and value must be an array of files who contains given word.
+ *  @param strings    Dictionary containing strings. String must be key and value must be an array of files who contains given word.
  *  @param completion Callback block object called once operation finishes with execution. It has one parameter, a string suitable for writing strings in file.
  *
  *  @return Newly created instance.

@@ -28,7 +28,22 @@
               completion:(void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion;
 
 #pragma mark - File Content
+/**
+ *  Loads NSLocalizedString strings in given files. Suitable if you want your own formatting.
+ *
+ *  @param files      An array of file paths.
+ *  @param completion Callback block object called once loading is finished. It has two parameters but only one is not nil at given time. If load is finished with success it will contain dictionary where key is string and value is an array of classes where it is contained. Otherwise NSError object will have failure reason.
+ */
 - (void)loadLocalizableStringsInFiles:(NSArray * __nonnull)files
                            completion:(void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion;
+
+/**
+ *  Loads NSLocalizedString strings in given files and processes them to output format.
+ *
+ *  @param files      An array of file paths.
+ *  @param completion Callback block object called once loading is finished. It has two parameters but only one is not nil at given time. If load is finished with success it will contain formatted string object with localizable strings. Otherwise NSError object will have failure reason.
+ */
+- (void)loadAndProcessLocalizableStringsInFiles:(NSArray * __nonnull)files
+                                     completion:(void(^ __nullable )(NSString * __nullable, NSError * __nullable))completion;
 
 @end
