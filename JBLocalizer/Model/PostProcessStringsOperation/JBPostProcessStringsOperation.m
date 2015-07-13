@@ -74,7 +74,7 @@ static NSString *shared = @"Shared";
                 [string appendString:@"\n"];
                 [string appendString:kKeyValueFormat(value)];
             }];
-            [string appendString:@"\n"];
+            [string appendString:@"\n\n"];
         }];
         
         if (self.completionHandler) {
