@@ -10,7 +10,5 @@
 
 @interface ViewController : NSViewController
 
-- (IBAction)onOpenFile:(id)sender;
-
 @end
 

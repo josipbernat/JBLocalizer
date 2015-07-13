@@ -19,12 +19,17 @@
 + (nonnull instancetype)sharedController;
 
 #pragma mark - Project
+
+- (void)loadProjectRootFiles:(NSString * __nonnull)projectPath
+                  completion:(void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion;
+
 /**
  *  Loads project and parses project files.
  *
  *  @param projectPath A file path where project is saved.
  */
 - (void)loadProjectFiles:(NSString * __nonnull)projectPath
+           rootDirectory:(NSString * __nonnull)rootDirectory
               completion:(void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion;
 
 #pragma mark - File Content

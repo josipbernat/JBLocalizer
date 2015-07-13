@@ -30,42 +30,42 @@
 - (void)testExample {
     // This is an example of a functional test case.
     
-    XCTestExpectation *expectation = [self expectationWithDescription:@"Testing Async Method Works!"];
-    
-    [[JBFileController sharedController] loadProjectFiles:@"/Users/josipbernat/Documents/Posao/iOS_projects/onetime/SpikaEnterprise.xcodeproj"
-                                               completion:^(NSDictionary * result, NSError * error) {
-                                                   
-                                                   if(error) {
-                                                       NSLog(@"error is: %@", error);
-                                                   }
-                                                   else {
-                                                       
-                                                       [[JBFileController sharedController] loadAndProcessLocalizableStringsInFiles:result[@"SpikaEnterprise"]
-                                                                                                                         completion:^(NSString * result1, NSError * error1) {
-                                                                                                                            
-                                                                                                                             if(error1) {
-                                                                                                                                 NSLog(@"error is: %@", error1);
-                                                                                                                             }
-                                                                                                                             else {
-                                                                                                                                 NSLog(@"Result: %@", result1);
-                                                                                                                                 
-                                                                                                                                 XCTAssert(YES, @"Pass");
-                                                                                                                                 [expectation fulfill];
-                                                                                                                             }
-                                                                                                                         }];
-//                                                       XCTAssert(YES, @"Pass");
-//                                                       [expectation fulfill];
-                                                   }
-                                               }];
-    
-    [self waitForExpectationsWithTimeout:105.0f handler:^(NSError *error) {
-        
-        if(error)
-        {
-            XCTFail(@"Expectation Failed with error: %@", error);
-        }
-        
-    }];
+//    XCTestExpectation *expectation = [self expectationWithDescription:@"Testing Async Method Works!"];
+//    
+//    [[JBFileController sharedController] loadProjectFiles:@"/Users/josipbernat/Documents/Posao/iOS_projects/onetime/SpikaEnterprise.xcodeproj"
+//                                               completion:^(NSDictionary * result, NSError * error) {
+//                                                   
+//                                                   if(error) {
+//                                                       NSLog(@"error is: %@", error);
+//                                                   }
+//                                                   else {
+//                                                       
+//                                                       [[JBFileController sharedController] loadAndProcessLocalizableStringsInFiles:result[@"SpikaEnterprise"]
+//                                                                                                                         completion:^(NSString * result1, NSError * error1) {
+//                                                                                                                            
+//                                                                                                                             if(error1) {
+//                                                                                                                                 NSLog(@"error is: %@", error1);
+//                                                                                                                             }
+//                                                                                                                             else {
+//                                                                                                                                 NSLog(@"Result: %@", result1);
+//                                                                                                                                 
+//                                                                                                                                 XCTAssert(YES, @"Pass");
+//                                                                                                                                 [expectation fulfill];
+//                                                                                                                             }
+//                                                                                                                         }];
+////                                                       XCTAssert(YES, @"Pass");
+////                                                       [expectation fulfill];
+//                                                   }
+//                                               }];
+//    
+//    [self waitForExpectationsWithTimeout:105.0f handler:^(NSError *error) {
+//        
+//        if(error)
+//        {
+//            XCTFail(@"Expectation Failed with error: %@", error);
+//        }
+//        
+//    }];
     
 }
 

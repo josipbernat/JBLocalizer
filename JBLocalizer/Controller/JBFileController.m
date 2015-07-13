@@ -11,6 +11,7 @@
 #import "JBLoadSourceFilesOperation.h"
 #import "JBLoadFileStringsOperation.h"
 #import "JBPostProcessStringsOperation.h"
+#import "JBLoadRootFilesOperation.h"
 
 @interface JBFileController ()
 
@@ -46,20 +47,26 @@
 
 #pragma mark - Project
 
-- (void)loadProjectFiles:(NSString *)projectPath
+- (void)loadProjectRootFiles:(NSString * __nonnull)projectPath
+                  completion:(void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion {
+    NSParameterAssert(projectPath);
+    
+    JBLoadRootFilesOperation *operation = [JBLoadRootFilesOperation loadRootDirectories:projectPath
+                                                                             completion:completion];
+    [self.queue addOperation:operation];
+
+}
+
+- (void)loadProjectFiles:(NSString * __nonnull)projectPath
+           rootDirectory:(NSString * __nonnull)rootDirectory
               completion:(void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion {
     NSParameterAssert(projectPath);
     
     XCProject *project = [XCProject projectWithFilePath:projectPath];
 
     JBLoadSourceFilesOperation *operation = [JBLoadSourceFilesOperation loadProjectSourceFiles:project
-                                                                                 rootDirectory:@"SpikaEnterprise"
-                                                                                    completion:^(NSDictionary * result, NSError * error) {
-                                                                                        
-                                                                                        if (completion) {
-                                                                                            completion(result, error);
-                                                                                        }
-                                                                                    }];
+                                                                                 rootDirectory:rootDirectory
+                                                                                    completion:completion];
     
     [self.queue addOperation:operation];
 }
@@ -117,7 +124,7 @@
 
 - (void)loadAndProcessLocalizableStringsInFiles:(NSArray * __nonnull)files
                                      completion:(void(^ __nullable )(NSString * __nullable, NSError * __nullable))completion {
-
+    
     __weak id this = self;
     [self loadLocalizableStringsInFiles:files
                              completion:^(NSDictionary * strings, NSError * error) {

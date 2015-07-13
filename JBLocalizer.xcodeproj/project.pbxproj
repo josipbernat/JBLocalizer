@@ -9,10 +9,18 @@
 /* Begin PBXBuildFile section */
 		3DCDD694DA7C8F8ABF7574D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CA02745D263DFEA2D3EFFB /* libPods.a */; };
 		41465EBAE75153FC54E4C0B5 /* libPods-JBLocalizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3B7ADF6B5469932203BFF7 /* libPods-JBLocalizer.a */; };
-		BE37FAA51B4E903800F4BFF6 /* JBLoadFileStringsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE37FAA31B4E903800F4BFF6 /* JBLoadFileStringsOperation.h */; };
-		BE37FAA61B4E903800F4BFF6 /* JBLoadFileStringsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE37FAA41B4E903800F4BFF6 /* JBLoadFileStringsOperation.m */; };
-		BE37FAAA1B4EC1A800F4BFF6 /* JBPostProcessStringsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE37FAA81B4EC1A800F4BFF6 /* JBPostProcessStringsOperation.h */; };
-		BE37FAAB1B4EC1A800F4BFF6 /* JBPostProcessStringsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE37FAA91B4EC1A800F4BFF6 /* JBPostProcessStringsOperation.m */; };
+		BE18CFA91B540E7E00184BC0 /* JBLoadFileStringsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE18CF9B1B540E7E00184BC0 /* JBLoadFileStringsOperation.h */; };
+		BE18CFAA1B540E7E00184BC0 /* JBLoadFileStringsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18CF9C1B540E7E00184BC0 /* JBLoadFileStringsOperation.m */; };
+		BE18CFAB1B540E7E00184BC0 /* JBLoadRootFilesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE18CF9E1B540E7E00184BC0 /* JBLoadRootFilesOperation.h */; };
+		BE18CFAC1B540E7E00184BC0 /* JBLoadRootFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18CF9F1B540E7E00184BC0 /* JBLoadRootFilesOperation.m */; };
+		BE18CFAD1B540E7E00184BC0 /* JBLoadSourceFilesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE18CFA11B540E7E00184BC0 /* JBLoadSourceFilesOperation.h */; };
+		BE18CFAE1B540E7E00184BC0 /* JBLoadSourceFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18CFA21B540E7E00184BC0 /* JBLoadSourceFilesOperation.m */; };
+		BE18CFAF1B540E7E00184BC0 /* JBOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE18CFA41B540E7E00184BC0 /* JBOperation.h */; };
+		BE18CFB01B540E7E00184BC0 /* JBOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18CFA51B540E7E00184BC0 /* JBOperation.m */; };
+		BE18CFB11B540E7E00184BC0 /* JBPostProcessStringsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE18CFA71B540E7E00184BC0 /* JBPostProcessStringsOperation.h */; };
+		BE18CFB21B540E7E00184BC0 /* JBPostProcessStringsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18CFA81B540E7E00184BC0 /* JBPostProcessStringsOperation.m */; };
+		BE18CFB71B54237700184BC0 /* JBFile.h in Headers */ = {isa = PBXBuildFile; fileRef = BE18CFB51B54237700184BC0 /* JBFile.h */; };
+		BE18CFB81B54237700184BC0 /* JBFile.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18CFB61B54237700184BC0 /* JBFile.m */; };
 		BE5A5E951B4D3CAD00FF0134 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A5E941B4D3CAD00FF0134 /* AppKit.framework */; };
 		BE5A5E971B4D3CB200FF0134 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A5E961B4D3CB200FF0134 /* Cocoa.framework */; };
 		BE5A5E9D1B4D47BB00FF0134 /* JBLocalizer-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = BE5A5E9C1B4D47BB00FF0134 /* JBLocalizer-Prefix.pch */; };
@@ -30,12 +38,6 @@
 		BEFD00CD1B46809A0008AADF /* JBLocalizer.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00CC1B46809A0008AADF /* JBLocalizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEFD00F01B4680E20008AADF /* JBFileController.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00E41B4680E20008AADF /* JBFileController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEFD00F11B4680E20008AADF /* JBFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00E51B4680E20008AADF /* JBFileController.m */; };
-		BEFD00F31B4680E20008AADF /* JBLoadRootFilesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00E81B4680E20008AADF /* JBLoadRootFilesOperation.h */; };
-		BEFD00F41B4680E20008AADF /* JBLoadRootFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00E91B4680E20008AADF /* JBLoadRootFilesOperation.m */; };
-		BEFD00F61B4680E20008AADF /* JBLoadSourceFilesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00EB1B4680E20008AADF /* JBLoadSourceFilesOperation.h */; };
-		BEFD00F71B4680E20008AADF /* JBLoadSourceFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00EC1B4680E20008AADF /* JBLoadSourceFilesOperation.m */; };
-		BEFD00F91B4680E20008AADF /* JBOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00EE1B4680E20008AADF /* JBOperation.h */; };
-		BEFD00FA1B4680E20008AADF /* JBOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00EF1B4680E20008AADF /* JBOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,10 +60,18 @@
 		606C0E60A4819BCE71C41A22 /* Pods-JBLocalizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBLocalizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JBLocalizer/Pods-JBLocalizer.debug.xcconfig"; sourceTree = "<group>"; };
 		6BBEB77BC28460535D52A421 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7146C79FB6FBC865F48231D9 /* Pods-JBLocalizerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBLocalizerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JBLocalizerTests/Pods-JBLocalizerTests.release.xcconfig"; sourceTree = "<group>"; };
-		BE37FAA31B4E903800F4BFF6 /* JBLoadFileStringsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLoadFileStringsOperation.h; sourceTree = "<group>"; };
-		BE37FAA41B4E903800F4BFF6 /* JBLoadFileStringsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLoadFileStringsOperation.m; sourceTree = "<group>"; };
-		BE37FAA81B4EC1A800F4BFF6 /* JBPostProcessStringsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBPostProcessStringsOperation.h; sourceTree = "<group>"; };
-		BE37FAA91B4EC1A800F4BFF6 /* JBPostProcessStringsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBPostProcessStringsOperation.m; sourceTree = "<group>"; };
+		BE18CF9B1B540E7E00184BC0 /* JBLoadFileStringsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLoadFileStringsOperation.h; sourceTree = "<group>"; };
+		BE18CF9C1B540E7E00184BC0 /* JBLoadFileStringsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLoadFileStringsOperation.m; sourceTree = "<group>"; };
+		BE18CF9E1B540E7E00184BC0 /* JBLoadRootFilesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLoadRootFilesOperation.h; sourceTree = "<group>"; };
+		BE18CF9F1B540E7E00184BC0 /* JBLoadRootFilesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLoadRootFilesOperation.m; sourceTree = "<group>"; };
+		BE18CFA11B540E7E00184BC0 /* JBLoadSourceFilesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLoadSourceFilesOperation.h; sourceTree = "<group>"; };
+		BE18CFA21B540E7E00184BC0 /* JBLoadSourceFilesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLoadSourceFilesOperation.m; sourceTree = "<group>"; };
+		BE18CFA41B540E7E00184BC0 /* JBOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBOperation.h; sourceTree = "<group>"; };
+		BE18CFA51B540E7E00184BC0 /* JBOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBOperation.m; sourceTree = "<group>"; };
+		BE18CFA71B540E7E00184BC0 /* JBPostProcessStringsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBPostProcessStringsOperation.h; sourceTree = "<group>"; };
+		BE18CFA81B540E7E00184BC0 /* JBPostProcessStringsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBPostProcessStringsOperation.m; sourceTree = "<group>"; };
+		BE18CFB51B54237700184BC0 /* JBFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBFile.h; sourceTree = "<group>"; };
+		BE18CFB61B54237700184BC0 /* JBFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBFile.m; sourceTree = "<group>"; };
 		BE5A5E941B4D3CAD00FF0134 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		BE5A5E961B4D3CB200FF0134 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		BE5A5E981B4D466F00FF0134 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -85,12 +95,6 @@
 		BEFD00CC1B46809A0008AADF /* JBLocalizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBLocalizer.h; sourceTree = "<group>"; };
 		BEFD00E41B4680E20008AADF /* JBFileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBFileController.h; sourceTree = "<group>"; };
 		BEFD00E51B4680E20008AADF /* JBFileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBFileController.m; sourceTree = "<group>"; };
-		BEFD00E81B4680E20008AADF /* JBLoadRootFilesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLoadRootFilesOperation.h; sourceTree = "<group>"; };
-		BEFD00E91B4680E20008AADF /* JBLoadRootFilesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLoadRootFilesOperation.m; sourceTree = "<group>"; };
-		BEFD00EB1B4680E20008AADF /* JBLoadSourceFilesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLoadSourceFilesOperation.h; sourceTree = "<group>"; };
-		BEFD00EC1B4680E20008AADF /* JBLoadSourceFilesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLoadSourceFilesOperation.m; sourceTree = "<group>"; };
-		BEFD00EE1B4680E20008AADF /* JBOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBOperation.h; sourceTree = "<group>"; };
-		BEFD00EF1B4680E20008AADF /* JBOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,22 +156,78 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BE37FAA21B4E902D00F4BFF6 /* LoadFileStringsOperation */ = {
+		BE18CF991B540E7E00184BC0 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				BE37FAA31B4E903800F4BFF6 /* JBLoadFileStringsOperation.h */,
-				BE37FAA41B4E903800F4BFF6 /* JBLoadFileStringsOperation.m */,
+				BE18CF9A1B540E7E00184BC0 /* LoadFileStringsOperation */,
+				BE18CF9D1B540E7E00184BC0 /* LoadRootFilesOperation */,
+				BE18CFA01B540E7E00184BC0 /* LoadSourceFilesOperation */,
+				BE18CFA31B540E7E00184BC0 /* Operation */,
+				BE18CFA61B540E7E00184BC0 /* PostProcessStringsOperation */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		BE18CF9A1B540E7E00184BC0 /* LoadFileStringsOperation */ = {
+			isa = PBXGroup;
+			children = (
+				BE18CF9B1B540E7E00184BC0 /* JBLoadFileStringsOperation.h */,
+				BE18CF9C1B540E7E00184BC0 /* JBLoadFileStringsOperation.m */,
 			);
 			path = LoadFileStringsOperation;
 			sourceTree = "<group>";
 		};
-		BE37FAA71B4EC19900F4BFF6 /* PostProcessStringsOperation */ = {
+		BE18CF9D1B540E7E00184BC0 /* LoadRootFilesOperation */ = {
 			isa = PBXGroup;
 			children = (
-				BE37FAA81B4EC1A800F4BFF6 /* JBPostProcessStringsOperation.h */,
-				BE37FAA91B4EC1A800F4BFF6 /* JBPostProcessStringsOperation.m */,
+				BE18CF9E1B540E7E00184BC0 /* JBLoadRootFilesOperation.h */,
+				BE18CF9F1B540E7E00184BC0 /* JBLoadRootFilesOperation.m */,
+			);
+			path = LoadRootFilesOperation;
+			sourceTree = "<group>";
+		};
+		BE18CFA01B540E7E00184BC0 /* LoadSourceFilesOperation */ = {
+			isa = PBXGroup;
+			children = (
+				BE18CFA11B540E7E00184BC0 /* JBLoadSourceFilesOperation.h */,
+				BE18CFA21B540E7E00184BC0 /* JBLoadSourceFilesOperation.m */,
+			);
+			path = LoadSourceFilesOperation;
+			sourceTree = "<group>";
+		};
+		BE18CFA31B540E7E00184BC0 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				BE18CFA41B540E7E00184BC0 /* JBOperation.h */,
+				BE18CFA51B540E7E00184BC0 /* JBOperation.m */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
+		BE18CFA61B540E7E00184BC0 /* PostProcessStringsOperation */ = {
+			isa = PBXGroup;
+			children = (
+				BE18CFA71B540E7E00184BC0 /* JBPostProcessStringsOperation.h */,
+				BE18CFA81B540E7E00184BC0 /* JBPostProcessStringsOperation.m */,
 			);
 			path = PostProcessStringsOperation;
+			sourceTree = "<group>";
+		};
+		BE18CFB31B54236A00184BC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE18CFB41B54236A00184BC0 /* File */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE18CFB41B54236A00184BC0 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				BE18CFB51B54237700184BC0 /* JBFile.h */,
+				BE18CFB61B54237700184BC0 /* JBFile.m */,
+			);
+			path = File;
 			sourceTree = "<group>";
 		};
 		BE5A5EA31B4D487300FF0134 /* JBLocalizerApp */ = {
@@ -237,8 +297,9 @@
 		BEFD00C91B46809A0008AADF /* JBLocalizer */ = {
 			isa = PBXGroup;
 			children = (
+				BE18CFB31B54236A00184BC0 /* Model */,
+				BE18CF991B540E7E00184BC0 /* Operations */,
 				BEFD00E31B4680E20008AADF /* Controller */,
-				BEFD00E61B4680E20008AADF /* Model */,
 				BEFD00CC1B46809A0008AADF /* JBLocalizer.h */,
 				BEFD00CA1B46809A0008AADF /* Supporting Files */,
 			);
@@ -263,45 +324,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		BEFD00E61B4680E20008AADF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				BE37FAA71B4EC19900F4BFF6 /* PostProcessStringsOperation */,
-				BE37FAA21B4E902D00F4BFF6 /* LoadFileStringsOperation */,
-				BEFD00E71B4680E20008AADF /* LoadRootFilesOperation */,
-				BEFD00EA1B4680E20008AADF /* LoadSourceFilesOperation */,
-				BEFD00ED1B4680E20008AADF /* Operation */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BEFD00E71B4680E20008AADF /* LoadRootFilesOperation */ = {
-			isa = PBXGroup;
-			children = (
-				BEFD00E81B4680E20008AADF /* JBLoadRootFilesOperation.h */,
-				BEFD00E91B4680E20008AADF /* JBLoadRootFilesOperation.m */,
-			);
-			path = LoadRootFilesOperation;
-			sourceTree = "<group>";
-		};
-		BEFD00EA1B4680E20008AADF /* LoadSourceFilesOperation */ = {
-			isa = PBXGroup;
-			children = (
-				BEFD00EB1B4680E20008AADF /* JBLoadSourceFilesOperation.h */,
-				BEFD00EC1B4680E20008AADF /* JBLoadSourceFilesOperation.m */,
-			);
-			path = LoadSourceFilesOperation;
-			sourceTree = "<group>";
-		};
-		BEFD00ED1B4680E20008AADF /* Operation */ = {
-			isa = PBXGroup;
-			children = (
-				BEFD00EE1B4680E20008AADF /* JBOperation.h */,
-				BEFD00EF1B4680E20008AADF /* JBOperation.m */,
-			);
-			path = Operation;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -309,14 +331,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE37FAA51B4E903800F4BFF6 /* JBLoadFileStringsOperation.h in Headers */,
-				BE37FAAA1B4EC1A800F4BFF6 /* JBPostProcessStringsOperation.h in Headers */,
-				BEFD00F91B4680E20008AADF /* JBOperation.h in Headers */,
 				BEFD00F01B4680E20008AADF /* JBFileController.h in Headers */,
+				BE18CFB11B540E7E00184BC0 /* JBPostProcessStringsOperation.h in Headers */,
+				BE18CFA91B540E7E00184BC0 /* JBLoadFileStringsOperation.h in Headers */,
 				BE5A5E9D1B4D47BB00FF0134 /* JBLocalizer-Prefix.pch in Headers */,
 				BEFD00CD1B46809A0008AADF /* JBLocalizer.h in Headers */,
-				BEFD00F31B4680E20008AADF /* JBLoadRootFilesOperation.h in Headers */,
-				BEFD00F61B4680E20008AADF /* JBLoadSourceFilesOperation.h in Headers */,
+				BE18CFB71B54237700184BC0 /* JBFile.h in Headers */,
+				BE18CFAF1B540E7E00184BC0 /* JBOperation.h in Headers */,
+				BE18CFAB1B540E7E00184BC0 /* JBLoadRootFilesOperation.h in Headers */,
+				BE18CFAD1B540E7E00184BC0 /* JBLoadSourceFilesOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,12 +525,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEFD00F71B4680E20008AADF /* JBLoadSourceFilesOperation.m in Sources */,
-				BEFD00FA1B4680E20008AADF /* JBOperation.m in Sources */,
+				BE18CFB01B540E7E00184BC0 /* JBOperation.m in Sources */,
+				BE18CFAE1B540E7E00184BC0 /* JBLoadSourceFilesOperation.m in Sources */,
+				BE18CFAC1B540E7E00184BC0 /* JBLoadRootFilesOperation.m in Sources */,
+				BE18CFAA1B540E7E00184BC0 /* JBLoadFileStringsOperation.m in Sources */,
+				BE18CFB21B540E7E00184BC0 /* JBPostProcessStringsOperation.m in Sources */,
+				BE18CFB81B54237700184BC0 /* JBFile.m in Sources */,
 				BEFD00F11B4680E20008AADF /* JBFileController.m in Sources */,
-				BE37FAA61B4E903800F4BFF6 /* JBLoadFileStringsOperation.m in Sources */,
-				BE37FAAB1B4EC1A800F4BFF6 /* JBPostProcessStringsOperation.m in Sources */,
-				BEFD00F41B4680E20008AADF /* JBLoadRootFilesOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
