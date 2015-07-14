@@ -47,7 +47,7 @@
             }
             return;
         }
-        
+
         NSMutableArray *strings = [[NSMutableArray alloc] init];
         
         NSError *regexError = nil;
@@ -57,7 +57,6 @@
         
         BOOL isObjC = [[self.filePath lastPathComponent] hasSuffix:@".m"];
         BOOL isSwift = [[self.filePath lastPathComponent] hasSuffix:@".swift"];
-        __block BOOL isValidString = YES;
         
         [regex enumerateMatchesInString:fileContent
                                 options:0
@@ -77,6 +76,8 @@
                                      
                                      NSArray *componentes = [value componentsSeparatedByString:@","];
                                      NSUInteger index = 0;
+                                     BOOL isValidString = YES;
+                                     
                                      for (NSString *component in componentes) {
                                          
                                          NSString *stringValue = component;

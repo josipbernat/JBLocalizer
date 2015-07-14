@@ -58,7 +58,12 @@ static NSString *shared = @"Shared";
                 [mutArray addObject:key];
             }
             else if (obj.count == 1) {
-                result[[obj firstObject]] = @[key];
+                NSMutableArray *array = result[[obj firstObject]];
+                if (!array) {
+                    array = [[NSMutableArray alloc] init];
+                    result[[obj firstObject]] = array;
+                }
+                [array addObject:key];
             }
             else {
                 NSAssert(NO, @"String doesn't belong to any file!");
