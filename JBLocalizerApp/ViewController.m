@@ -12,7 +12,7 @@
 
 @interface ViewController () <NSTableViewDataSource, NSTableViewDelegate>
 
-@property (weak) IBOutlet NSScrollView *tableSuperView;
+@property (weak) IBOutlet NSView *tablePickerContainerView;
 @property (weak) IBOutlet NSTableView *tableView;
 @property (weak) IBOutlet NSTableColumn *columnView;
 @property (weak) IBOutlet NSButton *nextButton;
@@ -36,9 +36,7 @@
     [self.columnView setResizingMask:NSTableColumnAutoresizingMask];
     [self.tableView sizeLastColumnToFit];
     
-    self.tableSuperView.hidden = YES;
-    self.nextButton.hidden = YES;
-    self.instructionLabel.hidden = YES;
+    self.tablePickerContainerView.hidden = YES;
 }
 
 #pragma mark - Button Selectors
@@ -130,14 +128,30 @@
     NSLog(@"Error: %@", error);
 }
 
+- (void)__presentErrorAlertViewWithMessage:(NSString *)message {
+    
+    if (![NSThread isMainThread]) {
+        __weak id this = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            __strong typeof(self) strongThis = this;
+            [strongThis __presentErrorAlertViewWithMessage:message];
+        });
+        return;
+    }
+    
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = message;
+    [alert addButtonWithTitle:NSLocalizedString(@"Ok", nil)];
+    
+    [alert runModal];
+}
+
 #pragma mark - File Processing
 
 - (void)__processProjectAtPath:(NSString *)path {
     NSParameterAssert(path);
     
-    self.tableSuperView.hidden = NO;
-    self.nextButton.hidden = NO;
-    self.instructionLabel.hidden = NO;
+    self.tablePickerContainerView.hidden = NO;
     
     self.projectPath = path;
     
@@ -171,7 +185,12 @@
                                                        [strongThis __presentErrorAlertView:error];
                                                    }
                                                    else {
-                                                       [strongThis __processLocalizableStringsInFolders:result file:file];
+                                                       if (result.count) {
+                                                           [strongThis __processLocalizableStringsInFolders:result file:file];
+                                                       }
+                                                       else {
+                                                           [strongThis __presentErrorAlertViewWithMessage:NSLocalizedString(@"Selected folder contains zero Objective-C or Swift files", nil)];
+                                                       }
                                                    }
                                                }];
 }
@@ -187,7 +206,12 @@
                                                                               // Present error.
                                                                           }
                                                                           else {
-                                                                              [strongThis __presentSaveFileDialog:strings];
+                                                                              if (strings.length) {
+                                                                                  [strongThis __presentSaveFileDialog:strings];
+                                                                              }
+                                                                              else {
+                                                                                  [strongThis __presentErrorAlertViewWithMessage:NSLocalizedString(@"Selected folder contains zero files using NSLocalizedString", nil)];
+                                                                              }
                                                                           }
                                                                       }];
 }
@@ -223,6 +247,12 @@
     
     JBFile *file = self.items[row];
     file.selected = [value boolValue];
+    
+    for (JBFile *otherFile in self.items) {
+        if (![otherFile.path isEqualToString:file.path]) {
+            otherFile.selected = NO;
+        }
+    }
     
     [tableView reloadData];
 }

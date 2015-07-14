@@ -40,7 +40,7 @@
 
 #pragma mark - Execution
 
-static NSString *shared = @"Shared";
+static NSString *kKeyShared = @"Shared";
 #define kFileCommentFormat(__NAME__) [NSString stringWithFormat:@"/**\n * %@\n */", (__NAME__)]
 #define kKeyValueFormat(__KEY__) [NSString stringWithFormat:@"\"%@\" = \"%@\";", (__KEY__), (__KEY__)]
 
@@ -49,12 +49,12 @@ static NSString *shared = @"Shared";
     @autoreleasepool {
 
         NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
-        result[shared] = [[NSMutableArray alloc] init];
+        result[kKeyShared] = [[NSMutableArray alloc] init];
         
         [self.strings enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSArray *obj, BOOL *stop) {
             
             if (obj.count > 1) {
-                NSMutableArray *mutArray = result[shared];
+                NSMutableArray *mutArray = result[kKeyShared];
                 [mutArray addObject:key];
             }
             else if (obj.count == 1) {
@@ -69,6 +69,11 @@ static NSString *shared = @"Shared";
                 NSAssert(NO, @"String doesn't belong to any file!");
             }
         }];
+        
+        NSMutableDictionary *sharedDict = result[kKeyShared];
+        if (!sharedDict.count) {
+            [result removeObjectForKey:kKeyShared];
+        }
         
         NSMutableString *string = [[NSMutableString alloc] init];
         [result enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSArray *obj, BOOL *stop) {
