@@ -7,10 +7,12 @@
 //
 
 #import "JBPostProcessStringsOperation.h"
+#import "JBString.h"
+#import "JBFile.h"
 
 @interface JBPostProcessStringsOperation ()
 
-@property (strong, nonatomic) NSDictionary *strings;
+@property (strong, nonatomic) NSArray *strings;
 @property (nonatomic, copy) void(^completionHandler)(NSString * __nullable);
 
 @end
@@ -18,15 +20,8 @@
 @implementation JBPostProcessStringsOperation
 
 #pragma mark - Initialization
-/**
- *  Postprocess given strings for printing suitable format.
- *
- *  @param strings    NSDictionary containing strings. String must be key and value must be an array of files who contains given word.
- *  @param completion Callback block object called once operation finishes with execution. It has one parameter, a string suitable for writing strings in file.
- *
- *  @return Newly created instance.
- */
-+ (nonnull instancetype)processStrings:(NSDictionary * __nonnull)strings
+
++ (nonnull instancetype)processStrings:(NSArray * __nonnull)strings
                             completion:( void(^ __nullable )(NSString * __nullable))completion {
     
     NSParameterAssert(strings);
@@ -46,24 +41,28 @@ static NSString *kKeyShared = @"Shared";
 
 - (void)execute {
     
+    if ([self isCancelled]) {
+        return;
+    }
+    
     @autoreleasepool {
 
         NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
         result[kKeyShared] = [[NSMutableArray alloc] init];
         
-        [self.strings enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSArray *obj, BOOL *stop) {
-            
-            if (obj.count > 1) {
+        [self.strings enumerateObjectsUsingBlock:^(JBString *string, NSUInteger idx, BOOL *stop) {
+        
+            if (string.files.count > 1) {
                 NSMutableArray *mutArray = result[kKeyShared];
-                [mutArray addObject:key];
+                [mutArray addObject:string.string];
             }
-            else if (obj.count == 1) {
-                NSMutableArray *array = result[[obj firstObject]];
+            else if (string.files.count == 1) {
+                NSMutableArray *array = result[[string.files anyObject]];
                 if (!array) {
                     array = [[NSMutableArray alloc] init];
-                    result[[obj firstObject]] = array;
+                    result[[string.files anyObject]] = array;
                 }
-                [array addObject:key];
+                [array addObject:string.string];
             }
             else {
                 NSAssert(NO, @"String doesn't belong to any file!");
@@ -76,10 +75,10 @@ static NSString *kKeyShared = @"Shared";
         }
         
         NSMutableString *string = [[NSMutableString alloc] init];
-        [result enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSArray *obj, BOOL *stop) {
+        [result enumerateKeysAndObjectsUsingBlock:^(JBFile *key, NSArray *obj, BOOL *stop) {
             
             // Continue here...
-            [string appendString:kFileCommentFormat(key)];
+            [string appendString:kFileCommentFormat(key.name)];
             [obj enumerateObjectsUsingBlock:^(NSString *value, NSUInteger idx, BOOL *stop) {
                 [string appendString:@"\n"];
                 [string appendString:kKeyValueFormat(value)];

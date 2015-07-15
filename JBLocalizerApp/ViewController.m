@@ -177,9 +177,9 @@
 
     __weak id this = self;
     [[JBFileController sharedController] loadProjectFiles:self.projectPath
-                                            rootDirectory:[file name]
+                                        filterDirectories:@[file]
                                                completion:^(NSDictionary *result, NSError *error) {
-                                                   
+                                                  
                                                    __strong typeof(self) strongThis = this;
                                                    if (error) {
                                                        [strongThis __presentErrorAlertView:error];
@@ -198,7 +198,7 @@
 - (void)__processLocalizableStringsInFolders:(NSDictionary *)result file:(JBFile *)file {
 
     __weak id this = self;
-    [[JBFileController sharedController] loadAndProcessLocalizableStringsInFiles:result[[file name]]
+    [[JBFileController sharedController] loadAndProcessLocalizableStringsInFiles:result[file]
                                                                       completion:^(NSString *strings, NSError *error) {
                                                                           
                                                                           __strong typeof(self) strongThis = this;

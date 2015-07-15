@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JBFile : NSObject
+@interface JBFile : NSObject <NSCopying>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *path;

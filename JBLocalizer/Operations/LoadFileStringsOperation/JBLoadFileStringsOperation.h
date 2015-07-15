@@ -8,6 +8,8 @@
 
 #import "JBOperation.h"
 
+@class JBFile;
+
 @interface JBLoadFileStringsOperation : JBOperation
 
 #pragma mark - Initialization
@@ -19,7 +21,7 @@
  *
  *  @return Newly created instance.
  */
-+ (nonnull instancetype)loadStringsInFile:(NSString * __nonnull)file
++ (nonnull instancetype)loadStringsInFile:(JBFile * __nonnull)file
                                completion:( void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion;
 
 @end

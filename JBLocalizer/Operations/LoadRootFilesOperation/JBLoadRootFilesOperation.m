@@ -38,37 +38,44 @@
 #pragma mark - Execution
 
 - (void)execute {
-
-    NSError *error = nil;
-    NSArray *content = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:self.projectPath error:&error];
     
-    if (error) {
-        if (self.completionHandler) {
-            self.completionHandler(nil, error);
-        }
+    if ([self isCancelled]) {
+        return;
     }
-    
-    NSMutableArray *items = [NSMutableArray array];
-    NSArray *ignoringNames = kIgnoringNames;
-    
-    for (NSString *item in content) {
+
+    @autoreleasepool {
         
-        BOOL contains = NO;
-        for (NSString *ignore in ignoringNames) {
-            if ([item containsString:ignore]) {
-                contains = YES;
-                break;
+        NSError *error = nil;
+        NSArray *content = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:self.projectPath error:&error];
+        
+        if (error) {
+            if (self.completionHandler) {
+                self.completionHandler(nil, error);
             }
         }
-        if (!contains) {
-            [items addObject:[JBFile fileWithName:item
-                                             path:[self.projectPath stringByAppendingPathComponent:item]
-                                        directory:YES]];
+        
+        NSMutableArray *items = [NSMutableArray array];
+        NSArray *ignoringNames = kIgnoringNames;
+        
+        for (NSString *item in content) {
+            
+            BOOL contains = NO;
+            for (NSString *ignore in ignoringNames) {
+                if ([item containsString:ignore]) {
+                    contains = YES;
+                    break;
+                }
+            }
+            if (!contains) {
+                [items addObject:[JBFile fileWithName:item
+                                                 path:[self.projectPath stringByAppendingPathComponent:item]
+                                            directory:YES]];
+            }
         }
-    }
-
-    if (self.completionHandler) {
-        self.completionHandler(items, nil);
+        
+        if (self.completionHandler) {
+            self.completionHandler(items, nil);
+        }
     }
 }
 

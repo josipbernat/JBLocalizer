@@ -23,7 +23,7 @@
  *  @return Newly created instance.
  */
 + (nonnull instancetype)loadProjectSourceFiles:(XCProject  * __nonnull )project
-                                 rootDirectory:(NSString * __nullable)root
+                             filterDirectories:(NSArray * __nullable)filter
                                     completion:( void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion;
 
 @end

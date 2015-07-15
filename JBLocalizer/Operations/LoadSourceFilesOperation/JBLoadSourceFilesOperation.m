@@ -10,11 +10,12 @@
 #import "XcodeEditor/XcodeEditor.h"
 #import <XcodeEditor/XCProject.h>
 #import "JBLoadRootFilesOperation.h"
+#import "JBFile.h"
 
 @interface JBLoadSourceFilesOperation ()
 
 @property (nonatomic, strong) XCProject *project;
-@property (nonatomic, strong) NSString *root;
+@property (nonatomic, strong) NSArray *filter;
 @property (nonatomic, copy) void(^completionHandler)(NSDictionary * __nullable, NSError * __nullable);
 
 @end
@@ -24,12 +25,12 @@
 #pragma mark - Initialization
 
 + (nonnull instancetype)loadProjectSourceFiles:(XCProject  * __nonnull )project
-                                 rootDirectory:(NSString * __nullable)root
+                             filterDirectories:(NSArray *)filter
                                     completion:( void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion {
 
     JBLoadSourceFilesOperation *operation = [[self alloc] init];
     operation.project = project;
-    operation.root = root;
+    operation.filter = filter;
     operation.completionHandler = completion;
     
     return operation;
@@ -38,32 +39,46 @@
 #pragma mark - Execution
 
 - (void)execute {
+    
+    if ([self isCancelled]) {
+        return;
+    }
 
     @autoreleasepool {
-        
-        NSString *projectFolder = [self.project.filePath stringByDeletingLastPathComponent];
-        NSMutableDictionary *result = nil;
-        
-        if (self.root) {
+
+        if (self.filter && self.filter.count) {
             
-            NSError *error = nil;
-            NSString *targetDirectory = [projectFolder stringByAppendingPathComponent:self.root];
+            __block NSError *error = nil;
+            __block NSMutableDictionary *allItems = [[NSMutableDictionary alloc] init];
             
-            NSArray *items = [self sourceFilesInDirectory:targetDirectory error:&error];
-            
-            if (items) {
+            [self.filter enumerateObjectsUsingBlock:^(JBFile *obj, NSUInteger idx, BOOL *stop) {
+                NSAssert([obj isKindOfClass:[JBFile class]], @"obj must be JBFile class");
+                NSAssert(obj.directory, @"Given file must be directory");
                 
-                result = [[NSMutableDictionary alloc] init];
-                result[self.root] = items;
-            }
+                NSArray *items = [self sourceFilesInDirectory:obj.path error:&error];
+                if (error) {
+                    *stop = YES;
+                    
+                    if (self.completionHandler) {
+                        self.completionHandler(nil, error);
+                    }
+                }
+                if (items) {
+                    allItems[obj] = items;
+                }
+                else {
+                    allItems[obj] = [NSArray array];
+                }
+            }];
             
             if (self.completionHandler) {
-                self.completionHandler(result, error);
+                self.completionHandler(allItems, error);
             }
         }
         else {
             
-            result = [[NSMutableDictionary alloc] init];
+            NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
+            NSString *projectFolder = [self.project.filePath stringByDeletingLastPathComponent];
             
             NSError *error = nil;
             NSArray *rootContent = [JBLoadRootFilesOperation rootDirectoriesInPath:projectFolder error:&error];
@@ -129,10 +144,14 @@
                 }
             }
             else {
-                if ([[file pathExtension] isEqualToString:@"m"] || [[file pathExtension] isEqualToString:@"mm"] ||
-                    [[file pathExtension] isEqualToString:@"swift"]) {
+                NSString *pathExtension = [file pathExtension];
+                if ([pathExtension isEqualToString:@"m"] || [pathExtension isEqualToString:@"mm"] ||
+                    [pathExtension isEqualToString:@"swift"]) {
                     
-                    [array addObject:filePath];
+                    JBFile *aFile = [JBFile fileWithName:[file lastPathComponent]
+                                                    path:[path stringByAppendingPathComponent:file]
+                                               directory:NO];
+                    [array addObject:aFile];
                 }
             }
         }

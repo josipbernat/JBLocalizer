@@ -35,6 +35,8 @@
 		BE5A5EC91B4D48DC00FF0134 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A5E961B4D3CB200FF0134 /* Cocoa.framework */; };
 		BE5A5ECA1B4D4AEB00FF0134 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A5E941B4D3CAD00FF0134 /* AppKit.framework */; };
 		BE5A5ECB1B4D4B0100FF0134 /* JBLocalizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD00C71B46809A0008AADF /* JBLocalizer.framework */; };
+		BEEB9C6E1B56687700EF133E /* JBString.h in Headers */ = {isa = PBXBuildFile; fileRef = BEEB9C6C1B56687700EF133E /* JBString.h */; };
+		BEEB9C6F1B56687700EF133E /* JBString.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9C6D1B56687700EF133E /* JBString.m */; };
 		BEFD00CD1B46809A0008AADF /* JBLocalizer.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00CC1B46809A0008AADF /* JBLocalizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEFD00F01B4680E20008AADF /* JBFileController.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00E41B4680E20008AADF /* JBFileController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEFD00F11B4680E20008AADF /* JBFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00E51B4680E20008AADF /* JBFileController.m */; };
@@ -90,6 +92,8 @@
 		BE5A5EBA1B4D487300FF0134 /* JBLocalizerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JBLocalizerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5A5EBF1B4D487300FF0134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE5A5EC01B4D487300FF0134 /* JBLocalizerAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBLocalizerAppTests.m; sourceTree = "<group>"; };
+		BEEB9C6C1B56687700EF133E /* JBString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBString.h; sourceTree = "<group>"; };
+		BEEB9C6D1B56687700EF133E /* JBString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBString.m; sourceTree = "<group>"; };
 		BEFD00C71B46809A0008AADF /* JBLocalizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JBLocalizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFD00CB1B46809A0008AADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFD00CC1B46809A0008AADF /* JBLocalizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBLocalizer.h; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 		BE18CFB31B54236A00184BC0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BEEB9C6B1B56686B00EF133E /* String */,
 				BE18CFB41B54236A00184BC0 /* File */,
 			);
 			path = Model;
@@ -270,6 +275,15 @@
 				BE5A5EBF1B4D487300FF0134 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEEB9C6B1B56686B00EF133E /* String */ = {
+			isa = PBXGroup;
+			children = (
+				BEEB9C6C1B56687700EF133E /* JBString.h */,
+				BEEB9C6D1B56687700EF133E /* JBString.m */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 		BEFD00BD1B46809A0008AADF = {
@@ -340,6 +354,7 @@
 				BE18CFAF1B540E7E00184BC0 /* JBOperation.h in Headers */,
 				BE18CFAB1B540E7E00184BC0 /* JBLoadRootFilesOperation.h in Headers */,
 				BE18CFAD1B540E7E00184BC0 /* JBLoadSourceFilesOperation.h in Headers */,
+				BEEB9C6E1B56687700EF133E /* JBString.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +540,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEEB9C6F1B56687700EF133E /* JBString.m in Sources */,
 				BE18CFB01B540E7E00184BC0 /* JBOperation.m in Sources */,
 				BE18CFAE1B540E7E00184BC0 /* JBLoadSourceFilesOperation.m in Sources */,
 				BE18CFAC1B540E7E00184BC0 /* JBLoadRootFilesOperation.m in Sources */,

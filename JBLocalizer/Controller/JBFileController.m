@@ -12,6 +12,7 @@
 #import "JBLoadFileStringsOperation.h"
 #import "JBPostProcessStringsOperation.h"
 #import "JBLoadRootFilesOperation.h"
+#import "JBString.h"
 
 @interface JBFileController ()
 
@@ -45,6 +46,12 @@
     return self;
 }
 
+#pragma mark - Canceling
+
+- (void)reset {
+    [self.queue cancelAllOperations];
+}
+
 #pragma mark - Project
 
 - (void)loadProjectRootFiles:(NSString * __nonnull)projectPath
@@ -58,14 +65,14 @@
 }
 
 - (void)loadProjectFiles:(NSString * __nonnull)projectPath
-           rootDirectory:(NSString * __nonnull)rootDirectory
+       filterDirectories:(NSArray * __nonnull)filter
               completion:(void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion {
     NSParameterAssert(projectPath);
     
     XCProject *project = [XCProject projectWithFilePath:projectPath];
 
     JBLoadSourceFilesOperation *operation = [JBLoadSourceFilesOperation loadProjectSourceFiles:project
-                                                                                 rootDirectory:rootDirectory
+                                                                             filterDirectories:filter
                                                                                     completion:completion];
     
     [self.queue addOperation:operation];
@@ -74,33 +81,32 @@
 #pragma mark - File Content
 
 - (void)loadLocalizableStringsInFiles:(NSArray * __nonnull)files
-                           completion:(void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion {
+                           completion:(void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion {
 
     NSParameterAssert(files);
     
-    __block NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    __block NSMutableArray *resultArray = [[NSMutableArray alloc] init];
     __block NSInteger counter = 0;
     __block NSInteger count = files.count;
     __block NSError *anError = nil;
     
-    for (NSString *file in files) {
+    for (JBFile *file in files) {
         
-        void (^handler)(NSArray *, NSError *) = ^(NSArray *strings, NSError *error){
+        void (^handler)(NSArray *, NSError *) = ^(NSArray *strings, NSError *error) {
         
             counter++;
             if (strings && strings.count) {
                 
-                NSString *fileName = [file lastPathComponent];
-                for (NSString *string in strings) {
+                for (JBString *string in strings) {
+                    NSAssert([string isKindOfClass:[JBString class]], @"String must be JBString");
                     
-                    if (dict[string]) {
-                        NSMutableArray *array = dict[string];
-                        [array addObject:fileName];
+                    NSUInteger index = [resultArray indexOfObject:string];
+                    if (index != NSNotFound) {
+                        JBString *savedString = resultArray[index];
+                        [savedString.files addObjectsFromArray:[string.files allObjects]];
                     }
                     else {
-                        NSMutableArray *array = [[NSMutableArray alloc] init];
-                        [array addObject:fileName];
-                        dict[string] = array;
+                        [resultArray addObject:string];
                     }
                 }
             }
@@ -111,7 +117,7 @@
             if (counter == count) {
                 
                 if (completion) {
-                    completion(dict, anError);
+                    completion(resultArray, anError);
                 }
             }
         };
@@ -127,7 +133,7 @@
     
     __weak id this = self;
     [self loadLocalizableStringsInFiles:files
-                             completion:^(NSDictionary * strings, NSError * error) {
+                             completion:^(NSArray * strings, NSError * error) {
                                  
                                  if (error) {
                                      if (completion) {

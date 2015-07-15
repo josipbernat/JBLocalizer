@@ -7,10 +7,12 @@
 //
 
 #import "JBLoadFileStringsOperation.h"
+#import "JBString.h"
+#import "JBFile.h"
 
 @interface JBLoadFileStringsOperation ()
 
-@property (strong, nonatomic) NSString *filePath;
+@property (strong, nonatomic) JBFile *file;
 @property (nonatomic, copy) void(^completionHandler)(NSArray * __nullable, NSError * __nullable);
 
 @end
@@ -19,13 +21,13 @@
 
 #pragma mark - Initialization
 
-+ (nonnull instancetype)loadStringsInFile:(NSString * __nonnull)file
++ (nonnull instancetype)loadStringsInFile:(JBFile * __nonnull)file
                                completion:( void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion {
 
     NSParameterAssert(file);
     
     JBLoadFileStringsOperation *operation = [[self alloc] init];
-    operation.filePath = file;
+    operation.file = file;
     operation.completionHandler = completion;
     
     return operation;
@@ -35,10 +37,14 @@
 
 - (void)execute {
     
+    if ([self isCancelled]) {
+        return;
+    }
+    
     @autoreleasepool {
     
         NSError *fileOpenError = nil;
-        NSString *fileContent = [[NSString alloc] initWithContentsOfFile:self.filePath
+        NSString *fileContent = [[NSString alloc] initWithContentsOfFile:self.file.path
                                                                 encoding:NSUTF8StringEncoding
                                                                    error:&fileOpenError];
         if (fileOpenError || !fileContent) {
@@ -55,8 +61,8 @@
                                                                                options:NSRegularExpressionCaseInsensitive
                                                                                  error:&regexError];
         
-        BOOL isObjC = [[self.filePath lastPathComponent] hasSuffix:@".m"];
-        BOOL isSwift = [[self.filePath lastPathComponent] hasSuffix:@".swift"];
+        BOOL isObjC = [[self.file.path lastPathComponent] hasSuffix:@".m"];
+        BOOL isSwift = [[self.file.path lastPathComponent] hasSuffix:@".swift"];
         
         [regex enumerateMatchesInString:fileContent
                                 options:0
@@ -77,6 +83,10 @@
                                      NSArray *componentes = [value componentsSeparatedByString:@","];
                                      NSUInteger index = 0;
                                      BOOL isValidString = YES;
+                                     
+                                     NSString *localizableString = nil;
+                                     NSString *comment = nil;
+                                     NSUInteger count = componentes.count;
                                      
                                      for (NSString *component in componentes) {
                                          
@@ -110,13 +120,17 @@
                                          if (stringValue.length && isValidString) {
                                              
                                              if (index == 0) {
-                                                 [strings addObject:stringValue];
+                                                 localizableString = stringValue;
                                              }
-                                             else if (index == 1) {
-                                                 // Maybe add table or comment?
+                                             else if (index == count - 1) {
+                                                 comment = stringValue;
                                              }
                                          }
                                          index++;
+                                     }
+                                     
+                                     if (localizableString && isValidString) {
+                                         [strings addObject:[JBString stringWithString:localizableString comment:comment file:self.file]];
                                      }
                                  }
         }];

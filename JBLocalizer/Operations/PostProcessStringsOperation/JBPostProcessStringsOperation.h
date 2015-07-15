@@ -19,7 +19,7 @@
  *
  *  @return Newly created instance.
  */
-+ (nonnull instancetype)processStrings:(NSDictionary * __nonnull)strings
++ (nonnull instancetype)processStrings:(NSArray * __nonnull)strings
                             completion:( void(^ __nullable )(NSString * __nullable))completion;
 
 @end

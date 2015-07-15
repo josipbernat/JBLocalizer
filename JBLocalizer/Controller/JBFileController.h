@@ -18,6 +18,12 @@
  */
 + (nonnull instancetype)sharedController;
 
+#pragma mark - Canceling
+/**
+ *  Invokes cancel on all operations.
+ */
+- (void)reset;
+
 #pragma mark - Project
 
 - (void)loadProjectRootFiles:(NSString * __nonnull)projectPath
@@ -29,7 +35,7 @@
  *  @param projectPath A file path where project is saved.
  */
 - (void)loadProjectFiles:(NSString * __nonnull)projectPath
-           rootDirectory:(NSString * __nonnull)rootDirectory
+           filterDirectories:(NSArray * __nonnull)filter
               completion:(void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion;
 
 #pragma mark - File Content
@@ -40,7 +46,7 @@
  *  @param completion Callback block object called once loading is finished. It has two parameters but only one is not nil at given time. If load is finished with success it will contain dictionary where key is string and value is an array of classes where it is contained. Otherwise NSError object will have failure reason.
  */
 - (void)loadLocalizableStringsInFiles:(NSArray * __nonnull)files
-                           completion:(void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion;
+                           completion:(void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion;
 
 /**
  *  Loads NSLocalizedString strings in given files and processes them to output format.
