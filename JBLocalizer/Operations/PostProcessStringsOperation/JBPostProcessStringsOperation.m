@@ -37,7 +37,8 @@
 
 static NSString *kKeyShared = @"Shared";
 #define kFileCommentFormat(__NAME__) [NSString stringWithFormat:@"/**\n * %@\n */", (__NAME__)]
-#define kKeyValueFormat(__KEY__) [NSString stringWithFormat:@"\"%@\" = \"%@\";", (__KEY__), (__KEY__)]
+#define kKeyValueFormatWithoutComment(__KEY__) [NSString stringWithFormat:@"\"%@\" = \"%@\";", (__KEY__), (__KEY__)]
+#define kKeyValueFormatComment(__COMMENT__, __KEY__) [NSString stringWithFormat:@"// %@\n\"%@\" = \"%@\";", (__COMMENT__), (__KEY__), (__KEY__)]
 
 - (void)execute {
     
@@ -48,21 +49,24 @@ static NSString *kKeyShared = @"Shared";
     @autoreleasepool {
 
         NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
-        result[kKeyShared] = [[NSMutableArray alloc] init];
+        JBFile *sharedFile = [JBFile fileWithName:kKeyShared path:kKeyShared directory:NO];
+        result[sharedFile] = [[NSMutableArray alloc] init];
         
         [self.strings enumerateObjectsUsingBlock:^(JBString *string, NSUInteger idx, BOOL *stop) {
-        
+            
             if (string.files.count > 1) {
-                NSMutableArray *mutArray = result[kKeyShared];
-                [mutArray addObject:string.string];
+                NSMutableArray *mutArray = result[sharedFile];
+                [mutArray addObject:string];
             }
             else if (string.files.count == 1) {
-                NSMutableArray *array = result[[string.files anyObject]];
+                
+                JBFile *key = [string.files anyObject];
+                NSMutableArray *array = result[key];
                 if (!array) {
                     array = [[NSMutableArray alloc] init];
-                    result[[string.files anyObject]] = array;
+                    result[key] = array;
                 }
-                [array addObject:string.string];
+                [array addObject:string];
             }
             else {
                 NSAssert(NO, @"String doesn't belong to any file!");
@@ -76,12 +80,19 @@ static NSString *kKeyShared = @"Shared";
         
         NSMutableString *string = [[NSMutableString alloc] init];
         [result enumerateKeysAndObjectsUsingBlock:^(JBFile *key, NSArray *obj, BOOL *stop) {
+            NSAssert([key isKindOfClass:[JBFile class]], @"key must be JBFile class");
             
-            // Continue here...
             [string appendString:kFileCommentFormat(key.name)];
-            [obj enumerateObjectsUsingBlock:^(NSString *value, NSUInteger idx, BOOL *stop) {
+            [obj enumerateObjectsUsingBlock:^(JBString *value, NSUInteger idx, BOOL *stop) {
+                NSAssert([value isKindOfClass:[JBString class]], @"value must be JBString class");
+                
                 [string appendString:@"\n"];
-                [string appendString:kKeyValueFormat(value)];
+                if (value.comment && value.comment.length) {
+                    [string appendString:kKeyValueFormatComment(value.comment, value.string)];
+                }
+                else {
+                    [string appendString:kKeyValueFormatWithoutComment(value.string)];
+                }
             }];
             [string appendString:@"\n\n"];
         }];

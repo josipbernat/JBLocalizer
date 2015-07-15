@@ -14,6 +14,9 @@
 
 + (instancetype)fileWithName:(NSString *)name path:(NSString *)path directory:(BOOL)directory {
 
+    NSParameterAssert(name);
+    NSParameterAssert(path);
+    
     JBFile *file = [[self alloc] init];
     file.name = name;
     file.path = path;

@@ -6,27 +6,27 @@
 //  Copyright (c) 2015 Josip Bernat. All rights reserved.
 //
 
-#import "JBLoadFileStringsOperation.h"
+#import "JBLoadStringsInFileOperation.h"
 #import "JBString.h"
 #import "JBFile.h"
 
-@interface JBLoadFileStringsOperation ()
+@interface JBLoadStringsInFileOperation ()
 
 @property (strong, nonatomic) JBFile *file;
 @property (nonatomic, copy) void(^completionHandler)(NSArray * __nullable, NSError * __nullable);
 
 @end
 
-@implementation JBLoadFileStringsOperation
+@implementation JBLoadStringsInFileOperation
 
 #pragma mark - Initialization
 
-+ (nonnull instancetype)loadStringsInFile:(JBFile * __nonnull)file
-                               completion:( void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion {
++ (nonnull instancetype)file:(JBFile * __nonnull)file
+                  completion:( void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion {
 
     NSParameterAssert(file);
     
-    JBLoadFileStringsOperation *operation = [[self alloc] init];
+    JBLoadStringsInFileOperation *operation = [[self alloc] init];
     operation.file = file;
     operation.completionHandler = completion;
     
@@ -54,7 +54,7 @@
             return;
         }
 
-        NSMutableArray *strings = [[NSMutableArray alloc] init];
+        NSMutableSet *stringsSet = [[NSMutableSet alloc] init];
         
         NSError *regexError = nil;
         NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(NSLocalizedString\\(.*?\\))"
@@ -63,6 +63,7 @@
         
         BOOL isObjC = [[self.file.path lastPathComponent] hasSuffix:@".m"];
         BOOL isSwift = [[self.file.path lastPathComponent] hasSuffix:@".swift"];
+        NSCharacterSet *whitespaceSet = [NSCharacterSet whitespaceCharacterSet];
         
         [regex enumerateMatchesInString:fileContent
                                 options:0
@@ -104,17 +105,30 @@
                                              }
                                          }
                                          else if (isSwift) {
-                                         
+                                            
                                              if ([stringValue hasPrefix:@"\""]) {
                                                  stringValue = [stringValue stringByReplacingOccurrencesOfString:@"\"" withString:@""];
                                              }
                                              else if ([stringValue hasPrefix:@" \""]) {
                                                  stringValue = [stringValue stringByReplacingOccurrencesOfString:@" \"" withString:@""];
                                              }
+                                             
+                                             if ([stringValue hasPrefix:@"comment:"]) {
+                                                 stringValue = [stringValue stringByReplacingOccurrencesOfString:@"comment:" withString:@""];
+                                             }
+                                             else if ([stringValue hasPrefix:@" comment:"]) {
+                                                 stringValue = [stringValue stringByReplacingOccurrencesOfString:@" comment:" withString:@""];
+                                             }
                                          }
                                          
                                          if ([stringValue hasSuffix:@"\""]) {
                                              stringValue = [stringValue stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+                                         }
+                                         
+                                         
+                                         NSString *trimmedString = [stringValue stringByTrimmingCharactersInSet:whitespaceSet];
+                                         if ([trimmedString isEqualToString:@""]) {
+                                             stringValue = nil;
                                          }
                                          
                                          if (stringValue.length && isValidString) {
@@ -129,14 +143,17 @@
                                          index++;
                                      }
                                      
-                                     if (localizableString && isValidString) {
-                                         [strings addObject:[JBString stringWithString:localizableString comment:comment file:self.file]];
+                                     if (localizableString) {
+                                         if ([localizableString isEqualToString:@"Block list"]) {
+                                             NSLog(@"Stop1");
+                                         }
+                                         [stringsSet addObject:[JBString stringWithString:localizableString comment:comment file:self.file]];
                                      }
                                  }
         }];
         
         if (self.completionHandler) {
-            self.completionHandler(strings, nil);
+            self.completionHandler([stringsSet allObjects], nil);
         }
     }
 }

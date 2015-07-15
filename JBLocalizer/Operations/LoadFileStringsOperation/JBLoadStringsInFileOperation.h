@@ -10,7 +10,7 @@
 
 @class JBFile;
 
-@interface JBLoadFileStringsOperation : JBOperation
+@interface JBLoadStringsInFileOperation : JBOperation
 
 #pragma mark - Initialization
 /**
@@ -21,7 +21,7 @@
  *
  *  @return Newly created instance.
  */
-+ (nonnull instancetype)loadStringsInFile:(JBFile * __nonnull)file
-                               completion:( void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion;
++ (nonnull instancetype)file:(JBFile * __nonnull)file
+                  completion:( void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion;
 
 @end

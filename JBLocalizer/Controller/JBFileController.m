@@ -9,7 +9,7 @@
 #import "JBFileController.h"
 #import "XcodeEditor/XcodeEditor.h"
 #import "JBLoadSourceFilesOperation.h"
-#import "JBLoadFileStringsOperation.h"
+#import "JBLoadStringsInFileOperation.h"
 #import "JBPostProcessStringsOperation.h"
 #import "JBLoadRootFilesOperation.h"
 #import "JBString.h"
@@ -85,7 +85,7 @@
 
     NSParameterAssert(files);
     
-    __block NSMutableArray *resultArray = [[NSMutableArray alloc] init];
+    __block NSMutableDictionary *resultArray = [[NSMutableDictionary alloc] init];
     __block NSInteger counter = 0;
     __block NSInteger count = files.count;
     __block NSError *anError = nil;
@@ -100,13 +100,12 @@
                 for (JBString *string in strings) {
                     NSAssert([string isKindOfClass:[JBString class]], @"String must be JBString");
                     
-                    NSUInteger index = [resultArray indexOfObject:string];
-                    if (index != NSNotFound) {
-                        JBString *savedString = resultArray[index];
+                    JBString *savedString = resultArray[string];
+                    if (savedString) {
                         [savedString.files addObjectsFromArray:[string.files allObjects]];
                     }
                     else {
-                        [resultArray addObject:string];
+                        resultArray[string] = string;
                     }
                 }
             }
@@ -117,13 +116,12 @@
             if (counter == count) {
                 
                 if (completion) {
-                    completion(resultArray, anError);
+                    completion(resultArray.allValues, anError);
                 }
             }
         };
         
-        JBLoadFileStringsOperation *operation = [JBLoadFileStringsOperation loadStringsInFile:file
-                                                                                   completion:handler];
+        JBLoadStringsInFileOperation *operation = [JBLoadStringsInFileOperation file:file completion:handler];
         [self.queue addOperation:operation];
     }
 }

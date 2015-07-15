@@ -18,7 +18,7 @@
     
     JBString *instance = [[self alloc] init];
     instance.string = string;
-    instance.comment = comment;
+    instance.comment = (comment && comment.length ? comment : nil);
     instance.files = [[NSMutableSet alloc] init];
     if (file) {
         [instance.files addObject:file];
@@ -35,7 +35,12 @@
         return NO;
     }
     
-    return ([_string isEqualToString:[object string]] && [_comment isEqualToString:[object comment]]);
+    if (_comment || [object comment]) {
+        return ([_string isEqualToString:[object string]] && [_comment isEqualToString:[object comment]]);
+    }
+    else {
+        return ([_string isEqualToString:[object string]]);
+    }
 }
 
 - (NSUInteger)hash {

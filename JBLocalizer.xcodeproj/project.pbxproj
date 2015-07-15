@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		3DCDD694DA7C8F8ABF7574D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CA02745D263DFEA2D3EFFB /* libPods.a */; };
 		41465EBAE75153FC54E4C0B5 /* libPods-JBLocalizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3B7ADF6B5469932203BFF7 /* libPods-JBLocalizer.a */; };
-		BE18CFA91B540E7E00184BC0 /* JBLoadFileStringsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE18CF9B1B540E7E00184BC0 /* JBLoadFileStringsOperation.h */; };
-		BE18CFAA1B540E7E00184BC0 /* JBLoadFileStringsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18CF9C1B540E7E00184BC0 /* JBLoadFileStringsOperation.m */; };
+		BE18CFA91B540E7E00184BC0 /* JBLoadStringsInFileOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE18CF9B1B540E7E00184BC0 /* JBLoadStringsInFileOperation.h */; };
+		BE18CFAA1B540E7E00184BC0 /* JBLoadStringsInFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18CF9C1B540E7E00184BC0 /* JBLoadStringsInFileOperation.m */; };
 		BE18CFAB1B540E7E00184BC0 /* JBLoadRootFilesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE18CF9E1B540E7E00184BC0 /* JBLoadRootFilesOperation.h */; };
 		BE18CFAC1B540E7E00184BC0 /* JBLoadRootFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18CF9F1B540E7E00184BC0 /* JBLoadRootFilesOperation.m */; };
 		BE18CFAD1B540E7E00184BC0 /* JBLoadSourceFilesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE18CFA11B540E7E00184BC0 /* JBLoadSourceFilesOperation.h */; };
@@ -62,8 +62,8 @@
 		606C0E60A4819BCE71C41A22 /* Pods-JBLocalizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBLocalizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JBLocalizer/Pods-JBLocalizer.debug.xcconfig"; sourceTree = "<group>"; };
 		6BBEB77BC28460535D52A421 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7146C79FB6FBC865F48231D9 /* Pods-JBLocalizerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBLocalizerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JBLocalizerTests/Pods-JBLocalizerTests.release.xcconfig"; sourceTree = "<group>"; };
-		BE18CF9B1B540E7E00184BC0 /* JBLoadFileStringsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLoadFileStringsOperation.h; sourceTree = "<group>"; };
-		BE18CF9C1B540E7E00184BC0 /* JBLoadFileStringsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLoadFileStringsOperation.m; sourceTree = "<group>"; };
+		BE18CF9B1B540E7E00184BC0 /* JBLoadStringsInFileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLoadStringsInFileOperation.h; sourceTree = "<group>"; };
+		BE18CF9C1B540E7E00184BC0 /* JBLoadStringsInFileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLoadStringsInFileOperation.m; sourceTree = "<group>"; };
 		BE18CF9E1B540E7E00184BC0 /* JBLoadRootFilesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLoadRootFilesOperation.h; sourceTree = "<group>"; };
 		BE18CF9F1B540E7E00184BC0 /* JBLoadRootFilesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLoadRootFilesOperation.m; sourceTree = "<group>"; };
 		BE18CFA11B540E7E00184BC0 /* JBLoadSourceFilesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLoadSourceFilesOperation.h; sourceTree = "<group>"; };
@@ -175,8 +175,8 @@
 		BE18CF9A1B540E7E00184BC0 /* LoadFileStringsOperation */ = {
 			isa = PBXGroup;
 			children = (
-				BE18CF9B1B540E7E00184BC0 /* JBLoadFileStringsOperation.h */,
-				BE18CF9C1B540E7E00184BC0 /* JBLoadFileStringsOperation.m */,
+				BE18CF9B1B540E7E00184BC0 /* JBLoadStringsInFileOperation.h */,
+				BE18CF9C1B540E7E00184BC0 /* JBLoadStringsInFileOperation.m */,
 			);
 			path = LoadFileStringsOperation;
 			sourceTree = "<group>";
@@ -347,7 +347,7 @@
 			files = (
 				BEFD00F01B4680E20008AADF /* JBFileController.h in Headers */,
 				BE18CFB11B540E7E00184BC0 /* JBPostProcessStringsOperation.h in Headers */,
-				BE18CFA91B540E7E00184BC0 /* JBLoadFileStringsOperation.h in Headers */,
+				BE18CFA91B540E7E00184BC0 /* JBLoadStringsInFileOperation.h in Headers */,
 				BE5A5E9D1B4D47BB00FF0134 /* JBLocalizer-Prefix.pch in Headers */,
 				BEFD00CD1B46809A0008AADF /* JBLocalizer.h in Headers */,
 				BE18CFB71B54237700184BC0 /* JBFile.h in Headers */,
@@ -544,7 +544,7 @@
 				BE18CFB01B540E7E00184BC0 /* JBOperation.m in Sources */,
 				BE18CFAE1B540E7E00184BC0 /* JBLoadSourceFilesOperation.m in Sources */,
 				BE18CFAC1B540E7E00184BC0 /* JBLoadRootFilesOperation.m in Sources */,
-				BE18CFAA1B540E7E00184BC0 /* JBLoadFileStringsOperation.m in Sources */,
+				BE18CFAA1B540E7E00184BC0 /* JBLoadStringsInFileOperation.m in Sources */,
 				BE18CFB21B540E7E00184BC0 /* JBPostProcessStringsOperation.m in Sources */,
 				BE18CFB81B54237700184BC0 /* JBFile.m in Sources */,
 				BEFD00F11B4680E20008AADF /* JBFileController.m in Sources */,
