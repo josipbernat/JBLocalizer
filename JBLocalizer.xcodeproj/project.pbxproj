@@ -26,7 +26,6 @@
 		BE5A5EA81B4D487300FF0134 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EA71B4D487300FF0134 /* AppDelegate.m */; };
 		BE5A5EAA1B4D487300FF0134 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EA91B4D487300FF0134 /* main.m */; };
 		BE5A5EAD1B4D487300FF0134 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EAC1B4D487300FF0134 /* ViewController.m */; };
-		BE5A5EB01B4D487300FF0134 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EAF1B4D487300FF0134 /* Document.m */; };
 		BE5A5EB21B4D487300FF0134 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5A5EB11B4D487300FF0134 /* Images.xcassets */; };
 		BE5A5EB51B4D487300FF0134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5A5EB31B4D487300FF0134 /* Main.storyboard */; };
 		BE5A5EC11B4D487300FF0134 /* JBLocalizerAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EC01B4D487300FF0134 /* JBLocalizerAppTests.m */; };
@@ -36,6 +35,7 @@
 		BE5A5ECB1B4D4B0100FF0134 /* JBLocalizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD00C71B46809A0008AADF /* JBLocalizer.framework */; };
 		BEEB9C6E1B56687700EF133E /* JBString.h in Headers */ = {isa = PBXBuildFile; fileRef = BEEB9C6C1B56687700EF133E /* JBString.h */; };
 		BEEB9C6F1B56687700EF133E /* JBString.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9C6D1B56687700EF133E /* JBString.m */; };
+		BEEB9C991B57FA1400EF133E /* JBWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9C981B57FA1400EF133E /* JBWindow.m */; };
 		BEFD00CD1B46809A0008AADF /* JBLocalizer.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00CC1B46809A0008AADF /* JBLocalizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEFD00F01B4680E20008AADF /* JBFileController.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00E41B4680E20008AADF /* JBFileController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEFD00F11B4680E20008AADF /* JBFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00E51B4680E20008AADF /* JBFileController.m */; };
@@ -84,8 +84,6 @@
 		BE5A5EA91B4D487300FF0134 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE5A5EAB1B4D487300FF0134 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BE5A5EAC1B4D487300FF0134 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		BE5A5EAE1B4D487300FF0134 /* Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
-		BE5A5EAF1B4D487300FF0134 /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 		BE5A5EB11B4D487300FF0134 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE5A5EB41B4D487300FF0134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE5A5EBA1B4D487300FF0134 /* JBLocalizerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JBLocalizerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +92,8 @@
 		BEEB9C6C1B56687700EF133E /* JBString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBString.h; sourceTree = "<group>"; };
 		BEEB9C6D1B56687700EF133E /* JBString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBString.m; sourceTree = "<group>"; };
 		BEEB9C731B57A1CC00EF133E /* JBPostProcessStringsDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBPostProcessStringsDefines.h; sourceTree = "<group>"; };
+		BEEB9C971B57FA1400EF133E /* JBWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBWindow.h; sourceTree = "<group>"; };
+		BEEB9C981B57FA1400EF133E /* JBWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBWindow.m; sourceTree = "<group>"; };
 		BEFD00C71B46809A0008AADF /* JBLocalizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JBLocalizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFD00CB1B46809A0008AADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFD00CC1B46809A0008AADF /* JBLocalizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBLocalizer.h; sourceTree = "<group>"; };
@@ -242,11 +242,11 @@
 				BE5A5EA71B4D487300FF0134 /* AppDelegate.m */,
 				BE5A5EAB1B4D487300FF0134 /* ViewController.h */,
 				BE5A5EAC1B4D487300FF0134 /* ViewController.m */,
-				BE5A5EAE1B4D487300FF0134 /* Document.h */,
-				BE5A5EAF1B4D487300FF0134 /* Document.m */,
 				BE5A5EB11B4D487300FF0134 /* Images.xcassets */,
 				BE5A5EB31B4D487300FF0134 /* Main.storyboard */,
 				BE5A5EA41B4D487300FF0134 /* Supporting Files */,
+				BEEB9C971B57FA1400EF133E /* JBWindow.h */,
+				BEEB9C981B57FA1400EF133E /* JBWindow.m */,
 			);
 			path = JBLocalizerApp;
 			sourceTree = "<group>";
@@ -521,8 +521,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE5A5EB01B4D487300FF0134 /* Document.m in Sources */,
 				BE5A5EAD1B4D487300FF0134 /* ViewController.m in Sources */,
+				BEEB9C991B57FA1400EF133E /* JBWindow.m in Sources */,
 				BE5A5EAA1B4D487300FF0134 /* main.m in Sources */,
 				BE5A5EA81B4D487300FF0134 /* AppDelegate.m in Sources */,
 			);

@@ -33,7 +33,7 @@
 - (void)viewDidLoad {
 
     [super viewDidLoad];
-    
+        
     [_tableView  setColumnAutoresizingStyle:NSTableViewUniformColumnAutoresizingStyle];
     [_columnView setResizingMask:NSTableColumnAutoresizingMask];
     [_tableView sizeLastColumnToFit];
@@ -43,6 +43,10 @@
 }
 
 #pragma mark - Button Selectors
+
+- (IBAction)openDocument:(id)sender {
+    [self onOpenFile:sender];
+}
 
 - (IBAction)onOpenFile:(id)sender {
 
@@ -111,7 +115,7 @@
             [panel close];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self __processProjectAtPath:[[files firstObject] path]];
-            });
+            });            
         }
     }
 }
