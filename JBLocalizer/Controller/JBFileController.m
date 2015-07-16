@@ -54,6 +54,20 @@
 
 #pragma mark - Project
 
+- (nullable NSArray *)targetNamesInProjectAtPath:(NSString * __nonnull)projectPath {
+
+    XCProject *project = [XCProject projectWithFilePath:projectPath];
+    if (!project) {
+        return nil;
+    }
+    
+    NSMutableArray *items = [NSMutableArray array];
+    for (XCTarget *target in project.targets) {
+        [items addObject:target.name];
+    }
+    return items;
+}
+
 - (void)loadProjectRootFiles:(NSString * __nonnull)projectPath
                   completion:(void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion {
     NSParameterAssert(projectPath);

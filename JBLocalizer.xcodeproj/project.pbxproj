@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3DCDD694DA7C8F8ABF7574D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CA02745D263DFEA2D3EFFB /* libPods.a */; };
 		41465EBAE75153FC54E4C0B5 /* libPods-JBLocalizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3B7ADF6B5469932203BFF7 /* libPods-JBLocalizer.a */; };
 		BE18CFA91B540E7E00184BC0 /* JBLoadStringsInFileOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE18CF9B1B540E7E00184BC0 /* JBLoadStringsInFileOperation.h */; };
 		BE18CFAA1B540E7E00184BC0 /* JBLoadStringsInFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18CF9C1B540E7E00184BC0 /* JBLoadStringsInFileOperation.m */; };
@@ -127,7 +126,6 @@
 			files = (
 				BE5A5E971B4D3CB200FF0134 /* Cocoa.framework in Frameworks */,
 				BE5A5E951B4D3CAD00FF0134 /* AppKit.framework in Frameworks */,
-				3DCDD694DA7C8F8ABF7574D8 /* libPods.a in Frameworks */,
 				41465EBAE75153FC54E4C0B5 /* libPods-JBLocalizer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,6 +585,7 @@
 				);
 				INFOPLIST_FILE = JBLocalizerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -756,6 +755,7 @@
 				INFOPLIST_FILE = JBLocalizer/Info.plist;
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-isystem",
@@ -792,7 +792,7 @@
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JBLocalizer/JBLocalizer-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

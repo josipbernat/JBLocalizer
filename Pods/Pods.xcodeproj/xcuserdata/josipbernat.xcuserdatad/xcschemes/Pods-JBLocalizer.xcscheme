@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "70CA117230D02474481B3950"
+               BlueprintIdentifier = "36F39416E57219690A6069E4"
                BuildableName = "libPods-JBLocalizer.a"
                BlueprintName = "Pods-JBLocalizer"
                ReferencedContainer = "container:Pods.xcodeproj">

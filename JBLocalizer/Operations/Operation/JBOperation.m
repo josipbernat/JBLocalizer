@@ -36,13 +36,23 @@
 
 - (void)start {
     
+    [self willChangeValueForKey:@"isExecuting"];
     _executing = YES;
+    [self didChangeValueForKey:@"isExecuting"];
+    
+    [self willChangeValueForKey:@"isFinished"];
     _finished = NO;
+    [self didChangeValueForKey:@"isFinished"];
     
     [self execute];
     
+    [self willChangeValueForKey:@"isFinished"];
     _finished = YES;
+    [self didChangeValueForKey:@"isFinished"];
+    
+    [self willChangeValueForKey:@"isExecuting"];
     _executing = NO;
+    [self didChangeValueForKey:@"isExecuting"];
 }
 
 - (BOOL)isConcurrent {

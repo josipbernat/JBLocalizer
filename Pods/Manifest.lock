@@ -1,13 +1,10 @@
 PODS:
-  - Kiwi (2.3.0)
   - XcodeEditor (1.6.2)
 
 DEPENDENCIES:
-  - Kiwi (~> 2.3)
   - XcodeEditor
 
 SPEC CHECKSUMS:
-  Kiwi: 4c3988bd551f80f6ca0009f302f7c1a2e3777bf2
   XcodeEditor: 0d21967dd71a16262c7121c7723179f6ae2b11c3
 
 COCOAPODS: 0.37.2

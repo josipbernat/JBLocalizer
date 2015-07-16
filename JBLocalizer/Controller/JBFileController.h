@@ -27,13 +27,28 @@
 
 #pragma mark - Project
 
+/**
+ *  Finds for targets in specified project.
+ *
+ *  @param projectPath A file path where project is located on disk.
+ *
+ *  @return An array of target names if project is parsed successfully. Otherwise nil.
+ */
+- (nullable NSArray *)targetNamesInProjectAtPath:(NSString * __nonnull)projectPath;
+
+/**
+ *  Loads project root files.
+ *
+ *  @param projectPath A file path where project is located on disk.
+ *  @param completion  Callback block object called once loading is finished. It has two parameters but only one is not nil at given time. If load is finished with success it will contain an array of JBFile objects. Otherwise NSError object will have failure reason.
+ */
 - (void)loadProjectRootFiles:(NSString * __nonnull)projectPath
                   completion:(void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion;
 
 /**
  *  Loads project and parses project files.
  *
- *  @param projectPath A file path where project is saved.
+ *  @param projectPath A file path where project is located on disk.
  */
 - (void)loadProjectFiles:(NSString * __nonnull)projectPath
            filterDirectories:(NSArray * __nonnull)filter

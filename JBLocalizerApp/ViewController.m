@@ -191,6 +191,8 @@
     
     self.projectPath = path;
     
+    NSArray *targetNames = [[JBFileController sharedController] targetNamesInProjectAtPath:path];
+    
     __weak id this = self;
     [[JBFileController sharedController] loadProjectRootFiles:[path stringByDeletingLastPathComponent]
                                                    completion:^(NSArray *items, NSError *error) {
@@ -202,6 +204,12 @@
                                                        else {
 
                                                            strongThis.items = items;
+                                                           for (JBFile *file in items) {
+                                                               if ([targetNames containsObject:file.name] && ![file.name hasSuffix:@"Tests"]) {
+                                                                   file.selected = YES;
+                                                               }
+                                                           }
+                                                           
                                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                                [strongThis.tableView reloadData];
                                                            });
@@ -285,14 +293,20 @@
     JBFile *file = self.items[row];
     file.selected = [value boolValue];
     
-    for (JBFile *otherFile in self.items) {
-        if (![otherFile.path isEqualToString:file.path]) {
-            otherFile.selected = NO;
+    BOOL hasSelectedFile = file.selected;
+    
+    if (!hasSelectedFile) {
+        
+        for (JBFile *otherFile in self.items) {
+            if (otherFile.selected) {
+                hasSelectedFile = YES;
+                break;
+            }
         }
     }
-    
+
     [tableView reloadData];
-    [_nextButton setEnabled:file.selected];
+    [_nextButton setEnabled:hasSelectedFile];
 }
 
 @end

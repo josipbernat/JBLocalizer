@@ -57,10 +57,6 @@ static NSString *kKeyShared = @"Shared";
         
         [self.strings enumerateObjectsUsingBlock:^(JBString *string, NSUInteger idx, BOOL *stop) {
             
-            if ([string.string isEqualToString:@"Back"]) {
-                NSLog(@"Stop");
-            }
-            
             if (string.files.count > 1) {
                 NSMutableArray *mutArray = result[sharedFile];
                 [mutArray addObject:string];
@@ -80,9 +76,9 @@ static NSString *kKeyShared = @"Shared";
             }
         }];
         
-        NSMutableDictionary *sharedDict = result[kKeyShared];
+        NSMutableDictionary *sharedDict = result[sharedFile];
         if (!sharedDict.count) {
-            [result removeObjectForKey:kKeyShared];
+            [result removeObjectForKey:sharedFile];
         }
         
         BOOL enableComments = (self.formatting == JBStringFormattingTypeDefault ? YES : NO);
