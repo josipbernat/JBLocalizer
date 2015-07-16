@@ -17,6 +17,8 @@
 @property (weak) IBOutlet NSTableColumn *columnView;
 @property (weak) IBOutlet NSButton *nextButton;
 @property (weak) IBOutlet NSTextField *instructionLabel;
+@property (weak) IBOutlet NSButton *commentsButton;
+@property (weak) IBOutlet NSView *selectProjectContainer;
 
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, strong) NSString *projectPath;
@@ -32,11 +34,12 @@
 
     [super viewDidLoad];
     
-    [self.tableView  setColumnAutoresizingStyle:NSTableViewUniformColumnAutoresizingStyle];
-    [self.columnView setResizingMask:NSTableColumnAutoresizingMask];
-    [self.tableView sizeLastColumnToFit];
+    [_tableView  setColumnAutoresizingStyle:NSTableViewUniformColumnAutoresizingStyle];
+    [_columnView setResizingMask:NSTableColumnAutoresizingMask];
+    [_tableView sizeLastColumnToFit];
     
-    self.tablePickerContainerView.hidden = YES;
+    _selectProjectContainer.hidden = NO;
+    _tablePickerContainerView.hidden = YES;
 }
 
 #pragma mark - Button Selectors
@@ -50,16 +53,43 @@
     
     self.selectedFile = nil;
     
-    for (JBFile *file in self.items) {
+    for (JBFile *file in _items) {
         if (file.selected) {
             self.selectedFile = file;
             break;
         }
     }
     
-    if (self.selectedFile) {
-        [self __loadLocalizableFilesInRootFile:self.selectedFile];
+    if (_selectedFile) {
+        [self __loadLocalizableFilesInRootFile:_selectedFile];
     }
+}
+
+- (IBAction)onCancel:(id)sender {
+
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = NSLocalizedString(@"Are you sure you want to cancel?", nil);
+    [alert addButtonWithTitle:NSLocalizedString(@"Yes", nil)];
+    [alert addButtonWithTitle:NSLocalizedString(@"No", nil)];
+    
+    NSModalResponse response = [alert runModal];
+    if (response == NSAlertFirstButtonReturn) {
+        [self __reset];
+    }
+}
+
+- (void)__reset {
+
+    [[JBFileController sharedController] reset];
+    
+    _selectProjectContainer.hidden = NO;
+    _tablePickerContainerView.hidden = YES;
+    [_commentsButton setState:NSOnState];
+    [_nextButton setEnabled:NO];
+    
+    self.selectedFile = nil;
+    self.projectPath = nil;
+    self.items = nil;
 }
 
 #pragma mark - Open File
@@ -109,6 +139,8 @@
         NSURL *fileURL = [panel URL];
         NSError *writeError = nil;
         [resultToSave writeToURL:fileURL atomically:YES encoding:NSUTF8StringEncoding error:&writeError];
+        
+        [self __reset];
     }
 }
 
@@ -125,7 +157,10 @@
         return;
     }
     
-    NSLog(@"Error: %@", error);
+    NSAlert *alert = [NSAlert alertWithError:error];
+    [alert addButtonWithTitle:NSLocalizedString(@"Ok", nil)];
+    
+    [alert runModal];
 }
 
 - (void)__presentErrorAlertViewWithMessage:(NSString *)message {
@@ -151,7 +186,8 @@
 - (void)__processProjectAtPath:(NSString *)path {
     NSParameterAssert(path);
     
-    self.tablePickerContainerView.hidden = NO;
+    _selectProjectContainer.hidden = YES;
+    _tablePickerContainerView.hidden = NO;
     
     self.projectPath = path;
     
@@ -199,6 +235,7 @@
 
     __weak id this = self;
     [[JBFileController sharedController] loadAndProcessLocalizableStringsInFiles:result[file]
+                                                                      formatting:([self.commentsButton state] == NSOnState ? JBStringFormattingTypeDefault : JBStringFormattingTypeWithoutComments)
                                                                       completion:^(NSString *strings, NSError *error) {
                                                                           
                                                                           __strong typeof(self) strongThis = this;
@@ -255,6 +292,7 @@
     }
     
     [tableView reloadData];
+    [_nextButton setEnabled:file.selected];
 }
 
 @end

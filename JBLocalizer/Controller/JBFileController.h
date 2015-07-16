@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JBPostProcessStringsDefines.h"
 
 @interface JBFileController : NSObject
 
@@ -43,18 +44,22 @@
  *  Loads NSLocalizedString strings in given files. Suitable if you want your own formatting.
  *
  *  @param files      An array of file paths.
+ *  @param formatting  Type of desired formatting.
  *  @param completion Callback block object called once loading is finished. It has two parameters but only one is not nil at given time. If load is finished with success it will contain dictionary where key is string and value is an array of classes where it is contained. Otherwise NSError object will have failure reason.
  */
 - (void)loadLocalizableStringsInFiles:(NSArray * __nonnull)files
+                           formatting:(JBStringFormattingType)formatting
                            completion:(void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion;
 
 /**
  *  Loads NSLocalizedString strings in given files and processes them to output format.
  *
- *  @param files      An array of file paths.
- *  @param completion Callback block object called once loading is finished. It has two parameters but only one is not nil at given time. If load is finished with success it will contain formatted string object with localizable strings. Otherwise NSError object will have failure reason.
+ *  @param files       An array of file paths.
+ *  @param formatting  Type of desired formatting.
+ *  @param completion  Callback block object called once loading is finished. It has two parameters but only one is not nil at given time. If load is finished with success it will contain formatted string object with localizable strings. Otherwise NSError object will have failure reason.
  */
-- (void)loadAndProcessLocalizableStringsInFiles:(NSArray * __nonnull)files
+- (void)loadAndProcessLocalizableStringsInFiles:(NSArray * __nonnull)filess
+                                     formatting:(JBStringFormattingType)formatting
                                      completion:(void(^ __nullable )(NSString * __nullable, NSError * __nullable))completion;
 
 @end

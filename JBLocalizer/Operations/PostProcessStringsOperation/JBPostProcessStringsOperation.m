@@ -13,6 +13,7 @@
 @interface JBPostProcessStringsOperation ()
 
 @property (strong, nonatomic) NSArray *strings;
+@property (readwrite, nonatomic) JBStringFormattingType formatting;
 @property (nonatomic, copy) void(^completionHandler)(NSString * __nullable);
 
 @end
@@ -22,12 +23,14 @@
 #pragma mark - Initialization
 
 + (nonnull instancetype)processStrings:(NSArray * __nonnull)strings
+                            formatting:(JBStringFormattingType)type
                             completion:( void(^ __nullable )(NSString * __nullable))completion {
     
     NSParameterAssert(strings);
     
     JBPostProcessStringsOperation *operation = [[self alloc] init];
     operation.strings = strings;
+    operation.formatting = type;
     operation.completionHandler = completion;
     
     return operation;
@@ -78,6 +81,8 @@ static NSString *kKeyShared = @"Shared";
             [result removeObjectForKey:kKeyShared];
         }
         
+        BOOL enableComments = (self.formatting == JBStringFormattingTypeDefault ? YES : NO);
+        
         NSMutableString *string = [[NSMutableString alloc] init];
         [result enumerateKeysAndObjectsUsingBlock:^(JBFile *key, NSArray *obj, BOOL *stop) {
             NSAssert([key isKindOfClass:[JBFile class]], @"key must be JBFile class");
@@ -87,7 +92,7 @@ static NSString *kKeyShared = @"Shared";
                 NSAssert([value isKindOfClass:[JBString class]], @"value must be JBString class");
                 
                 [string appendString:@"\n"];
-                if (value.comment && value.comment.length) {
+                if (enableComments && value.comment && value.comment.length) {
                     [string appendString:kKeyValueFormatComment(value.comment, value.string)];
                 }
                 else {

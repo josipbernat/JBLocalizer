@@ -81,6 +81,7 @@
 #pragma mark - File Content
 
 - (void)loadLocalizableStringsInFiles:(NSArray * __nonnull)files
+                           formatting:(JBStringFormattingType)formatting
                            completion:(void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion {
 
     NSParameterAssert(files);
@@ -121,16 +122,20 @@
             }
         };
         
-        JBLoadStringsInFileOperation *operation = [JBLoadStringsInFileOperation file:file completion:handler];
+        JBLoadStringsInFileOperation *operation = [JBLoadStringsInFileOperation file:file
+                                                                     includeComments:(formatting == JBStringFormattingTypeDefault)
+                                                                          completion:handler];
         [self.queue addOperation:operation];
     }
 }
 
 - (void)loadAndProcessLocalizableStringsInFiles:(NSArray * __nonnull)files
+                                     formatting:(JBStringFormattingType)formatting
                                      completion:(void(^ __nullable )(NSString * __nullable, NSError * __nullable))completion {
     
     __weak id this = self;
     [self loadLocalizableStringsInFiles:files
+                             formatting:formatting
                              completion:^(NSArray * strings, NSError * error) {
                                  
                                  if (error) {
@@ -142,6 +147,7 @@
                                  
                                  __strong typeof(self) strongThis = this;
                                  JBPostProcessStringsOperation *operation = [JBPostProcessStringsOperation processStrings:strings
+                                                                                                               formatting:formatting
                                                                                                                completion:^(NSString *result) {
                                                                                                                    
                                                                                                                    if (completion) {

@@ -94,6 +94,7 @@
 		BE5A5EC01B4D487300FF0134 /* JBLocalizerAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBLocalizerAppTests.m; sourceTree = "<group>"; };
 		BEEB9C6C1B56687700EF133E /* JBString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBString.h; sourceTree = "<group>"; };
 		BEEB9C6D1B56687700EF133E /* JBString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBString.m; sourceTree = "<group>"; };
+		BEEB9C731B57A1CC00EF133E /* JBPostProcessStringsDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBPostProcessStringsDefines.h; sourceTree = "<group>"; };
 		BEFD00C71B46809A0008AADF /* JBLocalizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JBLocalizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFD00CB1B46809A0008AADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFD00CC1B46809A0008AADF /* JBLocalizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBLocalizer.h; sourceTree = "<group>"; };
@@ -211,6 +212,7 @@
 		BE18CFA61B540E7E00184BC0 /* PostProcessStringsOperation */ = {
 			isa = PBXGroup;
 			children = (
+				BEEB9C731B57A1CC00EF133E /* JBPostProcessStringsDefines.h */,
 				BE18CFA71B540E7E00184BC0 /* JBPostProcessStringsOperation.h */,
 				BE18CFA81B540E7E00184BC0 /* JBPostProcessStringsOperation.m */,
 			);

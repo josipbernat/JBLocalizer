@@ -13,6 +13,7 @@
 @interface JBLoadStringsInFileOperation ()
 
 @property (strong, nonatomic) JBFile *file;
+@property (readwrite, nonatomic) BOOL includeComments;
 @property (nonatomic, copy) void(^completionHandler)(NSArray * __nullable, NSError * __nullable);
 
 @end
@@ -22,12 +23,14 @@
 #pragma mark - Initialization
 
 + (nonnull instancetype)file:(JBFile * __nonnull)file
+             includeComments:(BOOL)includeComments
                   completion:( void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion {
 
     NSParameterAssert(file);
     
     JBLoadStringsInFileOperation *operation = [[self alloc] init];
     operation.file = file;
+    operation.includeComments = includeComments;
     operation.completionHandler = completion;
     
     return operation;
@@ -63,8 +66,10 @@
         
         BOOL isObjC = [[self.file.path lastPathComponent] hasSuffix:@".m"];
         BOOL isSwift = [[self.file.path lastPathComponent] hasSuffix:@".swift"];
+        BOOL includeComments = self.includeComments;
         NSCharacterSet *whitespaceSet = [NSCharacterSet whitespaceCharacterSet];
         
+        __weak id this = self;
         [regex enumerateMatchesInString:fileContent
                                 options:0
                                   range:NSMakeRange(0, fileContent.length)
@@ -82,72 +87,15 @@
                                      }
                                      
                                      NSArray *componentes = [value componentsSeparatedByString:@","];
-                                     NSUInteger index = 0;
-                                     BOOL isValidString = YES;
+                                     __strong typeof(self) strongThis = this;
+                                     JBString *stringValue = [strongThis __processComponents:componentes
+                                                                                        objC:isObjC
+                                                                                       swift:isSwift
+                                                                                    comments:includeComments
+                                                                                excludingSet:whitespaceSet];
                                      
-                                     NSString *localizableString = nil;
-                                     NSString *comment = nil;
-                                     NSUInteger count = componentes.count;
-                                     
-                                     for (NSString *component in componentes) {
-                                         
-                                         NSString *stringValue = component;
-                                         
-                                         if (isObjC) {
-                                             if ([stringValue hasPrefix:@"@\""]) {
-                                                 stringValue = [stringValue stringByReplacingOccurrencesOfString:@"@\"" withString:@""];
-                                             }
-                                             else if ([stringValue hasPrefix:@" @\""]) {
-                                                 stringValue = [stringValue stringByReplacingOccurrencesOfString:@" @\"" withString:@""];
-                                             }
-                                             else {
-                                                 isValidString = NO;
-                                             }
-                                         }
-                                         else if (isSwift) {
-                                            
-                                             if ([stringValue hasPrefix:@"\""]) {
-                                                 stringValue = [stringValue stringByReplacingOccurrencesOfString:@"\"" withString:@""];
-                                             }
-                                             else if ([stringValue hasPrefix:@" \""]) {
-                                                 stringValue = [stringValue stringByReplacingOccurrencesOfString:@" \"" withString:@""];
-                                             }
-                                             
-                                             if ([stringValue hasPrefix:@"comment:"]) {
-                                                 stringValue = [stringValue stringByReplacingOccurrencesOfString:@"comment:" withString:@""];
-                                             }
-                                             else if ([stringValue hasPrefix:@" comment:"]) {
-                                                 stringValue = [stringValue stringByReplacingOccurrencesOfString:@" comment:" withString:@""];
-                                             }
-                                         }
-                                         
-                                         if ([stringValue hasSuffix:@"\""]) {
-                                             stringValue = [stringValue stringByReplacingOccurrencesOfString:@"\"" withString:@""];
-                                         }
-                                         
-                                         
-                                         NSString *trimmedString = [stringValue stringByTrimmingCharactersInSet:whitespaceSet];
-                                         if ([trimmedString isEqualToString:@""]) {
-                                             stringValue = nil;
-                                         }
-                                         
-                                         if (stringValue.length && isValidString) {
-                                             
-                                             if (index == 0) {
-                                                 localizableString = stringValue;
-                                             }
-                                             else if (index == count - 1) {
-                                                 comment = stringValue;
-                                             }
-                                         }
-                                         index++;
-                                     }
-                                     
-                                     if (localizableString) {
-                                         if ([localizableString isEqualToString:@"Block list"]) {
-                                             NSLog(@"Stop1");
-                                         }
-                                         [stringsSet addObject:[JBString stringWithString:localizableString comment:comment file:self.file]];
+                                     if (stringValue) {
+                                         [stringsSet addObject:stringValue];
                                      }
                                  }
         }];
@@ -156,6 +104,81 @@
             self.completionHandler([stringsSet allObjects], nil);
         }
     }
+}
+
+- (JBString *)__processComponents:(NSArray *)components objC:(BOOL)isObjC
+                            swift:(BOOL)isSwift
+                         comments:(BOOL)comments
+                     excludingSet:(NSCharacterSet *)set {
+
+    __block BOOL isValidString = YES;
+    __block NSString *localizableString = nil;
+    __block NSString *comment = nil;
+    __block NSUInteger count = components.count;
+    
+    [components enumerateObjectsUsingBlock:^(NSString *component, NSUInteger idx, BOOL *stop) {
+        NSAssert([component isKindOfClass:[NSString class]], @"Obj must be NSString");
+        
+        if (idx && !comments) {
+            *stop = YES;
+        }
+        
+        NSString *stringValue = component;
+        
+        if (isObjC) {
+            if ([stringValue hasPrefix:@"@\""]) {
+                stringValue = [stringValue stringByReplacingOccurrencesOfString:@"@\"" withString:@""];
+            }
+            else if ([stringValue hasPrefix:@" @\""]) {
+                stringValue = [stringValue stringByReplacingOccurrencesOfString:@" @\"" withString:@""];
+            }
+            else {
+                isValidString = NO;
+            }
+        }
+        else if (isSwift) {
+            
+            if ([stringValue hasPrefix:@"\""]) {
+                stringValue = [stringValue stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+            }
+            else if ([stringValue hasPrefix:@" \""]) {
+                stringValue = [stringValue stringByReplacingOccurrencesOfString:@" \"" withString:@""];
+            }
+            
+            if ([stringValue hasPrefix:@"comment:"]) {
+                stringValue = [stringValue stringByReplacingOccurrencesOfString:@"comment:" withString:@""];
+            }
+            else if ([stringValue hasPrefix:@" comment:"]) {
+                stringValue = [stringValue stringByReplacingOccurrencesOfString:@" comment:" withString:@""];
+            }
+        }
+        
+        if ([stringValue hasSuffix:@"\""]) {
+            stringValue = [stringValue stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+        }
+        
+        
+        NSString *trimmedString = [stringValue stringByTrimmingCharactersInSet:set];
+        if ([trimmedString isEqualToString:@""]) {
+            stringValue = nil;
+        }
+        
+        if (stringValue.length && isValidString) {
+            
+            if (idx == 0) {
+                localizableString = stringValue;
+            }
+            else if (idx == count - 1) {
+                comment = stringValue;
+            }
+        }
+    }];
+    
+    
+    if (localizableString) {
+        return [JBString stringWithString:localizableString comment:comment file:self.file];
+    }
+    return nil;
 }
 
 @end
