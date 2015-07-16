@@ -106,7 +106,8 @@
     }
 }
 
-- (JBString *)__processComponents:(NSArray *)components objC:(BOOL)isObjC
+- (JBString *)__processComponents:(NSArray *)components
+                             objC:(BOOL)isObjC
                             swift:(BOOL)isSwift
                          comments:(BOOL)comments
                      excludingSet:(NSCharacterSet *)set {
@@ -168,7 +169,7 @@
             if (idx == 0) {
                 localizableString = stringValue;
             }
-            else if (idx == count - 1) {
+            else if (idx == count - 1 && comments) {
                 comment = stringValue;
             }
         }

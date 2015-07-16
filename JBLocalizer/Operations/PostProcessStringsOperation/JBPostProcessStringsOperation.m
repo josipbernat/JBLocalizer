@@ -57,6 +57,10 @@ static NSString *kKeyShared = @"Shared";
         
         [self.strings enumerateObjectsUsingBlock:^(JBString *string, NSUInteger idx, BOOL *stop) {
             
+            if ([string.string isEqualToString:@"Back"]) {
+                NSLog(@"Stop");
+            }
+            
             if (string.files.count > 1) {
                 NSMutableArray *mutArray = result[sharedFile];
                 [mutArray addObject:string];
@@ -64,12 +68,12 @@ static NSString *kKeyShared = @"Shared";
             else if (string.files.count == 1) {
                 
                 JBFile *key = [string.files anyObject];
-                NSMutableArray *array = result[key];
-                if (!array) {
-                    array = [[NSMutableArray alloc] init];
-                    result[key] = array;
+                NSMutableSet *set = result[key];
+                if (!set) {
+                    set = [[NSMutableSet alloc] init];
+                    result[key] = set;
                 }
-                [array addObject:string];
+                [set addObject:string];
             }
             else {
                 NSAssert(NO, @"String doesn't belong to any file!");

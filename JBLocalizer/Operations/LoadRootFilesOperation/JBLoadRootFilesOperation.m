@@ -7,6 +7,7 @@
 //
 
 #import "JBLoadRootFilesOperation.h"
+#import <XcodeEditor/XcodeEditor.h>
 #import <XcodeEditor/XCProject.h>
 #import "JBFile.h"
 
