@@ -29,12 +29,12 @@
 
 - (void)testInitializationPass {
 
-    JBFile *file = [JBFile fileWithName:@"TestFile"
-                                   path:[kProjectRoot stringByAppendingPathComponent:@"TestFile"]
+    JBFile *file = [JBFile fileWithName:kTestFile
+                                   path:[kProjectRoot stringByAppendingPathComponent:kTestFile]
                               directory:YES];
     
-    XCTAssertEqualObjects(file.name, @"TestFile");
-    XCTAssertEqualObjects(file.path, [kProjectRoot stringByAppendingPathComponent:@"TestFile"]);
+    XCTAssertEqualObjects(file.name, kTestFile);
+    XCTAssertEqualObjects(file.path, kTestFilePath);
     XCTAssertEqual(file.directory, YES);
     XCTAssertEqual(file.selected, NO);
 }
@@ -43,7 +43,7 @@
 
     void (^expressionBlock)() = ^{
         [JBFile fileWithName:nil
-                        path:[kProjectRoot stringByAppendingPathComponent:@"TestFile"]
+                        path:kTestFilePath
                    directory:YES];
     };
     XCTAssertThrowsSpecificNamed(expressionBlock(), NSException, NSInternalInconsistencyException);
@@ -52,7 +52,7 @@
 - (void)testInitializationInvalidPathException {
     
     void (^expressionBlock)() = ^{
-        [JBFile fileWithName:@"TestFile"
+        [JBFile fileWithName:kTestFile
                         path:nil
                    directory:YES];
     };
@@ -61,12 +61,12 @@
 
 - (void)testEqualPass {
 
-    JBFile *file1 = [JBFile fileWithName:@"TestFile"
-                                   path:[kProjectRoot stringByAppendingPathComponent:@"TestFile"]
+    JBFile *file1 = [JBFile fileWithName:kTestFile
+                                   path:kTestFilePath
                               directory:YES];
     
-    JBFile *file2 = [JBFile fileWithName:@"TestFile"
-                                    path:[kProjectRoot stringByAppendingPathComponent:@"TestFile"]
+    JBFile *file2 = [JBFile fileWithName:kTestFile
+                                    path:kTestFilePath
                                directory:YES];
     
     XCTAssertEqualObjects(file1, file2);
@@ -74,12 +74,12 @@
 
 - (void)testEqualFailBecauseOfName {
     
-    JBFile *file1 = [JBFile fileWithName:@"TestFile"
-                                    path:[kProjectRoot stringByAppendingPathComponent:@"TestFile"]
+    JBFile *file1 = [JBFile fileWithName:kTestFile
+                                    path:kTestFilePath
                                directory:YES];
     
-    JBFile *file2 = [JBFile fileWithName:@"TestFile1"
-                                    path:[kProjectRoot stringByAppendingPathComponent:@"TestFile"]
+    JBFile *file2 = [JBFile fileWithName:kTestFile1
+                                    path:kTestFilePath
                                directory:YES];
     
     XCTAssertNotEqualObjects(file1, file2);
@@ -87,12 +87,12 @@
 
 - (void)testEqualFailBecauseOfPath {
     
-    JBFile *file1 = [JBFile fileWithName:@"TestFile"
-                                    path:[kProjectRoot stringByAppendingPathComponent:@"TestFile"]
+    JBFile *file1 = [JBFile fileWithName:kTestFile
+                                    path:kTestFilePath
                                directory:YES];
     
-    JBFile *file2 = [JBFile fileWithName:@"TestFile"
-                                    path:[kProjectRoot stringByAppendingPathComponent:@"TestFile1"]
+    JBFile *file2 = [JBFile fileWithName:kTestFile
+                                    path:[kProjectRoot stringByAppendingPathComponent:kTestFile1]
                                directory:YES];
     
     XCTAssertNotEqualObjects(file1, file2);
@@ -100,12 +100,12 @@
 
 - (void)testEqualFailBecauseOfDirectory {
     
-    JBFile *file1 = [JBFile fileWithName:@"TestFile"
-                                    path:[kProjectRoot stringByAppendingPathComponent:@"TestFile"]
+    JBFile *file1 = [JBFile fileWithName:kTestFile
+                                    path:kTestFilePath
                                directory:YES];
     
-    JBFile *file2 = [JBFile fileWithName:@"TestFile"
-                                    path:[kProjectRoot stringByAppendingPathComponent:@"TestFile"]
+    JBFile *file2 = [JBFile fileWithName:kTestFile
+                                    path:kTestFilePath
                                directory:NO];
     
     XCTAssertNotEqualObjects(file1, file2);

@@ -27,14 +27,6 @@
     return instance;
 }
 
-- (instancetype)init {
-
-    if (self = [super init]) {
-        
-    }
-    return self;
-}
-
 #pragma mark - Comparison
 
 - (BOOL)isEqual:(id)object {

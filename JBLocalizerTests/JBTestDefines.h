@@ -14,4 +14,14 @@
 #define kProjectRoot @"/Users/josipbernat/Documents/Private/Progs/JBLocalizer23/JBLocalizerTests/TestProject/TestApplication"
 #define kProjectPath [kProjectRoot stringByAppendingPathComponent: @"TestApplication.xcodeproj"]
 
+#define kTestFile   @"TestFile"
+#define kTestFile1  @"TestFile1"
+#define kTestFilePath   [kProjectRoot stringByAppendingPathComponent:kTestFile]
+
+#define kTestString1    @"TestString1"
+#define kTestComment1   @"TestComment1"
+
+#define kTestString2    @"TestString2"
+#define kTestComment2   @"TestComment2"
+
 #endif
