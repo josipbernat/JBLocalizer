@@ -29,13 +29,14 @@
 		BE5A5EB21B4D487300FF0134 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5A5EB11B4D487300FF0134 /* Images.xcassets */; };
 		BE5A5EB51B4D487300FF0134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5A5EB31B4D487300FF0134 /* Main.storyboard */; };
 		BE5A5EC11B4D487300FF0134 /* JBLocalizerAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EC01B4D487300FF0134 /* JBLocalizerAppTests.m */; };
-		BE5A5EC81B4D48C200FF0134 /* JBLocalizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD00C71B46809A0008AADF /* JBLocalizer.framework */; };
 		BE5A5EC91B4D48DC00FF0134 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A5E961B4D3CB200FF0134 /* Cocoa.framework */; };
 		BE5A5ECA1B4D4AEB00FF0134 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A5E941B4D3CAD00FF0134 /* AppKit.framework */; };
 		BE5A5ECB1B4D4B0100FF0134 /* JBLocalizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD00C71B46809A0008AADF /* JBLocalizer.framework */; };
 		BEEB9C6E1B56687700EF133E /* JBString.h in Headers */ = {isa = PBXBuildFile; fileRef = BEEB9C6C1B56687700EF133E /* JBString.h */; };
 		BEEB9C6F1B56687700EF133E /* JBString.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9C6D1B56687700EF133E /* JBString.m */; };
 		BEEB9C991B57FA1400EF133E /* JBWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9C981B57FA1400EF133E /* JBWindow.m */; };
+		BEEB9C9F1B58F31F00EF133E /* JBLocalizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD00C71B46809A0008AADF /* JBLocalizer.framework */; };
+		BEEB9CA01B58F31F00EF133E /* JBLocalizer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD00C71B46809A0008AADF /* JBLocalizer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BEFD00CD1B46809A0008AADF /* JBLocalizer.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00CC1B46809A0008AADF /* JBLocalizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEFD00F01B4680E20008AADF /* JBFileController.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00E41B4680E20008AADF /* JBFileController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEFD00F11B4680E20008AADF /* JBFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00E51B4680E20008AADF /* JBFileController.m */; };
@@ -49,7 +50,28 @@
 			remoteGlobalIDString = BE5A5EA11B4D487300FF0134;
 			remoteInfo = JBLocalizerApp;
 		};
+		BEEB9CA11B58F31F00EF133E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEFD00BE1B46809A0008AADF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BEFD00C61B46809A0008AADF;
+			remoteInfo = JBLocalizer;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BEEB9CA31B58F32000EF133E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BEEB9CA01B58F31F00EF133E /* JBLocalizer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A3B7ADF6B5469932203BFF7 /* libPods-JBLocalizer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JBLocalizer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,7 +130,7 @@
 			files = (
 				BE5A5ECA1B4D4AEB00FF0134 /* AppKit.framework in Frameworks */,
 				BE5A5EC91B4D48DC00FF0134 /* Cocoa.framework in Frameworks */,
-				BE5A5EC81B4D48C200FF0134 /* JBLocalizer.framework in Frameworks */,
+				BEEB9C9F1B58F31F00EF133E /* JBLocalizer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,10 +390,12 @@
 				BE5A5E9E1B4D487300FF0134 /* Sources */,
 				BE5A5E9F1B4D487300FF0134 /* Frameworks */,
 				BE5A5EA01B4D487300FF0134 /* Resources */,
+				BEEB9CA31B58F32000EF133E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BEEB9CA21B58F31F00EF133E /* PBXTargetDependency */,
 			);
 			name = JBLocalizerApp;
 			productName = JBLocalizerApp;
@@ -559,6 +583,11 @@
 			target = BE5A5EA11B4D487300FF0134 /* JBLocalizerApp */;
 			targetProxy = BE5A5EBB1B4D487300FF0134 /* PBXContainerItemProxy */;
 		};
+		BEEB9CA21B58F31F00EF133E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BEFD00C61B46809A0008AADF /* JBLocalizer */;
+			targetProxy = BEEB9CA11B58F31F00EF133E /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -729,6 +758,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 606C0E60A4819BCE71C41A22 /* Pods-JBLocalizer.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = NO;
 				DEPLOYMENT_LOCATION = YES;
@@ -753,7 +783,7 @@
 					"\"${PODS_ROOT}/Headers/Kiwi\"",
 				);
 				INFOPLIST_FILE = JBLocalizer/Info.plist;
-				INSTALL_PATH = "@rpath";
+				INSTALL_PATH = "@executable_path/../Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
@@ -776,6 +806,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AD656E4548D787BBB400E34 /* Pods-JBLocalizer.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = NO;
 				DEPLOYMENT_LOCATION = YES;
@@ -800,7 +831,7 @@
 					"\"${PODS_ROOT}/Headers/Kiwi\"",
 				);
 				INFOPLIST_FILE = JBLocalizer/Info.plist;
-				INSTALL_PATH = "@rpath";
+				INSTALL_PATH = "@executable_path/../Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "";
 				OTHER_CFLAGS = (
 					"$(inherited)",
