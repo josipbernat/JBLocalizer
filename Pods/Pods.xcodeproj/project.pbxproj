@@ -7,287 +7,442 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02D7F73F2E9A88C7FB26EA10 /* XcodeSourceFileType.h in Headers */ = {isa = PBXBuildFile; fileRef = 81673E04AA99DB5C0D2B882D /* XcodeSourceFileType.h */; };
-		04434D62DDE501999E85DDF5 /* XCProject+SubProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D5C09A4585FB278B6F2728 /* XCProject+SubProject.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		054488BCDB8A3FFEFBBD74A4 /* XCGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5458DF95B4CACDB4CB51D /* XCGroup.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		0B5CC4F6950A81617210E63A /* Pods-JBLocalizer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 318552FAB73FAB71F02E187D /* Pods-JBLocalizer-dummy.m */; };
-		0BC16B03E53C9FB409F68050 /* XCFrameworkDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F84F95E054E1324341F39FE /* XCFrameworkDefinition.h */; };
-		23E77BC316501EA21E09DF62 /* XCSourceFileDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 2914160CF991A8BA0D199E1A /* XCSourceFileDefinition.h */; };
-		2B8500BA04F676FE67E32F82 /* XCSourceFileDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = D789DA45395DDBDB36F152B4 /* XCSourceFileDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		2B9C2C018BAE966111630BC3 /* XCProject.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EAC261FA489D5EC79F17E8F /* XCProject.h */; };
-		2F8A96D6F641D0B44AFB6FD9 /* XCSourceFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 071B3992A8D7C14F19B0A576 /* XCSourceFile.h */; };
-		3D0929D8C8A89B565F79F9B4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB47A1BEDB24CF2249EBB4A /* Cocoa.framework */; };
-		432B595E1A61EEDDAC4742A9 /* XcodeSourceFileType.m in Sources */ = {isa = PBXBuildFile; fileRef = C89D74771F0A620002A08F69 /* XcodeSourceFileType.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		4FA198B9F2337B9D9AF26321 /* XCTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6511C8D7F2FA60EED21380 /* XCTarget.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		51FA5FA3C017B76D6381C9BB /* XCGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F5BA35064BC95B23321AFFE /* XCGroup.h */; };
-		5B8AD8B10BC69683A473B58D /* XcodeGroupMember.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FF045EF2B02BA14F959F325 /* XcodeGroupMember.h */; };
-		64E86E53E0D9B25F0BD88501 /* XCKeyBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D2D31072CD3809819BCF6 /* XCKeyBuilder.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		75044C8C1012F8F78D793783 /* XCAbstractDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C374A82F7E2893478BF5C36 /* XCAbstractDefinition.h */; };
-		860CB5528F2A92FF73024F4C /* XCProjectBuildConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9578A584940D2C461C4EEC /* XCProjectBuildConfig.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		88423513682A254A426012F5 /* XcodeMemberType.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B7879E8119F60BA91D1A60 /* XcodeMemberType.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		97B22F3303660EE552CE35AD /* XcodeEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C6B308544524AC0B7DA14C5 /* XcodeEditor.h */; };
-		9D50D36BF2FAC903C803C271 /* XCSubProjectDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F785CF920E2EB57A36109BF /* XCSubProjectDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		9E8840C24BEC7142978FB667 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB47A1BEDB24CF2249EBB4A /* Cocoa.framework */; };
-		9FC19FCBD75638F8D44EE625 /* XCTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = BD566858C76623D8BCFDE1CD /* XCTarget.h */; };
-		A331973EE0471A381A46C932 /* XCSubProjectDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 41CFA0D92DB7D57193824CA4 /* XCSubProjectDefinition.h */; };
-		CD70FC7A533437A8E52AE67A /* XcodeMemberType.h in Headers */ = {isa = PBXBuildFile; fileRef = D418A3B1E1783AF9FC77E7A3 /* XcodeMemberType.h */; };
-		D6132EA5D2CAFFBE727AAFB3 /* XCProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B1835FA7D2944984AD383D /* XCProject.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		D9871248BDC9B8F7BF2D06C1 /* XCAbstractDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6339F946EC33C529466D1DAA /* XCAbstractDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		DC83EA07E12E999640CA02EE /* XCXibDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = A857EB7F67897711C3265131 /* XCXibDefinition.h */; };
-		DD7D0602293E7303ED7892C2 /* XCXibDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9A8AF6D0655FEE9E57E850 /* XCXibDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E2F6B6FBF32B22555563A2BC /* Pods-JBLocalizer-XcodeEditor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 684E1036ED42BF6ECE73B867 /* Pods-JBLocalizer-XcodeEditor-dummy.m */; };
-		E785950C08A19E39965A9DB5 /* XCProjectBuildConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD0FAEB1B7DC780B8115DA7 /* XCProjectBuildConfig.h */; };
-		E965E94A8C4A08D91E18BB53 /* XCSourceFile.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDF251B1B7B46BFC49CDBB2 /* XCSourceFile.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E9AA92FDBA7ADA284224572F /* XCFileOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3376F2ED4BF60CBD78458A2D /* XCFileOperationQueue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		EE76F0C951B0AA5BB4D34B6E /* XCFrameworkDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAC405CA96670BC97307004 /* XCFrameworkDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		EFCE9AAF33993567E59D0A79 /* XCProject+SubProject.h in Headers */ = {isa = PBXBuildFile; fileRef = AA629379888F5BBA5EC28E3B /* XCProject+SubProject.h */; };
-		F1D81194EA2A30A49519763B /* XCClassDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0306045A9C39A009D63E74BD /* XCClassDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		F4DEC7BE6C80036F48E29954 /* XCKeyBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AF6140ED920C12F63625588 /* XCKeyBuilder.h */; };
-		FBCA74DBDB7B3999FB678F8B /* XCClassDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CF0F9A32F47B66AD0CB3D2B /* XCClassDefinition.h */; };
-		FFF6126BA2908F2549A4FE74 /* XCFileOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D67651D792ABBFA3259EFA /* XCFileOperationQueue.h */; };
+		0355A7276927AEA5E9A44F98 /* XcodeGroupMember.h in Headers */ = {isa = PBXBuildFile; fileRef = 28854A232018B3B5BA0D0FBB /* XcodeGroupMember.h */; };
+		099CC09BC1A00B915CA65691 /* XCFrameworkDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D399DEAE9377627270D4737 /* XCFrameworkDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0ABE0A28B08E658B102D5745 /* XCXibDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 45097CBC7683CB8269640C01 /* XCXibDefinition.h */; };
+		133829BC342BF7EF268836E6 /* XCKeyBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 8974AFC0346695AF2E3F8E24 /* XCKeyBuilder.h */; };
+		13555CF1E5901269E84ABC30 /* XCProjectBuildConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D469234CC649C1352A050D5 /* XCProjectBuildConfig.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		186EA25FF5DC7BDBF45CA551 /* XCFileOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = BC72542B914F99A0929A00CC /* XCFileOperationQueue.h */; };
+		20E110B13A1DAB5209A57C96 /* XcodeMemberType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8B693D3F23BE0604A464C /* XcodeMemberType.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		225825D64AA896C3EF407565 /* XCXibDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C22BA7C1166A983161A86D /* XCXibDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		22BBC5FEDE2F558F2FFA42A2 /* XCProject+SubProject.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C0932BF21AB691DC8019BC0 /* XCProject+SubProject.h */; };
+		252A99CE213F3E6575538BAE /* XcodeSourceFileType.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D753B423DE1D01BBA9EFEDC /* XcodeSourceFileType.h */; };
+		255B271BA2B5B32FF4EC9A13 /* XCFrameworkDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = A70B52C676CFCF149452B776 /* XCFrameworkDefinition.h */; };
+		2658374C7007DA71E11B8450 /* XcodeEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = F4845FE45E1818EA9B683BA3 /* XcodeEditor.h */; };
+		2B04DF43F164549F5FFBD47B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97538135EB7A0A5149A0127 /* Cocoa.framework */; };
+		2C5032A57F88D5684C83682C /* XCTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D728F483D3BB677688E7A3A /* XCTarget.h */; };
+		2DC7B1DB247A0D0224B9D988 /* XCSourceFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B06B57ED5B1CA69E070CF8C7 /* XCSourceFile.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2DD65A81F9E45ACE20E02225 /* XCProject+SubProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FE2FA6152D773C2F5E5E52 /* XCProject+SubProject.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2DF6FA6C5A13EA2C51C7B8C1 /* XCProject+SubProject.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C0932BF21AB691DC8019BC0 /* XCProject+SubProject.h */; };
+		30152AAA641BF5366AC8AF5C /* Pods-JBLocalizerTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F541D6FC8CA9918AC623F1 /* Pods-JBLocalizerTests-dummy.m */; };
+		326311AADA4006CDC89EBA0C /* XCXibDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C22BA7C1166A983161A86D /* XCXibDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		338A7BA139D07EA33DAEA2F4 /* XcodeMemberType.h in Headers */ = {isa = PBXBuildFile; fileRef = A95671A11793B68077737810 /* XcodeMemberType.h */; };
+		3945119E4ED4776B232980E0 /* XCSubProjectDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B5EA209AF652A6B89E1EBE /* XCSubProjectDefinition.h */; };
+		399FD3A075A87701557D72CA /* XCClassDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = CE2693FBF4CFFC9E044C72B7 /* XCClassDefinition.h */; };
+		39A8CA596184F399CD37CAD1 /* XcodeSourceFileType.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D753B423DE1D01BBA9EFEDC /* XcodeSourceFileType.h */; };
+		448FF7B7D78ABB4B53610366 /* XCFileOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 061F4B79282555F8FC6B2134 /* XCFileOperationQueue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		44FB1FA52E02CE1CECBB79D8 /* Pods-JBLocalizerTests-XcodeEditor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD019770853B51ABD06BB7 /* Pods-JBLocalizerTests-XcodeEditor-dummy.m */; };
+		4D5442721BBC9B826F3E03D4 /* XCTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D728F483D3BB677688E7A3A /* XCTarget.h */; };
+		519BBE980F8D546F23A2E1B4 /* Pods-JBLocalizer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695765C719E4DC7C7FCCE81 /* Pods-JBLocalizer-dummy.m */; };
+		51DBBD9E19809212E392F662 /* XCProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1F59666935B4CF121ED12 /* XCProject.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5B9F0D419E69A384C2678D33 /* XCProjectBuildConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 25DB1230D5F377797EFFC918 /* XCProjectBuildConfig.h */; };
+		629F58DF9E3E5594BEE1095B /* XCClassDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = DD01E01CFD667722EE32403D /* XCClassDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		66F11BD8838AF9FEEA43D5BF /* XCGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D5FE8F6CBA424C97AA5A6 /* XCGroup.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		682C138E6651F537BFAA6BBB /* XCFileOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 061F4B79282555F8FC6B2134 /* XCFileOperationQueue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6A06C99BDD8B33F1C02EB914 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97538135EB7A0A5149A0127 /* Cocoa.framework */; };
+		6D079A7D40AC6CF91BEDD76B /* XCFileOperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = BC72542B914F99A0929A00CC /* XCFileOperationQueue.h */; };
+		7026C20B451DFBD72179E82A /* XCAbstractDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D6A7B79317E8B0FBB43E9A /* XCAbstractDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		73DCDFD4CA59293F68C4ADDD /* XCGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D5FE8F6CBA424C97AA5A6 /* XCGroup.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		74781EC540A4266BE2764962 /* XCGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 529D4B2B3C1A01A8638C4DC7 /* XCGroup.h */; };
+		74797EBCDB0C123FA5B84241 /* XCProjectBuildConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 25DB1230D5F377797EFFC918 /* XCProjectBuildConfig.h */; };
+		7516C4DF4458BA171C23F8A5 /* XcodeGroupMember.h in Headers */ = {isa = PBXBuildFile; fileRef = 28854A232018B3B5BA0D0FBB /* XcodeGroupMember.h */; };
+		77CC39EA3DCD356824153A5A /* XcodeEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = F4845FE45E1818EA9B683BA3 /* XcodeEditor.h */; };
+		79F6EAE20C3CD70BE4326708 /* XCXibDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 45097CBC7683CB8269640C01 /* XCXibDefinition.h */; };
+		7A5DCCD293896632997E4AEC /* XCProjectBuildConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D469234CC649C1352A050D5 /* XCProjectBuildConfig.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		80C825108A66446991188EB8 /* XcodeSourceFileType.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB6C2A09ACB1C86437A071B /* XcodeSourceFileType.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		87759894F1224AB3D8D6F7E9 /* XCSourceFileDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 32122A45AC63156069B024A5 /* XCSourceFileDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		8789DB2036B42E6068624CFD /* XCClassDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = DD01E01CFD667722EE32403D /* XCClassDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		888845D6F545B53F3E55F84E /* XCAbstractDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D6A7B79317E8B0FBB43E9A /* XCAbstractDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		8C80819C280E27D1B2316E3E /* XcodeMemberType.h in Headers */ = {isa = PBXBuildFile; fileRef = A95671A11793B68077737810 /* XcodeMemberType.h */; };
+		92B898A0C9975C138E3E7F44 /* XCSourceFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 709F27C7698F9FF92A82CACF /* XCSourceFile.h */; };
+		942A7D7CD57D12FE66126BF8 /* XCGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 529D4B2B3C1A01A8638C4DC7 /* XCGroup.h */; };
+		957435389A5BB4CF3C758F88 /* XCProject+SubProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FE2FA6152D773C2F5E5E52 /* XCProject+SubProject.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		971FE75E2310BC769663164A /* XCKeyBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7FB7B642AD634B85A5FC0D /* XCKeyBuilder.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		9CCEB8661F899843AF489C52 /* XCProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1F59666935B4CF121ED12 /* XCProject.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A2917F71C618755DA09E4D24 /* XCTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = DC605782AA8CDBDA00B975BD /* XCTarget.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A62E7EBEE3DE361E550A6224 /* XCSourceFileDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 32122A45AC63156069B024A5 /* XCSourceFileDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A80B3394F69CAF0E3FD22880 /* XCFrameworkDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = A70B52C676CFCF149452B776 /* XCFrameworkDefinition.h */; };
+		AEACBBABB933DBD7BC83CB6C /* XCSubProjectDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B5EA209AF652A6B89E1EBE /* XCSubProjectDefinition.h */; };
+		C2268F6ABD81CC8D8075789E /* XcodeMemberType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8B693D3F23BE0604A464C /* XcodeMemberType.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		C26B325A6E8516913DBEC3CF /* XCTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = DC605782AA8CDBDA00B975BD /* XCTarget.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		C36D57902CE8925FE38FC937 /* XCClassDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = CE2693FBF4CFFC9E044C72B7 /* XCClassDefinition.h */; };
+		C7E551A85F5326A1E180ECBF /* XCKeyBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7FB7B642AD634B85A5FC0D /* XCKeyBuilder.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D03A7EF346E24326562F15DC /* XCAbstractDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 685E28D1F70FFA4A05CA8AEE /* XCAbstractDefinition.h */; };
+		D0E6FA67131EC1FDC4693CA5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97538135EB7A0A5149A0127 /* Cocoa.framework */; };
+		D7E2C0A825E05BDC21235CD6 /* XCSourceFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 709F27C7698F9FF92A82CACF /* XCSourceFile.h */; };
+		D92D577A054DFB527D961A47 /* XCAbstractDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 685E28D1F70FFA4A05CA8AEE /* XCAbstractDefinition.h */; };
+		D9C927C3B8EBBBCFF7C50155 /* XCProject.h in Headers */ = {isa = PBXBuildFile; fileRef = E094F17F85DF9130CCBA29C4 /* XCProject.h */; };
+		DB130CEE7ACEF5BD44EDBE48 /* XCSourceFileDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 440B282B4F23BCD316E0C711 /* XCSourceFileDefinition.h */; };
+		DE702873B1887CE2C4D5D0CA /* XCSubProjectDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2388489458ECEE20D6D7A6BB /* XCSubProjectDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E247018DFFDE382AE64C06EB /* XCSourceFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B06B57ED5B1CA69E070CF8C7 /* XCSourceFile.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E2BE304FE106883ECB0A0BCE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97538135EB7A0A5149A0127 /* Cocoa.framework */; };
+		E46348D2205EA10B83DEEF9B /* XCProject.h in Headers */ = {isa = PBXBuildFile; fileRef = E094F17F85DF9130CCBA29C4 /* XCProject.h */; };
+		EB3245AD649B535A1FA376FC /* XCSubProjectDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2388489458ECEE20D6D7A6BB /* XCSubProjectDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		EF3187AA61E90EA5B689E296 /* XCKeyBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 8974AFC0346695AF2E3F8E24 /* XCKeyBuilder.h */; };
+		F73C5009926091FAC5466B8B /* XcodeSourceFileType.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB6C2A09ACB1C86437A071B /* XcodeSourceFileType.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F89503E52915B8FF0D6C1D3E /* XCSourceFileDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 440B282B4F23BCD316E0C711 /* XCSourceFileDefinition.h */; };
+		F904F98A55132C1BC65A2D88 /* Pods-JBLocalizer-XcodeEditor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 809F6DCD11A7082E339D0E2E /* Pods-JBLocalizer-XcodeEditor-dummy.m */; };
+		F93E66063369B9F50440700A /* XCFrameworkDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D399DEAE9377627270D4737 /* XCFrameworkDefinition.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E1CD51E7A62F1A7212665112 /* PBXContainerItemProxy */ = {
+		0D32A2F3843C78B6A67D3898 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6B2F070AD56A6473C23B460B /* Project object */;
+			containerPortal = C6F5BF8D61C3F8AA14211848 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 12E86F020CD343390BBFFF4C;
+			remoteGlobalIDString = 951610020F0D42181C49BB28;
 			remoteInfo = "Pods-JBLocalizer-XcodeEditor";
+		};
+		8EF68274F05CAA751F6E1B2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6F5BF8D61C3F8AA14211848 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C46D83A5E5D58AB0D3CB326;
+			remoteInfo = "Pods-JBLocalizerTests-XcodeEditor";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0306045A9C39A009D63E74BD /* XCClassDefinition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCClassDefinition.m; path = Source/XCClassDefinition.m; sourceTree = "<group>"; };
-		071B3992A8D7C14F19B0A576 /* XCSourceFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCSourceFile.h; path = Source/XCSourceFile.h; sourceTree = "<group>"; };
-		0C3355424B0826F8853374F8 /* libPods-JBLocalizer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JBLocalizer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C6B308544524AC0B7DA14C5 /* XcodeEditor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XcodeEditor.h; path = Source/XcodeEditor.h; sourceTree = "<group>"; };
-		0F8D2D31072CD3809819BCF6 /* XCKeyBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCKeyBuilder.m; path = Source/Utils/XCKeyBuilder.m; sourceTree = "<group>"; };
-		144EFFFA4AE2F2246AAF6396 /* Pods-JBLocalizer-XcodeEditor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JBLocalizer-XcodeEditor.xcconfig"; sourceTree = "<group>"; };
-		20B7879E8119F60BA91D1A60 /* XcodeMemberType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XcodeMemberType.m; path = Source/XcodeMemberType.m; sourceTree = "<group>"; };
-		28E21DA2012801D5521985E9 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		2914160CF991A8BA0D199E1A /* XCSourceFileDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCSourceFileDefinition.h; path = Source/XCSourceFileDefinition.h; sourceTree = "<group>"; };
-		29B1835FA7D2944984AD383D /* XCProject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCProject.m; path = Source/XCProject.m; sourceTree = "<group>"; };
-		2C374A82F7E2893478BF5C36 /* XCAbstractDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCAbstractDefinition.h; path = Source/XCAbstractDefinition.h; sourceTree = "<group>"; };
-		318552FAB73FAB71F02E187D /* Pods-JBLocalizer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JBLocalizer-dummy.m"; sourceTree = "<group>"; };
-		3376F2ED4BF60CBD78458A2D /* XCFileOperationQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCFileOperationQueue.m; path = Source/XCFileOperationQueue.m; sourceTree = "<group>"; };
-		3CF0F9A32F47B66AD0CB3D2B /* XCClassDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCClassDefinition.h; path = Source/XCClassDefinition.h; sourceTree = "<group>"; };
-		3EF5458DF95B4CACDB4CB51D /* XCGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCGroup.m; path = Source/XCGroup.m; sourceTree = "<group>"; };
-		3FD0FAEB1B7DC780B8115DA7 /* XCProjectBuildConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCProjectBuildConfig.h; path = Source/XCProjectBuildConfig.h; sourceTree = "<group>"; };
-		41CFA0D92DB7D57193824CA4 /* XCSubProjectDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCSubProjectDefinition.h; path = Source/XCSubProjectDefinition.h; sourceTree = "<group>"; };
-		448D16CF18553A771DF48A56 /* Pods-JBLocalizer-XcodeEditor-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JBLocalizer-XcodeEditor-Private.xcconfig"; sourceTree = "<group>"; };
-		4AF6140ED920C12F63625588 /* XCKeyBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCKeyBuilder.h; path = Source/Utils/XCKeyBuilder.h; sourceTree = "<group>"; };
-		4EAC261FA489D5EC79F17E8F /* XCProject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCProject.h; path = Source/XCProject.h; sourceTree = "<group>"; };
-		4F5BA35064BC95B23321AFFE /* XCGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCGroup.h; path = Source/XCGroup.h; sourceTree = "<group>"; };
-		5E6511C8D7F2FA60EED21380 /* XCTarget.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCTarget.m; path = Source/XCTarget.m; sourceTree = "<group>"; };
-		6339F946EC33C529466D1DAA /* XCAbstractDefinition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCAbstractDefinition.m; path = Source/XCAbstractDefinition.m; sourceTree = "<group>"; };
-		684E1036ED42BF6ECE73B867 /* Pods-JBLocalizer-XcodeEditor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JBLocalizer-XcodeEditor-dummy.m"; sourceTree = "<group>"; };
-		6FF045EF2B02BA14F959F325 /* XcodeGroupMember.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XcodeGroupMember.h; path = Source/XcodeGroupMember.h; sourceTree = "<group>"; };
-		7050BCCD484E2FF7AE51326F /* Pods-JBLocalizer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JBLocalizer-acknowledgements.plist"; sourceTree = "<group>"; };
-		75D5C09A4585FB278B6F2728 /* XCProject+SubProject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCProject+SubProject.m"; path = "Source/XCProject+SubProject.m"; sourceTree = "<group>"; };
-		7DE62D01945869CA4115EF28 /* Pods-JBLocalizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JBLocalizer.debug.xcconfig"; sourceTree = "<group>"; };
-		7F785CF920E2EB57A36109BF /* XCSubProjectDefinition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCSubProjectDefinition.m; path = Source/XCSubProjectDefinition.m; sourceTree = "<group>"; };
-		7F84F95E054E1324341F39FE /* XCFrameworkDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCFrameworkDefinition.h; path = Source/XCFrameworkDefinition.h; sourceTree = "<group>"; };
-		81673E04AA99DB5C0D2B882D /* XcodeSourceFileType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XcodeSourceFileType.h; path = Source/XcodeSourceFileType.h; sourceTree = "<group>"; };
-		827FF5DCD1C261A9AA590D56 /* Pods-JBLocalizer-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JBLocalizer-resources.sh"; sourceTree = "<group>"; };
-		9AB47A1BEDB24CF2249EBB4A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		9B3A2DCA57F60EF484C96C2F /* Pods-JBLocalizer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JBLocalizer-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9B652DF737D46FF3AF119FCA /* Pods-JBLocalizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JBLocalizer.release.xcconfig"; sourceTree = "<group>"; };
-		A857EB7F67897711C3265131 /* XCXibDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCXibDefinition.h; path = Source/XCXibDefinition.h; sourceTree = "<group>"; };
-		AA629379888F5BBA5EC28E3B /* XCProject+SubProject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XCProject+SubProject.h"; path = "Source/XCProject+SubProject.h"; sourceTree = "<group>"; };
-		B1A91DF59104E9E24B7EA82A /* libPods-JBLocalizer-XcodeEditor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JBLocalizer-XcodeEditor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD566858C76623D8BCFDE1CD /* XCTarget.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCTarget.h; path = Source/XCTarget.h; sourceTree = "<group>"; };
-		C211A071FA4A796F698010AC /* Pods-JBLocalizer-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JBLocalizer-environment.h"; sourceTree = "<group>"; };
-		C89D74771F0A620002A08F69 /* XcodeSourceFileType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XcodeSourceFileType.m; path = Source/XcodeSourceFileType.m; sourceTree = "<group>"; };
-		CEAC405CA96670BC97307004 /* XCFrameworkDefinition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCFrameworkDefinition.m; path = Source/XCFrameworkDefinition.m; sourceTree = "<group>"; };
-		CEDF251B1B7B46BFC49CDBB2 /* XCSourceFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCSourceFile.m; path = Source/XCSourceFile.m; sourceTree = "<group>"; };
-		D418A3B1E1783AF9FC77E7A3 /* XcodeMemberType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XcodeMemberType.h; path = Source/XcodeMemberType.h; sourceTree = "<group>"; };
-		D789DA45395DDBDB36F152B4 /* XCSourceFileDefinition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCSourceFileDefinition.m; path = Source/XCSourceFileDefinition.m; sourceTree = "<group>"; };
-		DD9578A584940D2C461C4EEC /* XCProjectBuildConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCProjectBuildConfig.m; path = Source/XCProjectBuildConfig.m; sourceTree = "<group>"; };
-		E8D67651D792ABBFA3259EFA /* XCFileOperationQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCFileOperationQueue.h; path = Source/XCFileOperationQueue.h; sourceTree = "<group>"; };
-		FDE83EB3086DB97073C00A40 /* Pods-JBLocalizer-XcodeEditor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JBLocalizer-XcodeEditor-prefix.pch"; sourceTree = "<group>"; };
-		FF9A8AF6D0655FEE9E57E850 /* XCXibDefinition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCXibDefinition.m; path = Source/XCXibDefinition.m; sourceTree = "<group>"; };
+		00B5EA209AF652A6B89E1EBE /* XCSubProjectDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCSubProjectDefinition.h; path = Source/XCSubProjectDefinition.h; sourceTree = "<group>"; };
+		02F541D6FC8CA9918AC623F1 /* Pods-JBLocalizerTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JBLocalizerTests-dummy.m"; sourceTree = "<group>"; };
+		061F4B79282555F8FC6B2134 /* XCFileOperationQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCFileOperationQueue.m; path = Source/XCFileOperationQueue.m; sourceTree = "<group>"; };
+		1D399DEAE9377627270D4737 /* XCFrameworkDefinition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCFrameworkDefinition.m; path = Source/XCFrameworkDefinition.m; sourceTree = "<group>"; };
+		219D5FE8F6CBA424C97AA5A6 /* XCGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCGroup.m; path = Source/XCGroup.m; sourceTree = "<group>"; };
+		22E423AC0E0D22634ABB3B89 /* Pods-JBLocalizerTests-XcodeEditor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-JBLocalizerTests-XcodeEditor-prefix.pch"; path = "../Pods-JBLocalizerTests-XcodeEditor/Pods-JBLocalizerTests-XcodeEditor-prefix.pch"; sourceTree = "<group>"; };
+		2388489458ECEE20D6D7A6BB /* XCSubProjectDefinition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCSubProjectDefinition.m; path = Source/XCSubProjectDefinition.m; sourceTree = "<group>"; };
+		25DB1230D5F377797EFFC918 /* XCProjectBuildConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCProjectBuildConfig.h; path = Source/XCProjectBuildConfig.h; sourceTree = "<group>"; };
+		28854A232018B3B5BA0D0FBB /* XcodeGroupMember.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XcodeGroupMember.h; path = Source/XcodeGroupMember.h; sourceTree = "<group>"; };
+		32122A45AC63156069B024A5 /* XCSourceFileDefinition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCSourceFileDefinition.m; path = Source/XCSourceFileDefinition.m; sourceTree = "<group>"; };
+		38380506592B592FEE5C966C /* Pods-JBLocalizerTests-XcodeEditor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBLocalizerTests-XcodeEditor.xcconfig"; path = "../Pods-JBLocalizerTests-XcodeEditor/Pods-JBLocalizerTests-XcodeEditor.xcconfig"; sourceTree = "<group>"; };
+		3C0932BF21AB691DC8019BC0 /* XCProject+SubProject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XCProject+SubProject.h"; path = "Source/XCProject+SubProject.h"; sourceTree = "<group>"; };
+		3D408F384815FB5586D25539 /* Pods-JBLocalizerTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JBLocalizerTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		3D469234CC649C1352A050D5 /* XCProjectBuildConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCProjectBuildConfig.m; path = Source/XCProjectBuildConfig.m; sourceTree = "<group>"; };
+		440B282B4F23BCD316E0C711 /* XCSourceFileDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCSourceFileDefinition.h; path = Source/XCSourceFileDefinition.h; sourceTree = "<group>"; };
+		45097CBC7683CB8269640C01 /* XCXibDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCXibDefinition.h; path = Source/XCXibDefinition.h; sourceTree = "<group>"; };
+		47C22BA7C1166A983161A86D /* XCXibDefinition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCXibDefinition.m; path = Source/XCXibDefinition.m; sourceTree = "<group>"; };
+		4AF8B693D3F23BE0604A464C /* XcodeMemberType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XcodeMemberType.m; path = Source/XcodeMemberType.m; sourceTree = "<group>"; };
+		529D4B2B3C1A01A8638C4DC7 /* XCGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCGroup.h; path = Source/XCGroup.h; sourceTree = "<group>"; };
+		54D702ED371693DCCA966B97 /* Pods-JBLocalizerTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JBLocalizerTests-resources.sh"; sourceTree = "<group>"; };
+		56BD7DA6EB7285AF10E1187D /* Pods-JBLocalizer-XcodeEditor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JBLocalizer-XcodeEditor.xcconfig"; sourceTree = "<group>"; };
+		5D753B423DE1D01BBA9EFEDC /* XcodeSourceFileType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XcodeSourceFileType.h; path = Source/XcodeSourceFileType.h; sourceTree = "<group>"; };
+		5DCD019770853B51ABD06BB7 /* Pods-JBLocalizerTests-XcodeEditor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-JBLocalizerTests-XcodeEditor-dummy.m"; path = "../Pods-JBLocalizerTests-XcodeEditor/Pods-JBLocalizerTests-XcodeEditor-dummy.m"; sourceTree = "<group>"; };
+		685E28D1F70FFA4A05CA8AEE /* XCAbstractDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCAbstractDefinition.h; path = Source/XCAbstractDefinition.h; sourceTree = "<group>"; };
+		6D728F483D3BB677688E7A3A /* XCTarget.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCTarget.h; path = Source/XCTarget.h; sourceTree = "<group>"; };
+		6E79F5E77B9F2571A4BACE8E /* libPods-JBLocalizerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JBLocalizerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		709F27C7698F9FF92A82CACF /* XCSourceFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCSourceFile.h; path = Source/XCSourceFile.h; sourceTree = "<group>"; };
+		711175FDA1EFEADBE42DD06B /* Pods-JBLocalizerTests-XcodeEditor-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBLocalizerTests-XcodeEditor-Private.xcconfig"; path = "../Pods-JBLocalizerTests-XcodeEditor/Pods-JBLocalizerTests-XcodeEditor-Private.xcconfig"; sourceTree = "<group>"; };
+		7553E29EDFD8BA385C75C7AC /* Pods-JBLocalizerTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JBLocalizerTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		759268E53DE649766604F7E5 /* Pods-JBLocalizerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JBLocalizerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7695765C719E4DC7C7FCCE81 /* Pods-JBLocalizer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JBLocalizer-dummy.m"; sourceTree = "<group>"; };
+		7AC5AEAE6AD02D6A0AB74D87 /* Pods-JBLocalizer-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JBLocalizer-resources.sh"; sourceTree = "<group>"; };
+		809F6DCD11A7082E339D0E2E /* Pods-JBLocalizer-XcodeEditor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JBLocalizer-XcodeEditor-dummy.m"; sourceTree = "<group>"; };
+		84B2BBBAA4A82F84C7638702 /* libPods-JBLocalizer-XcodeEditor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JBLocalizer-XcodeEditor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8974AFC0346695AF2E3F8E24 /* XCKeyBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCKeyBuilder.h; path = Source/Utils/XCKeyBuilder.h; sourceTree = "<group>"; };
+		89FE2FA6152D773C2F5E5E52 /* XCProject+SubProject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCProject+SubProject.m"; path = "Source/XCProject+SubProject.m"; sourceTree = "<group>"; };
+		8EF1F59666935B4CF121ED12 /* XCProject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCProject.m; path = Source/XCProject.m; sourceTree = "<group>"; };
+		904890696BF6BA7846696199 /* Pods-JBLocalizer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JBLocalizer-acknowledgements.plist"; sourceTree = "<group>"; };
+		A70B52C676CFCF149452B776 /* XCFrameworkDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCFrameworkDefinition.h; path = Source/XCFrameworkDefinition.h; sourceTree = "<group>"; };
+		A95671A11793B68077737810 /* XcodeMemberType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XcodeMemberType.h; path = Source/XcodeMemberType.h; sourceTree = "<group>"; };
+		A97538135EB7A0A5149A0127 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		A9D6A7B79317E8B0FBB43E9A /* XCAbstractDefinition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCAbstractDefinition.m; path = Source/XCAbstractDefinition.m; sourceTree = "<group>"; };
+		B06B57ED5B1CA69E070CF8C7 /* XCSourceFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCSourceFile.m; path = Source/XCSourceFile.m; sourceTree = "<group>"; };
+		B3CF2BD2613993A4C3014341 /* Pods-JBLocalizerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JBLocalizerTests.release.xcconfig"; sourceTree = "<group>"; };
+		B45A12FE1E156D1CC6E9FE11 /* Pods-JBLocalizer-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JBLocalizer-environment.h"; sourceTree = "<group>"; };
+		BC72542B914F99A0929A00CC /* XCFileOperationQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCFileOperationQueue.h; path = Source/XCFileOperationQueue.h; sourceTree = "<group>"; };
+		BD74E93757114B8343BEF611 /* Pods-JBLocalizer-XcodeEditor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JBLocalizer-XcodeEditor-prefix.pch"; sourceTree = "<group>"; };
+		C410D8CE564ABE536C346635 /* Pods-JBLocalizer-XcodeEditor-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JBLocalizer-XcodeEditor-Private.xcconfig"; sourceTree = "<group>"; };
+		C4F97132F31E870332DB2F86 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CE2693FBF4CFFC9E044C72B7 /* XCClassDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCClassDefinition.h; path = Source/XCClassDefinition.h; sourceTree = "<group>"; };
+		D5BAB2F4F05A42E0520E1DCF /* Pods-JBLocalizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JBLocalizer.release.xcconfig"; sourceTree = "<group>"; };
+		D90E3B882AC85EFA0DEA098A /* Pods-JBLocalizerTests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JBLocalizerTests-environment.h"; sourceTree = "<group>"; };
+		DC605782AA8CDBDA00B975BD /* XCTarget.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCTarget.m; path = Source/XCTarget.m; sourceTree = "<group>"; };
+		DC7FB7B642AD634B85A5FC0D /* XCKeyBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCKeyBuilder.m; path = Source/Utils/XCKeyBuilder.m; sourceTree = "<group>"; };
+		DD01E01CFD667722EE32403D /* XCClassDefinition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XCClassDefinition.m; path = Source/XCClassDefinition.m; sourceTree = "<group>"; };
+		E094F17F85DF9130CCBA29C4 /* XCProject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCProject.h; path = Source/XCProject.h; sourceTree = "<group>"; };
+		E5F65693EB46FBE3033B9ECC /* libPods-JBLocalizerTests-XcodeEditor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JBLocalizerTests-XcodeEditor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E64033B00DA200C2BFEA8B52 /* libPods-JBLocalizer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JBLocalizer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6E2BA308774CF4CFB218324 /* Pods-JBLocalizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JBLocalizer.debug.xcconfig"; sourceTree = "<group>"; };
+		E9DAB10BC6F32392E1E93E6E /* Pods-JBLocalizer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JBLocalizer-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F4845FE45E1818EA9B683BA3 /* XcodeEditor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XcodeEditor.h; path = Source/XcodeEditor.h; sourceTree = "<group>"; };
+		FAB6C2A09ACB1C86437A071B /* XcodeSourceFileType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = XcodeSourceFileType.m; path = Source/XcodeSourceFileType.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2A7B3FC98022DC08A34C80C8 /* Frameworks */ = {
+		0BF5C72F03FAF13776B46CF6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E8840C24BEC7142978FB667 /* Cocoa.framework in Frameworks */,
+				6A06C99BDD8B33F1C02EB914 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2F68BFD5D5CC7112F547339D /* Frameworks */ = {
+		3DC475BD0A619E1F30A76A0E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D0929D8C8A89B565F79F9B4 /* Cocoa.framework in Frameworks */,
+				2B04DF43F164549F5FFBD47B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8557A62DFBAEE906820511B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2BE304FE106883ECB0A0BCE /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D009D5C9FEABBF80A87A9770 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0E6FA67131EC1FDC4693CA5 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		17CE884F9B617AD65F96810F /* Frameworks */ = {
+		47DCE44538283EB4C0B981FF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CDFFE29A9AA3DD0A1D955E45 /* OS X */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9A145C946E825255F52E0BF8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0C3355424B0826F8853374F8 /* libPods-JBLocalizer.a */,
-				B1A91DF59104E9E24B7EA82A /* libPods-JBLocalizer-XcodeEditor.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		AA6ACB6C263F477C7FA77646 /* XcodeEditor */ = {
-			isa = PBXGroup;
-			children = (
-				2C374A82F7E2893478BF5C36 /* XCAbstractDefinition.h */,
-				6339F946EC33C529466D1DAA /* XCAbstractDefinition.m */,
-				3CF0F9A32F47B66AD0CB3D2B /* XCClassDefinition.h */,
-				0306045A9C39A009D63E74BD /* XCClassDefinition.m */,
-				E8D67651D792ABBFA3259EFA /* XCFileOperationQueue.h */,
-				3376F2ED4BF60CBD78458A2D /* XCFileOperationQueue.m */,
-				7F84F95E054E1324341F39FE /* XCFrameworkDefinition.h */,
-				CEAC405CA96670BC97307004 /* XCFrameworkDefinition.m */,
-				4F5BA35064BC95B23321AFFE /* XCGroup.h */,
-				3EF5458DF95B4CACDB4CB51D /* XCGroup.m */,
-				4AF6140ED920C12F63625588 /* XCKeyBuilder.h */,
-				0F8D2D31072CD3809819BCF6 /* XCKeyBuilder.m */,
-				4EAC261FA489D5EC79F17E8F /* XCProject.h */,
-				29B1835FA7D2944984AD383D /* XCProject.m */,
-				AA629379888F5BBA5EC28E3B /* XCProject+SubProject.h */,
-				75D5C09A4585FB278B6F2728 /* XCProject+SubProject.m */,
-				3FD0FAEB1B7DC780B8115DA7 /* XCProjectBuildConfig.h */,
-				DD9578A584940D2C461C4EEC /* XCProjectBuildConfig.m */,
-				071B3992A8D7C14F19B0A576 /* XCSourceFile.h */,
-				CEDF251B1B7B46BFC49CDBB2 /* XCSourceFile.m */,
-				2914160CF991A8BA0D199E1A /* XCSourceFileDefinition.h */,
-				D789DA45395DDBDB36F152B4 /* XCSourceFileDefinition.m */,
-				41CFA0D92DB7D57193824CA4 /* XCSubProjectDefinition.h */,
-				7F785CF920E2EB57A36109BF /* XCSubProjectDefinition.m */,
-				BD566858C76623D8BCFDE1CD /* XCTarget.h */,
-				5E6511C8D7F2FA60EED21380 /* XCTarget.m */,
-				A857EB7F67897711C3265131 /* XCXibDefinition.h */,
-				FF9A8AF6D0655FEE9E57E850 /* XCXibDefinition.m */,
-				0C6B308544524AC0B7DA14C5 /* XcodeEditor.h */,
-				6FF045EF2B02BA14F959F325 /* XcodeGroupMember.h */,
-				D418A3B1E1783AF9FC77E7A3 /* XcodeMemberType.h */,
-				20B7879E8119F60BA91D1A60 /* XcodeMemberType.m */,
-				81673E04AA99DB5C0D2B882D /* XcodeSourceFileType.h */,
-				C89D74771F0A620002A08F69 /* XcodeSourceFileType.m */,
-				B28F9057371015CE55632C1C /* Support Files */,
-			);
-			path = XcodeEditor;
-			sourceTree = "<group>";
-		};
-		AEC7CD37B2C5D8701DE232FD /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AA6ACB6C263F477C7FA77646 /* XcodeEditor */,
+				9778CA8A66686CA302964D61 /* XcodeEditor */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B28F9057371015CE55632C1C /* Support Files */ = {
+		71A72742E36F6D99544EA726 /* Pods-JBLocalizer */ = {
 			isa = PBXGroup;
 			children = (
-				144EFFFA4AE2F2246AAF6396 /* Pods-JBLocalizer-XcodeEditor.xcconfig */,
-				448D16CF18553A771DF48A56 /* Pods-JBLocalizer-XcodeEditor-Private.xcconfig */,
-				684E1036ED42BF6ECE73B867 /* Pods-JBLocalizer-XcodeEditor-dummy.m */,
-				FDE83EB3086DB97073C00A40 /* Pods-JBLocalizer-XcodeEditor-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-JBLocalizer-XcodeEditor";
-			sourceTree = "<group>";
-		};
-		B589387749C7691FCC4BC4EA /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B64D5772480E2C42FD9BF7AA /* Pods-JBLocalizer */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		B64D5772480E2C42FD9BF7AA /* Pods-JBLocalizer */ = {
-			isa = PBXGroup;
-			children = (
-				9B3A2DCA57F60EF484C96C2F /* Pods-JBLocalizer-acknowledgements.markdown */,
-				7050BCCD484E2FF7AE51326F /* Pods-JBLocalizer-acknowledgements.plist */,
-				318552FAB73FAB71F02E187D /* Pods-JBLocalizer-dummy.m */,
-				C211A071FA4A796F698010AC /* Pods-JBLocalizer-environment.h */,
-				827FF5DCD1C261A9AA590D56 /* Pods-JBLocalizer-resources.sh */,
-				7DE62D01945869CA4115EF28 /* Pods-JBLocalizer.debug.xcconfig */,
-				9B652DF737D46FF3AF119FCA /* Pods-JBLocalizer.release.xcconfig */,
+				E9DAB10BC6F32392E1E93E6E /* Pods-JBLocalizer-acknowledgements.markdown */,
+				904890696BF6BA7846696199 /* Pods-JBLocalizer-acknowledgements.plist */,
+				7695765C719E4DC7C7FCCE81 /* Pods-JBLocalizer-dummy.m */,
+				B45A12FE1E156D1CC6E9FE11 /* Pods-JBLocalizer-environment.h */,
+				7AC5AEAE6AD02D6A0AB74D87 /* Pods-JBLocalizer-resources.sh */,
+				E6E2BA308774CF4CFB218324 /* Pods-JBLocalizer.debug.xcconfig */,
+				D5BAB2F4F05A42E0520E1DCF /* Pods-JBLocalizer.release.xcconfig */,
 			);
 			name = "Pods-JBLocalizer";
 			path = "Target Support Files/Pods-JBLocalizer";
 			sourceTree = "<group>";
 		};
-		CDFFE29A9AA3DD0A1D955E45 /* OS X */ = {
+		9778CA8A66686CA302964D61 /* XcodeEditor */ = {
 			isa = PBXGroup;
 			children = (
-				9AB47A1BEDB24CF2249EBB4A /* Cocoa.framework */,
+				685E28D1F70FFA4A05CA8AEE /* XCAbstractDefinition.h */,
+				A9D6A7B79317E8B0FBB43E9A /* XCAbstractDefinition.m */,
+				CE2693FBF4CFFC9E044C72B7 /* XCClassDefinition.h */,
+				DD01E01CFD667722EE32403D /* XCClassDefinition.m */,
+				BC72542B914F99A0929A00CC /* XCFileOperationQueue.h */,
+				061F4B79282555F8FC6B2134 /* XCFileOperationQueue.m */,
+				A70B52C676CFCF149452B776 /* XCFrameworkDefinition.h */,
+				1D399DEAE9377627270D4737 /* XCFrameworkDefinition.m */,
+				529D4B2B3C1A01A8638C4DC7 /* XCGroup.h */,
+				219D5FE8F6CBA424C97AA5A6 /* XCGroup.m */,
+				8974AFC0346695AF2E3F8E24 /* XCKeyBuilder.h */,
+				DC7FB7B642AD634B85A5FC0D /* XCKeyBuilder.m */,
+				E094F17F85DF9130CCBA29C4 /* XCProject.h */,
+				8EF1F59666935B4CF121ED12 /* XCProject.m */,
+				3C0932BF21AB691DC8019BC0 /* XCProject+SubProject.h */,
+				89FE2FA6152D773C2F5E5E52 /* XCProject+SubProject.m */,
+				25DB1230D5F377797EFFC918 /* XCProjectBuildConfig.h */,
+				3D469234CC649C1352A050D5 /* XCProjectBuildConfig.m */,
+				709F27C7698F9FF92A82CACF /* XCSourceFile.h */,
+				B06B57ED5B1CA69E070CF8C7 /* XCSourceFile.m */,
+				440B282B4F23BCD316E0C711 /* XCSourceFileDefinition.h */,
+				32122A45AC63156069B024A5 /* XCSourceFileDefinition.m */,
+				00B5EA209AF652A6B89E1EBE /* XCSubProjectDefinition.h */,
+				2388489458ECEE20D6D7A6BB /* XCSubProjectDefinition.m */,
+				6D728F483D3BB677688E7A3A /* XCTarget.h */,
+				DC605782AA8CDBDA00B975BD /* XCTarget.m */,
+				45097CBC7683CB8269640C01 /* XCXibDefinition.h */,
+				47C22BA7C1166A983161A86D /* XCXibDefinition.m */,
+				F4845FE45E1818EA9B683BA3 /* XcodeEditor.h */,
+				28854A232018B3B5BA0D0FBB /* XcodeGroupMember.h */,
+				A95671A11793B68077737810 /* XcodeMemberType.h */,
+				4AF8B693D3F23BE0604A464C /* XcodeMemberType.m */,
+				5D753B423DE1D01BBA9EFEDC /* XcodeSourceFileType.h */,
+				FAB6C2A09ACB1C86437A071B /* XcodeSourceFileType.m */,
+				EA75A85FCAB060C44A490090 /* Support Files */,
+			);
+			path = XcodeEditor;
+			sourceTree = "<group>";
+		};
+		A93452C784D48CE77592B5E2 = {
+			isa = PBXGroup;
+			children = (
+				C4F97132F31E870332DB2F86 /* Podfile */,
+				C953A3EFBA33FD8B08928448 /* Frameworks */,
+				47DCE44538283EB4C0B981FF /* Pods */,
+				F187063D410FC4D53CC0F557 /* Products */,
+				DD90C5775E547E1A0A50935D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		C2DA19013C7C2DE0FFEC9B25 /* Pods-JBLocalizerTests */ = {
+			isa = PBXGroup;
+			children = (
+				7553E29EDFD8BA385C75C7AC /* Pods-JBLocalizerTests-acknowledgements.markdown */,
+				3D408F384815FB5586D25539 /* Pods-JBLocalizerTests-acknowledgements.plist */,
+				02F541D6FC8CA9918AC623F1 /* Pods-JBLocalizerTests-dummy.m */,
+				D90E3B882AC85EFA0DEA098A /* Pods-JBLocalizerTests-environment.h */,
+				54D702ED371693DCCA966B97 /* Pods-JBLocalizerTests-resources.sh */,
+				759268E53DE649766604F7E5 /* Pods-JBLocalizerTests.debug.xcconfig */,
+				B3CF2BD2613993A4C3014341 /* Pods-JBLocalizerTests.release.xcconfig */,
+			);
+			name = "Pods-JBLocalizerTests";
+			path = "Target Support Files/Pods-JBLocalizerTests";
+			sourceTree = "<group>";
+		};
+		C953A3EFBA33FD8B08928448 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC1C6C2902F9A40E885AB96B /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD90C5775E547E1A0A50935D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				71A72742E36F6D99544EA726 /* Pods-JBLocalizer */,
+				C2DA19013C7C2DE0FFEC9B25 /* Pods-JBLocalizerTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		EA75A85FCAB060C44A490090 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				56BD7DA6EB7285AF10E1187D /* Pods-JBLocalizer-XcodeEditor.xcconfig */,
+				C410D8CE564ABE536C346635 /* Pods-JBLocalizer-XcodeEditor-Private.xcconfig */,
+				809F6DCD11A7082E339D0E2E /* Pods-JBLocalizer-XcodeEditor-dummy.m */,
+				BD74E93757114B8343BEF611 /* Pods-JBLocalizer-XcodeEditor-prefix.pch */,
+				38380506592B592FEE5C966C /* Pods-JBLocalizerTests-XcodeEditor.xcconfig */,
+				711175FDA1EFEADBE42DD06B /* Pods-JBLocalizerTests-XcodeEditor-Private.xcconfig */,
+				5DCD019770853B51ABD06BB7 /* Pods-JBLocalizerTests-XcodeEditor-dummy.m */,
+				22E423AC0E0D22634ABB3B89 /* Pods-JBLocalizerTests-XcodeEditor-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-JBLocalizer-XcodeEditor";
+			sourceTree = "<group>";
+		};
+		EC1C6C2902F9A40E885AB96B /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				A97538135EB7A0A5149A0127 /* Cocoa.framework */,
 			);
 			name = "OS X";
 			sourceTree = "<group>";
 		};
-		DF106E383C5EB1F434A6450F = {
+		F187063D410FC4D53CC0F557 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				28E21DA2012801D5521985E9 /* Podfile */,
-				17CE884F9B617AD65F96810F /* Frameworks */,
-				AEC7CD37B2C5D8701DE232FD /* Pods */,
-				9A145C946E825255F52E0BF8 /* Products */,
-				B589387749C7691FCC4BC4EA /* Targets Support Files */,
+				E64033B00DA200C2BFEA8B52 /* libPods-JBLocalizer.a */,
+				84B2BBBAA4A82F84C7638702 /* libPods-JBLocalizer-XcodeEditor.a */,
+				6E79F5E77B9F2571A4BACE8E /* libPods-JBLocalizerTests.a */,
+				E5F65693EB46FBE3033B9ECC /* libPods-JBLocalizerTests-XcodeEditor.a */,
 			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		FF4F786B409DBCA270809C1D /* Headers */ = {
+		88864DF675D54A0CBA52AA06 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75044C8C1012F8F78D793783 /* XCAbstractDefinition.h in Headers */,
-				FBCA74DBDB7B3999FB678F8B /* XCClassDefinition.h in Headers */,
-				FFF6126BA2908F2549A4FE74 /* XCFileOperationQueue.h in Headers */,
-				0BC16B03E53C9FB409F68050 /* XCFrameworkDefinition.h in Headers */,
-				51FA5FA3C017B76D6381C9BB /* XCGroup.h in Headers */,
-				F4DEC7BE6C80036F48E29954 /* XCKeyBuilder.h in Headers */,
-				EFCE9AAF33993567E59D0A79 /* XCProject+SubProject.h in Headers */,
-				2B9C2C018BAE966111630BC3 /* XCProject.h in Headers */,
-				E785950C08A19E39965A9DB5 /* XCProjectBuildConfig.h in Headers */,
-				2F8A96D6F641D0B44AFB6FD9 /* XCSourceFile.h in Headers */,
-				23E77BC316501EA21E09DF62 /* XCSourceFileDefinition.h in Headers */,
-				A331973EE0471A381A46C932 /* XCSubProjectDefinition.h in Headers */,
-				9FC19FCBD75638F8D44EE625 /* XCTarget.h in Headers */,
-				DC83EA07E12E999640CA02EE /* XCXibDefinition.h in Headers */,
-				97B22F3303660EE552CE35AD /* XcodeEditor.h in Headers */,
-				5B8AD8B10BC69683A473B58D /* XcodeGroupMember.h in Headers */,
-				CD70FC7A533437A8E52AE67A /* XcodeMemberType.h in Headers */,
-				02D7F73F2E9A88C7FB26EA10 /* XcodeSourceFileType.h in Headers */,
+				D92D577A054DFB527D961A47 /* XCAbstractDefinition.h in Headers */,
+				399FD3A075A87701557D72CA /* XCClassDefinition.h in Headers */,
+				6D079A7D40AC6CF91BEDD76B /* XCFileOperationQueue.h in Headers */,
+				A80B3394F69CAF0E3FD22880 /* XCFrameworkDefinition.h in Headers */,
+				74781EC540A4266BE2764962 /* XCGroup.h in Headers */,
+				EF3187AA61E90EA5B689E296 /* XCKeyBuilder.h in Headers */,
+				2DF6FA6C5A13EA2C51C7B8C1 /* XCProject+SubProject.h in Headers */,
+				D9C927C3B8EBBBCFF7C50155 /* XCProject.h in Headers */,
+				74797EBCDB0C123FA5B84241 /* XCProjectBuildConfig.h in Headers */,
+				D7E2C0A825E05BDC21235CD6 /* XCSourceFile.h in Headers */,
+				DB130CEE7ACEF5BD44EDBE48 /* XCSourceFileDefinition.h in Headers */,
+				3945119E4ED4776B232980E0 /* XCSubProjectDefinition.h in Headers */,
+				2C5032A57F88D5684C83682C /* XCTarget.h in Headers */,
+				79F6EAE20C3CD70BE4326708 /* XCXibDefinition.h in Headers */,
+				77CC39EA3DCD356824153A5A /* XcodeEditor.h in Headers */,
+				7516C4DF4458BA171C23F8A5 /* XcodeGroupMember.h in Headers */,
+				338A7BA139D07EA33DAEA2F4 /* XcodeMemberType.h in Headers */,
+				252A99CE213F3E6575538BAE /* XcodeSourceFileType.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A59B33874BAF30D884DFEADA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D03A7EF346E24326562F15DC /* XCAbstractDefinition.h in Headers */,
+				C36D57902CE8925FE38FC937 /* XCClassDefinition.h in Headers */,
+				186EA25FF5DC7BDBF45CA551 /* XCFileOperationQueue.h in Headers */,
+				255B271BA2B5B32FF4EC9A13 /* XCFrameworkDefinition.h in Headers */,
+				942A7D7CD57D12FE66126BF8 /* XCGroup.h in Headers */,
+				133829BC342BF7EF268836E6 /* XCKeyBuilder.h in Headers */,
+				22BBC5FEDE2F558F2FFA42A2 /* XCProject+SubProject.h in Headers */,
+				E46348D2205EA10B83DEEF9B /* XCProject.h in Headers */,
+				5B9F0D419E69A384C2678D33 /* XCProjectBuildConfig.h in Headers */,
+				92B898A0C9975C138E3E7F44 /* XCSourceFile.h in Headers */,
+				F89503E52915B8FF0D6C1D3E /* XCSourceFileDefinition.h in Headers */,
+				AEACBBABB933DBD7BC83CB6C /* XCSubProjectDefinition.h in Headers */,
+				4D5442721BBC9B826F3E03D4 /* XCTarget.h in Headers */,
+				0ABE0A28B08E658B102D5745 /* XCXibDefinition.h in Headers */,
+				2658374C7007DA71E11B8450 /* XcodeEditor.h in Headers */,
+				0355A7276927AEA5E9A44F98 /* XcodeGroupMember.h in Headers */,
+				8C80819C280E27D1B2316E3E /* XcodeMemberType.h in Headers */,
+				39A8CA596184F399CD37CAD1 /* XcodeSourceFileType.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		12E86F020CD343390BBFFF4C /* Pods-JBLocalizer-XcodeEditor */ = {
+		545D3CB7DA255C71449D3FAC /* Pods-JBLocalizerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3E5701C22097CCA20826FD03 /* Build configuration list for PBXNativeTarget "Pods-JBLocalizer-XcodeEditor" */;
+			buildConfigurationList = 28C50E7E52E2D27B92584133 /* Build configuration list for PBXNativeTarget "Pods-JBLocalizerTests" */;
 			buildPhases = (
-				E0245FCF167D95DCD19FAEBB /* Sources */,
-				2A7B3FC98022DC08A34C80C8 /* Frameworks */,
-				FF4F786B409DBCA270809C1D /* Headers */,
+				E9255CD674DD988BF1632469 /* Sources */,
+				0BF5C72F03FAF13776B46CF6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E81E301CC7D52B5B4F94D1B /* PBXTargetDependency */,
+			);
+			name = "Pods-JBLocalizerTests";
+			productName = "Pods-JBLocalizerTests";
+			productReference = 6E79F5E77B9F2571A4BACE8E /* libPods-JBLocalizerTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5C46D83A5E5D58AB0D3CB326 /* Pods-JBLocalizerTests-XcodeEditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7134AFA603DCC8660E3C3E98 /* Build configuration list for PBXNativeTarget "Pods-JBLocalizerTests-XcodeEditor" */;
+			buildPhases = (
+				80CC9A23836627E7E15B99FB /* Sources */,
+				D009D5C9FEABBF80A87A9770 /* Frameworks */,
+				A59B33874BAF30D884DFEADA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-JBLocalizerTests-XcodeEditor";
+			productName = "Pods-JBLocalizerTests-XcodeEditor";
+			productReference = E5F65693EB46FBE3033B9ECC /* libPods-JBLocalizerTests-XcodeEditor.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		951610020F0D42181C49BB28 /* Pods-JBLocalizer-XcodeEditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E3A87126A18115F8C389C27 /* Build configuration list for PBXNativeTarget "Pods-JBLocalizer-XcodeEditor" */;
+			buildPhases = (
+				6923CB4C3C527E92FBD64DE2 /* Sources */,
+				3DC475BD0A619E1F30A76A0E /* Frameworks */,
+				88864DF675D54A0CBA52AA06 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -295,104 +450,144 @@
 			);
 			name = "Pods-JBLocalizer-XcodeEditor";
 			productName = "Pods-JBLocalizer-XcodeEditor";
-			productReference = B1A91DF59104E9E24B7EA82A /* libPods-JBLocalizer-XcodeEditor.a */;
+			productReference = 84B2BBBAA4A82F84C7638702 /* libPods-JBLocalizer-XcodeEditor.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		36F39416E57219690A6069E4 /* Pods-JBLocalizer */ = {
+		9808872E34C27976F0B01AEC /* Pods-JBLocalizer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0B7EBB790166698DE3C41A8 /* Build configuration list for PBXNativeTarget "Pods-JBLocalizer" */;
+			buildConfigurationList = 538C4148CB1FE1AD5A81181B /* Build configuration list for PBXNativeTarget "Pods-JBLocalizer" */;
 			buildPhases = (
-				9F8EB1196351BD43EAD67B04 /* Sources */,
-				2F68BFD5D5CC7112F547339D /* Frameworks */,
+				1943F1DF28F961E3241343A9 /* Sources */,
+				8557A62DFBAEE906820511B4 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				33AF3ED59FE976E48992AD2E /* PBXTargetDependency */,
+				4B0B03817368943A3815EF10 /* PBXTargetDependency */,
 			);
 			name = "Pods-JBLocalizer";
 			productName = "Pods-JBLocalizer";
-			productReference = 0C3355424B0826F8853374F8 /* libPods-JBLocalizer.a */;
+			productReference = E64033B00DA200C2BFEA8B52 /* libPods-JBLocalizer.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6B2F070AD56A6473C23B460B /* Project object */ = {
+		C6F5BF8D61C3F8AA14211848 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 11708125505540DE309404E6 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 10839586C9022720823AA612 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = DF106E383C5EB1F434A6450F;
-			productRefGroup = 9A145C946E825255F52E0BF8 /* Products */;
+			mainGroup = A93452C784D48CE77592B5E2;
+			productRefGroup = F187063D410FC4D53CC0F557 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				36F39416E57219690A6069E4 /* Pods-JBLocalizer */,
-				12E86F020CD343390BBFFF4C /* Pods-JBLocalizer-XcodeEditor */,
+				9808872E34C27976F0B01AEC /* Pods-JBLocalizer */,
+				951610020F0D42181C49BB28 /* Pods-JBLocalizer-XcodeEditor */,
+				545D3CB7DA255C71449D3FAC /* Pods-JBLocalizerTests */,
+				5C46D83A5E5D58AB0D3CB326 /* Pods-JBLocalizerTests-XcodeEditor */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9F8EB1196351BD43EAD67B04 /* Sources */ = {
+		1943F1DF28F961E3241343A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B5CC4F6950A81617210E63A /* Pods-JBLocalizer-dummy.m in Sources */,
+				519BBE980F8D546F23A2E1B4 /* Pods-JBLocalizer-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E0245FCF167D95DCD19FAEBB /* Sources */ = {
+		6923CB4C3C527E92FBD64DE2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2F6B6FBF32B22555563A2BC /* Pods-JBLocalizer-XcodeEditor-dummy.m in Sources */,
-				D9871248BDC9B8F7BF2D06C1 /* XCAbstractDefinition.m in Sources */,
-				F1D81194EA2A30A49519763B /* XCClassDefinition.m in Sources */,
-				E9AA92FDBA7ADA284224572F /* XCFileOperationQueue.m in Sources */,
-				EE76F0C951B0AA5BB4D34B6E /* XCFrameworkDefinition.m in Sources */,
-				054488BCDB8A3FFEFBBD74A4 /* XCGroup.m in Sources */,
-				64E86E53E0D9B25F0BD88501 /* XCKeyBuilder.m in Sources */,
-				04434D62DDE501999E85DDF5 /* XCProject+SubProject.m in Sources */,
-				D6132EA5D2CAFFBE727AAFB3 /* XCProject.m in Sources */,
-				860CB5528F2A92FF73024F4C /* XCProjectBuildConfig.m in Sources */,
-				E965E94A8C4A08D91E18BB53 /* XCSourceFile.m in Sources */,
-				2B8500BA04F676FE67E32F82 /* XCSourceFileDefinition.m in Sources */,
-				9D50D36BF2FAC903C803C271 /* XCSubProjectDefinition.m in Sources */,
-				4FA198B9F2337B9D9AF26321 /* XCTarget.m in Sources */,
-				DD7D0602293E7303ED7892C2 /* XCXibDefinition.m in Sources */,
-				88423513682A254A426012F5 /* XcodeMemberType.m in Sources */,
-				432B595E1A61EEDDAC4742A9 /* XcodeSourceFileType.m in Sources */,
+				F904F98A55132C1BC65A2D88 /* Pods-JBLocalizer-XcodeEditor-dummy.m in Sources */,
+				888845D6F545B53F3E55F84E /* XCAbstractDefinition.m in Sources */,
+				8789DB2036B42E6068624CFD /* XCClassDefinition.m in Sources */,
+				448FF7B7D78ABB4B53610366 /* XCFileOperationQueue.m in Sources */,
+				F93E66063369B9F50440700A /* XCFrameworkDefinition.m in Sources */,
+				66F11BD8838AF9FEEA43D5BF /* XCGroup.m in Sources */,
+				C7E551A85F5326A1E180ECBF /* XCKeyBuilder.m in Sources */,
+				2DD65A81F9E45ACE20E02225 /* XCProject+SubProject.m in Sources */,
+				51DBBD9E19809212E392F662 /* XCProject.m in Sources */,
+				13555CF1E5901269E84ABC30 /* XCProjectBuildConfig.m in Sources */,
+				E247018DFFDE382AE64C06EB /* XCSourceFile.m in Sources */,
+				A62E7EBEE3DE361E550A6224 /* XCSourceFileDefinition.m in Sources */,
+				DE702873B1887CE2C4D5D0CA /* XCSubProjectDefinition.m in Sources */,
+				A2917F71C618755DA09E4D24 /* XCTarget.m in Sources */,
+				225825D64AA896C3EF407565 /* XCXibDefinition.m in Sources */,
+				20E110B13A1DAB5209A57C96 /* XcodeMemberType.m in Sources */,
+				F73C5009926091FAC5466B8B /* XcodeSourceFileType.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CC9A23836627E7E15B99FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44FB1FA52E02CE1CECBB79D8 /* Pods-JBLocalizerTests-XcodeEditor-dummy.m in Sources */,
+				7026C20B451DFBD72179E82A /* XCAbstractDefinition.m in Sources */,
+				629F58DF9E3E5594BEE1095B /* XCClassDefinition.m in Sources */,
+				682C138E6651F537BFAA6BBB /* XCFileOperationQueue.m in Sources */,
+				099CC09BC1A00B915CA65691 /* XCFrameworkDefinition.m in Sources */,
+				73DCDFD4CA59293F68C4ADDD /* XCGroup.m in Sources */,
+				971FE75E2310BC769663164A /* XCKeyBuilder.m in Sources */,
+				957435389A5BB4CF3C758F88 /* XCProject+SubProject.m in Sources */,
+				9CCEB8661F899843AF489C52 /* XCProject.m in Sources */,
+				7A5DCCD293896632997E4AEC /* XCProjectBuildConfig.m in Sources */,
+				2DC7B1DB247A0D0224B9D988 /* XCSourceFile.m in Sources */,
+				87759894F1224AB3D8D6F7E9 /* XCSourceFileDefinition.m in Sources */,
+				EB3245AD649B535A1FA376FC /* XCSubProjectDefinition.m in Sources */,
+				C26B325A6E8516913DBEC3CF /* XCTarget.m in Sources */,
+				326311AADA4006CDC89EBA0C /* XCXibDefinition.m in Sources */,
+				C2268F6ABD81CC8D8075789E /* XcodeMemberType.m in Sources */,
+				80C825108A66446991188EB8 /* XcodeSourceFileType.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9255CD674DD988BF1632469 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30152AAA641BF5366AC8AF5C /* Pods-JBLocalizerTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		33AF3ED59FE976E48992AD2E /* PBXTargetDependency */ = {
+		4B0B03817368943A3815EF10 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-JBLocalizer-XcodeEditor";
-			target = 12E86F020CD343390BBFFF4C /* Pods-JBLocalizer-XcodeEditor */;
-			targetProxy = E1CD51E7A62F1A7212665112 /* PBXContainerItemProxy */;
+			target = 951610020F0D42181C49BB28 /* Pods-JBLocalizer-XcodeEditor */;
+			targetProxy = 0D32A2F3843C78B6A67D3898 /* PBXContainerItemProxy */;
+		};
+		4E81E301CC7D52B5B4F94D1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-JBLocalizerTests-XcodeEditor";
+			target = 5C46D83A5E5D58AB0D3CB326 /* Pods-JBLocalizerTests-XcodeEditor */;
+			targetProxy = 8EF68274F05CAA751F6E1B2F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		93C3D84965D7EEE1AB4C9297 /* Debug */ = {
+		0A2F1BCB97B5314C63FA20DC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 448D16CF18553A771DF48A56 /* Pods-JBLocalizer-XcodeEditor-Private.xcconfig */;
+			baseConfigurationReference = 711175FDA1EFEADBE42DD06B /* Pods-JBLocalizerTests-XcodeEditor-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_PREFIX = lib;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-JBLocalizer-XcodeEditor/Pods-JBLocalizer-XcodeEditor-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-JBLocalizerTests-XcodeEditor/Pods-JBLocalizerTests-XcodeEditor-prefix.pch";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -402,25 +597,24 @@
 			};
 			name = Debug;
 		};
-		A0275D5E98A99E3CC3EDB0DE /* Release */ = {
+		176C416D9F3A3AC2A947943B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B652DF737D46FF3AF119FCA /* Pods-JBLocalizer.release.xcconfig */;
+			baseConfigurationReference = C410D8CE564ABE536C346635 /* Pods-JBLocalizer-XcodeEditor-Private.xcconfig */;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-JBLocalizer-XcodeEditor/Pods-JBLocalizer-XcodeEditor-prefix.pch";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		B19E41AA507349B74D36FBCF /* Release */ = {
+		22A27E5B2E610291BF939AFD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -454,7 +648,76 @@
 			};
 			name = Release;
 		};
-		D4E005AFFDCAA787EF913EFC /* Debug */ = {
+		28D999D6E2EAC586211BC573 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3CF2BD2613993A4C3014341 /* Pods-JBLocalizerTests.release.xcconfig */;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		796A927C67F8113BA47AC6B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 759268E53DE649766604F7E5 /* Pods-JBLocalizerTests.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8BF699892D414BD5A379605B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C410D8CE564ABE536C346635 /* Pods-JBLocalizer-XcodeEditor-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-JBLocalizer-XcodeEditor/Pods-JBLocalizer-XcodeEditor-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AE774A33C9DC2504BBBCF2D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5BAB2F4F05A42E0520E1DCF /* Pods-JBLocalizer.release.xcconfig */;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B67E142DC06D73B0169FCD27 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -487,32 +750,15 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		F61EA9186C7A4440108EFA2C /* Release */ = {
+		F177973B599496422556F7FA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 448D16CF18553A771DF48A56 /* Pods-JBLocalizer-XcodeEditor-Private.xcconfig */;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXECUTABLE_PREFIX = lib;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-JBLocalizer-XcodeEditor/Pods-JBLocalizer-XcodeEditor-prefix.pch";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		F91360B27CFCA4328E295C68 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DE62D01945869CA4115EF28 /* Pods-JBLocalizer.debug.xcconfig */;
+			baseConfigurationReference = E6E2BA308774CF4CFB218324 /* Pods-JBLocalizer.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_PREFIX = lib;
@@ -527,37 +773,72 @@
 			};
 			name = Debug;
 		};
+		F5F87C17FB8DA5567CC0893D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 711175FDA1EFEADBE42DD06B /* Pods-JBLocalizerTests-XcodeEditor-Private.xcconfig */;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-JBLocalizerTests-XcodeEditor/Pods-JBLocalizerTests-XcodeEditor-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		11708125505540DE309404E6 /* Build configuration list for PBXProject "Pods" */ = {
+		10839586C9022720823AA612 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D4E005AFFDCAA787EF913EFC /* Debug */,
-				B19E41AA507349B74D36FBCF /* Release */,
+				B67E142DC06D73B0169FCD27 /* Debug */,
+				22A27E5B2E610291BF939AFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3E5701C22097CCA20826FD03 /* Build configuration list for PBXNativeTarget "Pods-JBLocalizer-XcodeEditor" */ = {
+		28C50E7E52E2D27B92584133 /* Build configuration list for PBXNativeTarget "Pods-JBLocalizerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				93C3D84965D7EEE1AB4C9297 /* Debug */,
-				F61EA9186C7A4440108EFA2C /* Release */,
+				796A927C67F8113BA47AC6B5 /* Debug */,
+				28D999D6E2EAC586211BC573 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0B7EBB790166698DE3C41A8 /* Build configuration list for PBXNativeTarget "Pods-JBLocalizer" */ = {
+		538C4148CB1FE1AD5A81181B /* Build configuration list for PBXNativeTarget "Pods-JBLocalizer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F91360B27CFCA4328E295C68 /* Debug */,
-				A0275D5E98A99E3CC3EDB0DE /* Release */,
+				F177973B599496422556F7FA /* Debug */,
+				AE774A33C9DC2504BBBCF2D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E3A87126A18115F8C389C27 /* Build configuration list for PBXNativeTarget "Pods-JBLocalizer-XcodeEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BF699892D414BD5A379605B /* Debug */,
+				176C416D9F3A3AC2A947943B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7134AFA603DCC8660E3C3E98 /* Build configuration list for PBXNativeTarget "Pods-JBLocalizerTests-XcodeEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A2F1BCB97B5314C63FA20DC /* Debug */,
+				F5F87C17FB8DA5567CC0893D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6B2F070AD56A6473C23B460B /* Project object */;
+	rootObject = C6F5BF8D61C3F8AA14211848 /* Project object */;
 }

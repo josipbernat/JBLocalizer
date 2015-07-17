@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		354E417802EB0EEFA863C325 /* libPods-JBLocalizerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D349E18920DB08EAD565F2 /* libPods-JBLocalizerTests.a */; };
 		41465EBAE75153FC54E4C0B5 /* libPods-JBLocalizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3B7ADF6B5469932203BFF7 /* libPods-JBLocalizer.a */; };
 		BE18CFA91B540E7E00184BC0 /* JBLoadStringsInFileOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE18CF9B1B540E7E00184BC0 /* JBLoadStringsInFileOperation.h */; };
 		BE18CFAA1B540E7E00184BC0 /* JBLoadStringsInFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE18CF9C1B540E7E00184BC0 /* JBLoadStringsInFileOperation.m */; };
@@ -42,6 +43,7 @@
 		BEEB9CFD1B5938C600EF133E /* JBLoadRootFilesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9CFC1B5938C600EF133E /* JBLoadRootFilesTests.m */; };
 		BEEB9D001B593DDB00EF133E /* JBFileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9CFF1B593DDB00EF133E /* JBFileTests.m */; };
 		BEEB9D021B594DD800EF133E /* JBStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9D011B594DD800EF133E /* JBStringTests.m */; };
+		BEEB9D061B59523500EF133E /* JBLoadSourceFilesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9D051B59523500EF133E /* JBLoadSourceFilesTests.m */; };
 		BEFD00CD1B46809A0008AADF /* JBLocalizer.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00CC1B46809A0008AADF /* JBLocalizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEFD00F01B4680E20008AADF /* JBFileController.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00E41B4680E20008AADF /* JBFileController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEFD00F11B4680E20008AADF /* JBFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00E51B4680E20008AADF /* JBFileController.m */; };
@@ -135,6 +137,7 @@
 		BEEB9CFE1B59392E00EF133E /* JBTestDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBTestDefines.h; sourceTree = "<group>"; };
 		BEEB9CFF1B593DDB00EF133E /* JBFileTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBFileTests.m; sourceTree = "<group>"; };
 		BEEB9D011B594DD800EF133E /* JBStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBStringTests.m; sourceTree = "<group>"; };
+		BEEB9D051B59523500EF133E /* JBLoadSourceFilesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLoadSourceFilesTests.m; sourceTree = "<group>"; };
 		BEFD00C71B46809A0008AADF /* JBLocalizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JBLocalizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFD00CB1B46809A0008AADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFD00CC1B46809A0008AADF /* JBLocalizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBLocalizer.h; sourceTree = "<group>"; };
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEEB9CB41B59349600EF133E /* JBLocalizer.framework in Frameworks */,
+				354E417802EB0EEFA863C325 /* libPods-JBLocalizerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,8 +215,8 @@
 		BE18CF991B540E7E00184BC0 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				BE18CF9A1B540E7E00184BC0 /* LoadFileStringsOperation */,
 				BE18CF9D1B540E7E00184BC0 /* LoadRootFilesOperation */,
+				BE18CF9A1B540E7E00184BC0 /* LoadFileStringsOperation */,
 				BE18CFA01B540E7E00184BC0 /* LoadSourceFilesOperation */,
 				BE18CFA31B540E7E00184BC0 /* Operation */,
 				BE18CFA61B540E7E00184BC0 /* PostProcessStringsOperation */,
@@ -341,8 +345,9 @@
 				BEEB9CFE1B59392E00EF133E /* JBTestDefines.h */,
 				BEEB9CFF1B593DDB00EF133E /* JBFileTests.m */,
 				BEEB9D011B594DD800EF133E /* JBStringTests.m */,
-				BEEB9CFC1B5938C600EF133E /* JBLoadRootFilesTests.m */,
 				BEEB9CB21B59349600EF133E /* JBFileControllerTests.m */,
+				BEEB9CFC1B5938C600EF133E /* JBLoadRootFilesTests.m */,
+				BEEB9D051B59523500EF133E /* JBLoadSourceFilesTests.m */,
 				BEEB9CB01B59349600EF133E /* Supporting Files */,
 			);
 			path = JBLocalizerTests;
@@ -474,9 +479,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BEEB9CB71B59349600EF133E /* Build configuration list for PBXNativeTarget "JBLocalizerTests" */;
 			buildPhases = (
+				3BC68220315B1B2E8FE8FC9B /* Check Pods Manifest.lock */,
 				BEEB9CAA1B59349600EF133E /* Sources */,
 				BEEB9CAB1B59349600EF133E /* Frameworks */,
 				BEEB9CAC1B59349600EF133E /* Resources */,
+				40DF7762555EA26A65DCF871 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -587,6 +594,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3BC68220315B1B2E8FE8FC9B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		40DF7762555EA26A65DCF871 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JBLocalizerTests/Pods-JBLocalizerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		52001FBD52110042CB5DA347 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -647,6 +684,7 @@
 				BEEB9CB31B59349600EF133E /* JBFileControllerTests.m in Sources */,
 				BEEB9CFD1B5938C600EF133E /* JBLoadRootFilesTests.m in Sources */,
 				BEEB9D001B593DDB00EF133E /* JBFileTests.m in Sources */,
+				BEEB9D061B59523500EF133E /* JBLoadSourceFilesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,6 +806,7 @@
 		};
 		BEEB9CB81B59349600EF133E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AF196A1489D5BB830E8508E /* Pods-JBLocalizerTests.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -786,6 +825,7 @@
 		};
 		BEEB9CB91B59349600EF133E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7146C79FB6FBC865F48231D9 /* Pods-JBLocalizerTests.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1004,6 +1044,7 @@
 				BEEB9CB91B59349600EF133E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BEFD00C11B46809A0008AADF /* Build configuration list for PBXProject "JBLocalizer" */ = {
 			isa = XCConfigurationList;

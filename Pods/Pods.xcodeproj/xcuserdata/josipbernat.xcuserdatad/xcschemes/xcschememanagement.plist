@@ -14,15 +14,35 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-JBLocalizerTests-XcodeEditor.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-JBLocalizerTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>12E86F020CD343390BBFFF4C</key>
+		<key>545D3CB7DA255C71449D3FAC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>36F39416E57219690A6069E4</key>
+		<key>5C46D83A5E5D58AB0D3CB326</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>951610020F0D42181C49BB28</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9808872E34C27976F0B01AEC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
