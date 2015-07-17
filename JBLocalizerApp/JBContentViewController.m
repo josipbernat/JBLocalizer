@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Josip Bernat. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "JBContentViewController.h"
 #import <JBLocalizer/JBLocalizer.h>
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController () <NSTableViewDataSource, NSTableViewDelegate>
+@interface JBContentViewController () <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (weak) IBOutlet NSView *tablePickerContainerView;
 @property (weak) IBOutlet NSTableView *tableView;
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation ViewController
+@implementation JBContentViewController
 
 #pragma mark - View Lifecycle
 

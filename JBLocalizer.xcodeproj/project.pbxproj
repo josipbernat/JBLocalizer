@@ -23,9 +23,9 @@
 		BE5A5E951B4D3CAD00FF0134 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A5E941B4D3CAD00FF0134 /* AppKit.framework */; };
 		BE5A5E971B4D3CB200FF0134 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A5E961B4D3CB200FF0134 /* Cocoa.framework */; };
 		BE5A5E9D1B4D47BB00FF0134 /* JBLocalizer-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = BE5A5E9C1B4D47BB00FF0134 /* JBLocalizer-Prefix.pch */; };
-		BE5A5EA81B4D487300FF0134 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EA71B4D487300FF0134 /* AppDelegate.m */; };
+		BE5A5EA81B4D487300FF0134 /* JBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EA71B4D487300FF0134 /* JBAppDelegate.m */; };
 		BE5A5EAA1B4D487300FF0134 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EA91B4D487300FF0134 /* main.m */; };
-		BE5A5EAD1B4D487300FF0134 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EAC1B4D487300FF0134 /* ViewController.m */; };
+		BE5A5EAD1B4D487300FF0134 /* JBContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EAC1B4D487300FF0134 /* JBContentViewController.m */; };
 		BE5A5EB21B4D487300FF0134 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5A5EB11B4D487300FF0134 /* Images.xcassets */; };
 		BE5A5EB51B4D487300FF0134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5A5EB31B4D487300FF0134 /* Main.storyboard */; };
 		BE5A5EC11B4D487300FF0134 /* JBLocalizerAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EC01B4D487300FF0134 /* JBLocalizerAppTests.m */; };
@@ -34,9 +34,13 @@
 		BE5A5ECB1B4D4B0100FF0134 /* JBLocalizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD00C71B46809A0008AADF /* JBLocalizer.framework */; };
 		BEEB9C6E1B56687700EF133E /* JBString.h in Headers */ = {isa = PBXBuildFile; fileRef = BEEB9C6C1B56687700EF133E /* JBString.h */; };
 		BEEB9C6F1B56687700EF133E /* JBString.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9C6D1B56687700EF133E /* JBString.m */; };
-		BEEB9C991B57FA1400EF133E /* JBWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9C981B57FA1400EF133E /* JBWindow.m */; };
+		BEEB9C991B57FA1400EF133E /* JBWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9C981B57FA1400EF133E /* JBWindowController.m */; };
 		BEEB9C9F1B58F31F00EF133E /* JBLocalizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD00C71B46809A0008AADF /* JBLocalizer.framework */; };
 		BEEB9CA01B58F31F00EF133E /* JBLocalizer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD00C71B46809A0008AADF /* JBLocalizer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BEEB9CB31B59349600EF133E /* JBFileControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9CB21B59349600EF133E /* JBFileControllerTests.m */; };
+		BEEB9CB41B59349600EF133E /* JBLocalizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFD00C71B46809A0008AADF /* JBLocalizer.framework */; };
+		BEEB9CFD1B5938C600EF133E /* JBLoadRootFilesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9CFC1B5938C600EF133E /* JBLoadRootFilesTests.m */; };
+		BEEB9D001B593DDB00EF133E /* JBFileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9CFF1B593DDB00EF133E /* JBFileTests.m */; };
 		BEFD00CD1B46809A0008AADF /* JBLocalizer.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00CC1B46809A0008AADF /* JBLocalizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEFD00F01B4680E20008AADF /* JBFileController.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00E41B4680E20008AADF /* JBFileController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEFD00F11B4680E20008AADF /* JBFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00E51B4680E20008AADF /* JBFileController.m */; };
@@ -51,6 +55,13 @@
 			remoteInfo = JBLocalizerApp;
 		};
 		BEEB9CA11B58F31F00EF133E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEFD00BE1B46809A0008AADF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BEFD00C61B46809A0008AADF;
+			remoteInfo = JBLocalizer;
+		};
+		BEEB9CB51B59349600EF133E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BEFD00BE1B46809A0008AADF /* Project object */;
 			proxyType = 1;
@@ -101,11 +112,11 @@
 		BE5A5E9C1B4D47BB00FF0134 /* JBLocalizer-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JBLocalizer-Prefix.pch"; sourceTree = "<group>"; };
 		BE5A5EA21B4D487300FF0134 /* JBLocalizerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JBLocalizerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5A5EA51B4D487300FF0134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE5A5EA61B4D487300FF0134 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BE5A5EA71B4D487300FF0134 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BE5A5EA61B4D487300FF0134 /* JBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBAppDelegate.h; sourceTree = "<group>"; };
+		BE5A5EA71B4D487300FF0134 /* JBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBAppDelegate.m; sourceTree = "<group>"; };
 		BE5A5EA91B4D487300FF0134 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BE5A5EAB1B4D487300FF0134 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BE5A5EAC1B4D487300FF0134 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BE5A5EAB1B4D487300FF0134 /* JBContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBContentViewController.h; sourceTree = "<group>"; };
+		BE5A5EAC1B4D487300FF0134 /* JBContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBContentViewController.m; sourceTree = "<group>"; };
 		BE5A5EB11B4D487300FF0134 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE5A5EB41B4D487300FF0134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE5A5EBA1B4D487300FF0134 /* JBLocalizerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JBLocalizerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,8 +125,14 @@
 		BEEB9C6C1B56687700EF133E /* JBString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBString.h; sourceTree = "<group>"; };
 		BEEB9C6D1B56687700EF133E /* JBString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBString.m; sourceTree = "<group>"; };
 		BEEB9C731B57A1CC00EF133E /* JBPostProcessStringsDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBPostProcessStringsDefines.h; sourceTree = "<group>"; };
-		BEEB9C971B57FA1400EF133E /* JBWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBWindow.h; sourceTree = "<group>"; };
-		BEEB9C981B57FA1400EF133E /* JBWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBWindow.m; sourceTree = "<group>"; };
+		BEEB9C971B57FA1400EF133E /* JBWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBWindowController.h; sourceTree = "<group>"; };
+		BEEB9C981B57FA1400EF133E /* JBWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBWindowController.m; sourceTree = "<group>"; };
+		BEEB9CAE1B59349600EF133E /* JBLocalizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JBLocalizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEEB9CB11B59349600EF133E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEEB9CB21B59349600EF133E /* JBFileControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBFileControllerTests.m; sourceTree = "<group>"; };
+		BEEB9CFC1B5938C600EF133E /* JBLoadRootFilesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLoadRootFilesTests.m; sourceTree = "<group>"; };
+		BEEB9CFE1B59392E00EF133E /* JBTestDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBTestDefines.h; sourceTree = "<group>"; };
+		BEEB9CFF1B593DDB00EF133E /* JBFileTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBFileTests.m; sourceTree = "<group>"; };
 		BEFD00C71B46809A0008AADF /* JBLocalizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JBLocalizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFD00CB1B46809A0008AADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFD00CC1B46809A0008AADF /* JBLocalizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBLocalizer.h; sourceTree = "<group>"; };
@@ -139,6 +156,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE5A5ECB1B4D4B0100FF0134 /* JBLocalizer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEEB9CAB1B59349600EF133E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEEB9CB41B59349600EF133E /* JBLocalizer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,15 +285,15 @@
 		BE5A5EA31B4D487300FF0134 /* JBLocalizerApp */ = {
 			isa = PBXGroup;
 			children = (
-				BE5A5EA61B4D487300FF0134 /* AppDelegate.h */,
-				BE5A5EA71B4D487300FF0134 /* AppDelegate.m */,
-				BE5A5EAB1B4D487300FF0134 /* ViewController.h */,
-				BE5A5EAC1B4D487300FF0134 /* ViewController.m */,
+				BE5A5EA61B4D487300FF0134 /* JBAppDelegate.h */,
+				BE5A5EA71B4D487300FF0134 /* JBAppDelegate.m */,
+				BE5A5EAB1B4D487300FF0134 /* JBContentViewController.h */,
+				BE5A5EAC1B4D487300FF0134 /* JBContentViewController.m */,
 				BE5A5EB11B4D487300FF0134 /* Images.xcassets */,
 				BE5A5EB31B4D487300FF0134 /* Main.storyboard */,
 				BE5A5EA41B4D487300FF0134 /* Supporting Files */,
-				BEEB9C971B57FA1400EF133E /* JBWindow.h */,
-				BEEB9C981B57FA1400EF133E /* JBWindow.m */,
+				BEEB9C971B57FA1400EF133E /* JBWindowController.h */,
+				BEEB9C981B57FA1400EF133E /* JBWindowController.m */,
 			);
 			path = JBLocalizerApp;
 			sourceTree = "<group>";
@@ -308,10 +333,31 @@
 			path = String;
 			sourceTree = "<group>";
 		};
+		BEEB9CAF1B59349600EF133E /* JBLocalizerTests */ = {
+			isa = PBXGroup;
+			children = (
+				BEEB9CFE1B59392E00EF133E /* JBTestDefines.h */,
+				BEEB9CB21B59349600EF133E /* JBFileControllerTests.m */,
+				BEEB9CFC1B5938C600EF133E /* JBLoadRootFilesTests.m */,
+				BEEB9CB01B59349600EF133E /* Supporting Files */,
+				BEEB9CFF1B593DDB00EF133E /* JBFileTests.m */,
+			);
+			path = JBLocalizerTests;
+			sourceTree = "<group>";
+		};
+		BEEB9CB01B59349600EF133E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEEB9CB11B59349600EF133E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		BEFD00BD1B46809A0008AADF = {
 			isa = PBXGroup;
 			children = (
 				BEFD00C91B46809A0008AADF /* JBLocalizer */,
+				BEEB9CAF1B59349600EF133E /* JBLocalizerTests */,
 				BE5A5EA31B4D487300FF0134 /* JBLocalizerApp */,
 				BE5A5EBD1B4D487300FF0134 /* JBLocalizerAppTests */,
 				BEFD00C81B46809A0008AADF /* Products */,
@@ -326,6 +372,7 @@
 				BEFD00C71B46809A0008AADF /* JBLocalizer.framework */,
 				BE5A5EA21B4D487300FF0134 /* JBLocalizerApp.app */,
 				BE5A5EBA1B4D487300FF0134 /* JBLocalizerAppTests.xctest */,
+				BEEB9CAE1B59349600EF133E /* JBLocalizerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -420,6 +467,24 @@
 			productReference = BE5A5EBA1B4D487300FF0134 /* JBLocalizerAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		BEEB9CAD1B59349600EF133E /* JBLocalizerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEEB9CB71B59349600EF133E /* Build configuration list for PBXNativeTarget "JBLocalizerTests" */;
+			buildPhases = (
+				BEEB9CAA1B59349600EF133E /* Sources */,
+				BEEB9CAB1B59349600EF133E /* Frameworks */,
+				BEEB9CAC1B59349600EF133E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEEB9CB61B59349600EF133E /* PBXTargetDependency */,
+			);
+			name = JBLocalizerTests;
+			productName = JBLocalizerTests;
+			productReference = BEEB9CAE1B59349600EF133E /* JBLocalizerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BEFD00C61B46809A0008AADF /* JBLocalizer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BEFD00DD1B46809A0008AADF /* Build configuration list for PBXNativeTarget "JBLocalizer" */;
@@ -456,6 +521,9 @@
 						CreatedOnToolsVersion = 6.4;
 						TestTargetID = BE5A5EA11B4D487300FF0134;
 					};
+					BEEB9CAD1B59349600EF133E = {
+						CreatedOnToolsVersion = 6.4;
+					};
 					BEFD00C61B46809A0008AADF = {
 						CreatedOnToolsVersion = 6.4;
 					};
@@ -477,6 +545,7 @@
 				BEFD00C61B46809A0008AADF /* JBLocalizer */,
 				BE5A5EA11B4D487300FF0134 /* JBLocalizerApp */,
 				BE5A5EB91B4D487300FF0134 /* JBLocalizerAppTests */,
+				BEEB9CAD1B59349600EF133E /* JBLocalizerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -492,6 +561,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BE5A5EB81B4D487300FF0134 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEEB9CAC1B59349600EF133E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -545,10 +621,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE5A5EAD1B4D487300FF0134 /* ViewController.m in Sources */,
-				BEEB9C991B57FA1400EF133E /* JBWindow.m in Sources */,
+				BE5A5EAD1B4D487300FF0134 /* JBContentViewController.m in Sources */,
+				BEEB9C991B57FA1400EF133E /* JBWindowController.m in Sources */,
 				BE5A5EAA1B4D487300FF0134 /* main.m in Sources */,
-				BE5A5EA81B4D487300FF0134 /* AppDelegate.m in Sources */,
+				BE5A5EA81B4D487300FF0134 /* JBAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +633,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE5A5EC11B4D487300FF0134 /* JBLocalizerAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEEB9CAA1B59349600EF133E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEEB9CB31B59349600EF133E /* JBFileControllerTests.m in Sources */,
+				BEEB9CFD1B5938C600EF133E /* JBLoadRootFilesTests.m in Sources */,
+				BEEB9D001B593DDB00EF133E /* JBFileTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +673,11 @@
 			isa = PBXTargetDependency;
 			target = BEFD00C61B46809A0008AADF /* JBLocalizer */;
 			targetProxy = BEEB9CA11B58F31F00EF133E /* PBXContainerItemProxy */;
+		};
+		BEEB9CB61B59349600EF133E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BEFD00C61B46809A0008AADF /* JBLocalizer */;
+			targetProxy = BEEB9CB51B59349600EF133E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -668,6 +759,38 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JBLocalizerApp.app/Contents/MacOS/JBLocalizerApp";
+			};
+			name = Release;
+		};
+		BEEB9CB81B59349600EF133E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JBLocalizerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BEEB9CB91B59349600EF133E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JBLocalizerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -869,6 +992,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		BEEB9CB71B59349600EF133E /* Build configuration list for PBXNativeTarget "JBLocalizerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEEB9CB81B59349600EF133E /* Debug */,
+				BEEB9CB91B59349600EF133E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		BEFD00C11B46809A0008AADF /* Build configuration list for PBXProject "JBLocalizer" */ = {
 			isa = XCConfigurationList;

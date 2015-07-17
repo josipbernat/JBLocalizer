@@ -25,7 +25,7 @@
 #pragma mark - Initialization
 
 + (nonnull instancetype)loadProjectSourceFiles:(XCProject  * __nonnull )project
-                             filterDirectories:(NSArray *)filter
+                             filterDirectories:(NSArray * __nullable )filter
                                     completion:( void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion {
 
     JBLoadSourceFilesOperation *operation = [[self alloc] init];

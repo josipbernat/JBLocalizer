@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface JBWindow : NSWindowController
+@interface JBWindowController : NSWindowController
 
 @end

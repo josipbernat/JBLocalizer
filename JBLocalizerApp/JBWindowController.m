@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Josip Bernat. All rights reserved.
 //
 
-#import "JBWindow.h"
+#import "JBWindowController.h"
 
-@interface JBWindow ()
+@interface JBWindowController ()
 
 @end
 
-@implementation JBWindow
+@implementation JBWindowController
 
 - (void)windowDidLoad {
     [super windowDidLoad];

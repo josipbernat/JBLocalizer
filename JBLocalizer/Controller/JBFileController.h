@@ -26,6 +26,14 @@
 - (void)reset;
 
 #pragma mark - Project
+/**
+ *  Checks wheter project exists in given path. Must not be nil.
+ *
+ *  @param path Path in file system.
+ *
+ *  @return Boolean value determenint wheter project exists or not.
+ */
+- (BOOL)projectExistsAtPath:(NSString * __nonnull)path;
 
 /**
  *  Finds for targets in specified project.
@@ -51,7 +59,7 @@
  *  @param projectPath A file path where project is located on disk.
  */
 - (void)loadProjectFiles:(NSString * __nonnull)projectPath
-           filterDirectories:(NSArray * __nonnull)filter
+           filterDirectories:(NSArray * __nullable)filter
               completion:(void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion;
 
 #pragma mark - File Content

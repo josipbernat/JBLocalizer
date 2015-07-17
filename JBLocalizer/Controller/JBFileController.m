@@ -54,6 +54,15 @@
 
 #pragma mark - Project
 
+- (BOOL)projectExistsAtPath:(NSString * __nonnull)path {
+
+    XCProject *project = [XCProject projectWithFilePath:path];
+    if (!project) {
+        return NO;
+    }
+    return YES;
+}
+
 - (nullable NSArray *)targetNamesInProjectAtPath:(NSString * __nonnull)projectPath {
 
     XCProject *project = [XCProject projectWithFilePath:projectPath];
@@ -79,7 +88,7 @@
 }
 
 - (void)loadProjectFiles:(NSString * __nonnull)projectPath
-       filterDirectories:(NSArray * __nonnull)filter
+       filterDirectories:(NSArray * __nullable)filter
               completion:(void(^ __nullable )(NSDictionary * __nullable, NSError * __nullable))completion {
     NSParameterAssert(projectPath);
     
