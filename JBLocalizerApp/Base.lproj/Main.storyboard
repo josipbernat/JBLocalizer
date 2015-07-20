@@ -10,11 +10,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="JBLocalizer" id="1Xt-HY-uBw">
+                            <menuItem title="Localizer" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="JBLocalizer" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Localizer" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About JBLocalizer" id="5kV-Vb-QxS">
+                                        <menuItem title="About Localizer" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -23,7 +23,7 @@
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
-                                        <menuItem title="Hide JBLocalizer" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide Localizer" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -41,7 +41,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit JBLocalizer" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit Localizer" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -106,7 +106,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="JBLocalizer Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="Localizer Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -209,7 +209,7 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="ZZN-ay-HT8"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="o6c-F5-hhl"/>
                                         </constraints>
-                                        <buttonCell key="cell" type="recessed" title="Next" bezelStyle="recessed" image="54C0A8B5-1F37-46E3-A07E-8E1621FABE35" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tHB-cw-GyU">
+                                        <buttonCell key="cell" type="recessed" title="Next" bezelStyle="recessed" image="5994695D-E75C-4139-9853-35B58158770D" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tHB-cw-GyU">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                             <font key="font" metaFont="systemBold" size="12"/>
                                         </buttonCell>
@@ -223,7 +223,7 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="6fe-dY-lgl"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="61" id="ZYd-My-8fq"/>
                                         </constraints>
-                                        <buttonCell key="cell" type="recessed" title="Cancel" bezelStyle="recessed" image="7A3FF4BA-4EFF-415A-823B-BAA01A7C694F" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="akg-G9-fXr">
+                                        <buttonCell key="cell" type="recessed" title="Cancel" bezelStyle="recessed" image="DEB6D788-41DE-4BDE-9C6E-2E9EDE0DC840" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="akg-G9-fXr">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                             <font key="font" metaFont="systemBold" size="12"/>
                                         </buttonCell>
@@ -334,7 +334,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="54C0A8B5-1F37-46E3-A07E-8E1621FABE35" width="1" height="1">
+        <image name="5994695D-E75C-4139-9853-35B58158770D" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -385,7 +385,7 @@ qgmvCbcJugm/Cc4J0gnZCeEJ7gnzCfUJ9wn8CgQKBwoMChQKFwopCiwKMQAAAAAAAAIBAAAAAAAAAEIA
 AAAAAAAAAAAAAAAAAAozA
 </mutableData>
         </image>
-        <image name="7A3FF4BA-4EFF-415A-823B-BAA01A7C694F" width="1" height="1">
+        <image name="DEB6D788-41DE-4BDE-9C6E-2E9EDE0DC840" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

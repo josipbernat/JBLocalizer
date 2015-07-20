@@ -27,7 +27,6 @@
 		BE5A5EA81B4D487300FF0134 /* JBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EA71B4D487300FF0134 /* JBAppDelegate.m */; };
 		BE5A5EAA1B4D487300FF0134 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EA91B4D487300FF0134 /* main.m */; };
 		BE5A5EAD1B4D487300FF0134 /* JBContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EAC1B4D487300FF0134 /* JBContentViewController.m */; };
-		BE5A5EB21B4D487300FF0134 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5A5EB11B4D487300FF0134 /* Images.xcassets */; };
 		BE5A5EB51B4D487300FF0134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5A5EB31B4D487300FF0134 /* Main.storyboard */; };
 		BE5A5EC11B4D487300FF0134 /* JBLocalizerAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EC01B4D487300FF0134 /* JBLocalizerAppTests.m */; };
 		BE5A5EC91B4D48DC00FF0134 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5A5E961B4D3CB200FF0134 /* Cocoa.framework */; };
@@ -44,6 +43,7 @@
 		BEEB9D001B593DDB00EF133E /* JBFileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9CFF1B593DDB00EF133E /* JBFileTests.m */; };
 		BEEB9D021B594DD800EF133E /* JBStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9D011B594DD800EF133E /* JBStringTests.m */; };
 		BEEB9D061B59523500EF133E /* JBLoadSourceFilesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB9D051B59523500EF133E /* JBLoadSourceFilesTests.m */; };
+		BEEB9E1B1B5D344B00EF133E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEEB9E1A1B5D344B00EF133E /* Images.xcassets */; };
 		BEFD00CD1B46809A0008AADF /* JBLocalizer.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00CC1B46809A0008AADF /* JBLocalizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEFD00F01B4680E20008AADF /* JBFileController.h in Headers */ = {isa = PBXBuildFile; fileRef = BEFD00E41B4680E20008AADF /* JBFileController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEFD00F11B4680E20008AADF /* JBFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFD00E51B4680E20008AADF /* JBFileController.m */; };
@@ -113,14 +113,13 @@
 		BE5A5E961B4D3CB200FF0134 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		BE5A5E981B4D466F00FF0134 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		BE5A5E9C1B4D47BB00FF0134 /* JBLocalizer-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JBLocalizer-Prefix.pch"; sourceTree = "<group>"; };
-		BE5A5EA21B4D487300FF0134 /* JBLocalizerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JBLocalizerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE5A5EA21B4D487300FF0134 /* Localizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Localizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5A5EA51B4D487300FF0134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE5A5EA61B4D487300FF0134 /* JBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBAppDelegate.h; sourceTree = "<group>"; };
 		BE5A5EA71B4D487300FF0134 /* JBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBAppDelegate.m; sourceTree = "<group>"; };
 		BE5A5EA91B4D487300FF0134 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE5A5EAB1B4D487300FF0134 /* JBContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBContentViewController.h; sourceTree = "<group>"; };
 		BE5A5EAC1B4D487300FF0134 /* JBContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBContentViewController.m; sourceTree = "<group>"; };
-		BE5A5EB11B4D487300FF0134 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE5A5EB41B4D487300FF0134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE5A5EBA1B4D487300FF0134 /* JBLocalizerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JBLocalizerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5A5EBF1B4D487300FF0134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -138,6 +137,7 @@
 		BEEB9CFF1B593DDB00EF133E /* JBFileTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBFileTests.m; sourceTree = "<group>"; };
 		BEEB9D011B594DD800EF133E /* JBStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBStringTests.m; sourceTree = "<group>"; };
 		BEEB9D051B59523500EF133E /* JBLoadSourceFilesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLoadSourceFilesTests.m; sourceTree = "<group>"; };
+		BEEB9E1A1B5D344B00EF133E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BEFD00C71B46809A0008AADF /* JBLocalizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JBLocalizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFD00CB1B46809A0008AADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFD00CC1B46809A0008AADF /* JBLocalizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBLocalizer.h; sourceTree = "<group>"; };
@@ -295,11 +295,11 @@
 				BE5A5EA71B4D487300FF0134 /* JBAppDelegate.m */,
 				BE5A5EAB1B4D487300FF0134 /* JBContentViewController.h */,
 				BE5A5EAC1B4D487300FF0134 /* JBContentViewController.m */,
-				BE5A5EB11B4D487300FF0134 /* Images.xcassets */,
 				BE5A5EB31B4D487300FF0134 /* Main.storyboard */,
 				BE5A5EA41B4D487300FF0134 /* Supporting Files */,
 				BEEB9C971B57FA1400EF133E /* JBWindowController.h */,
 				BEEB9C981B57FA1400EF133E /* JBWindowController.m */,
+				BEEB9E1A1B5D344B00EF133E /* Images.xcassets */,
 			);
 			path = JBLocalizerApp;
 			sourceTree = "<group>";
@@ -378,7 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				BEFD00C71B46809A0008AADF /* JBLocalizer.framework */,
-				BE5A5EA21B4D487300FF0134 /* JBLocalizerApp.app */,
+				BE5A5EA21B4D487300FF0134 /* Localizer.app */,
 				BE5A5EBA1B4D487300FF0134 /* JBLocalizerAppTests.xctest */,
 				BEEB9CAE1B59349600EF133E /* JBLocalizerTests.xctest */,
 			);
@@ -454,7 +454,7 @@
 			);
 			name = JBLocalizerApp;
 			productName = JBLocalizerApp;
-			productReference = BE5A5EA21B4D487300FF0134 /* JBLocalizerApp.app */;
+			productReference = BE5A5EA21B4D487300FF0134 /* Localizer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BE5A5EB91B4D487300FF0134 /* JBLocalizerAppTests */ = {
@@ -565,8 +565,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE5A5EB21B4D487300FF0134 /* Images.xcassets in Resources */,
 				BE5A5EB51B4D487300FF0134 /* Main.storyboard in Resources */,
+				BEEB9E1B1B5D344B00EF133E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,7 +749,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Localizer;
 			};
 			name = Debug;
 		};
@@ -762,7 +762,7 @@
 				INFOPLIST_FILE = JBLocalizerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Localizer;
 			};
 			name = Release;
 		};

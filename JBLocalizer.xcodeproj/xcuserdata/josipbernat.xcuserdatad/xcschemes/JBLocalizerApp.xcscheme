@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BE5A5EA11B4D487300FF0134"
-               BuildableName = "JBLocalizerApp.app"
+               BuildableName = "Localizer.app"
                BlueprintName = "JBLocalizerApp"
                ReferencedContainer = "container:JBLocalizer.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BE5A5EA11B4D487300FF0134"
-            BuildableName = "JBLocalizerApp.app"
+            BuildableName = "Localizer.app"
             BlueprintName = "JBLocalizerApp"
             ReferencedContainer = "container:JBLocalizer.xcodeproj">
          </BuildableReference>
@@ -77,7 +77,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BE5A5EA11B4D487300FF0134"
-            BuildableName = "JBLocalizerApp.app"
+            BuildableName = "Localizer.app"
             BlueprintName = "JBLocalizerApp"
             ReferencedContainer = "container:JBLocalizer.xcodeproj">
          </BuildableReference>
@@ -96,7 +96,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BE5A5EA11B4D487300FF0134"
-            BuildableName = "JBLocalizerApp.app"
+            BuildableName = "Localizer.app"
             BlueprintName = "JBLocalizerApp"
             ReferencedContainer = "container:JBLocalizer.xcodeproj">
          </BuildableReference>
