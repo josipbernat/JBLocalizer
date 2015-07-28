@@ -122,7 +122,7 @@
     NSArray *directoryContent = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&anError];
     
     if (anError) {
-//        error = &anError;
+        *error = anError;
         return nil;
     }
     

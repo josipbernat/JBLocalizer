@@ -25,6 +25,16 @@
  */
 - (void)reset;
 
+#pragma Project Directory
+/**
+ *  Searches for possible .xcodeproj files.
+ *
+ *  @param path       Path to project folder.
+ *  @param completion Callback block object called once loading is finished. It has two parameters but only one is not nil at given time. If load is finished with success it will contain an array of JBFile objects. Otherwise NSError object will have failure reason.
+ */
+- (void)loadPossibleProjectFilesInPath:(NSString * __nonnull)path
+                            completion:(void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion;
+
 #pragma mark - Project
 /**
  *  Checks wheter project exists in given path. Must not be nil.

@@ -10,19 +10,28 @@
 #import <JBLocalizer/JBLocalizer.h>
 #import <Cocoa/Cocoa.h>
 
+typedef NS_ENUM(NSInteger, kContentFlow) {
+    
+    kContentFlowStart = 0,
+    kContentFlowSelectProject,
+    kContentFlowSelectTarget
+};
+
 @interface JBContentViewController () <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (weak) IBOutlet NSView *tablePickerContainerView;
 @property (weak) IBOutlet NSTableView *tableView;
+@property (weak) IBOutlet NSTextField *instructionLabel;
 @property (weak) IBOutlet NSTableColumn *columnView;
 @property (weak) IBOutlet NSButton *nextButton;
-@property (weak) IBOutlet NSTextField *instructionLabel;
-@property (weak) IBOutlet NSButton *commentsButton;
+@property (weak) IBOutlet NSButton *cancelButton;
+@property (weak) IBOutlet NSButton *commentsCheckBox;
 @property (weak) IBOutlet NSView *selectProjectContainer;
 
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, strong) NSString *projectPath;
 @property (nonatomic, strong) JBFile *selectedFile;
+@property (nonatomic, readwrite) kContentFlow currentFlow;
 
 @end
 
@@ -64,9 +73,21 @@
         }
     }
     
-    if (_selectedFile) {
+    if (!_selectedFile) {
+        return;
+    }
+    
+    if (_currentFlow == kContentFlowSelectProject) {
+        [self __processProjectAtPath:_selectedFile.path];
+    }
+    else if (_currentFlow == kContentFlowSelectTarget) {
         [self __loadLocalizableFilesInRootFile:_selectedFile];
     }
+    else {
+        NSAssert(NO, @"Not allowed flow state");
+    }
+    
+    [self __toogleContentFlow];
 }
 
 - (IBAction)onCancel:(id)sender {
@@ -83,17 +104,88 @@
 }
 
 - (void)__reset {
-
-    [[JBFileController sharedController] reset];
     
-    _selectProjectContainer.hidden = NO;
-    _tablePickerContainerView.hidden = YES;
-    [_commentsButton setState:NSOnState];
-    [_nextButton setEnabled:NO];
+    [[JBFileController sharedController] reset];
     
     self.selectedFile = nil;
     self.projectPath = nil;
     self.items = nil;
+    
+    _currentFlow = kContentFlowStart;
+    [self setShowLoader:NO];
+    [self __toogleContentFlow];
+}
+
+#pragma mark - Interface
+
+- (void)__toogleContentFlow {
+
+    if (![NSThread isMainThread]) {
+        __weak id this = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            __strong typeof(self) strongThis = this;
+            [strongThis __toogleContentFlow];
+        });
+        return;
+    }
+    
+    if (_currentFlow == kContentFlowStart) {
+        
+        _selectProjectContainer.hidden = NO;
+        _tablePickerContainerView.hidden = YES;
+        
+        _commentsCheckBox.state = NSOnState;
+        _commentsCheckBox.hidden = YES;
+        
+        _nextButton.hidden = YES;
+        _cancelButton.hidden = YES;
+        
+        [_tableView reloadData];
+    }
+    else if (_currentFlow == kContentFlowSelectProject) {
+    
+        _selectProjectContainer.hidden = YES;
+        _tablePickerContainerView.hidden = NO;
+        
+        _instructionLabel.stringValue = NSLocalizedString(@"Choose desired Xcode project", nil);
+        _columnView.title = NSLocalizedString(@"Project files", nil);
+        
+        _commentsCheckBox.hidden = YES;
+        
+        _nextButton.hidden = NO;
+        _nextButton.enabled = YES;
+        
+        _cancelButton.hidden = NO;
+        _cancelButton.enabled = YES;
+    }
+    else if (_currentFlow == kContentFlowSelectTarget) {
+    
+        _selectProjectContainer.hidden = YES;
+        _tablePickerContainerView.hidden = NO;
+        
+        _instructionLabel.stringValue = NSLocalizedString(@"Select folder with project source files", nil);
+        _columnView.title = NSLocalizedString(@"Root folders", nil);
+        
+        _commentsCheckBox.hidden = NO;
+        _nextButton.hidden = NO;
+        _cancelButton.hidden = NO;
+        _cancelButton.enabled = YES;
+    }
+}
+
+- (void)setShowLoader:(BOOL)show {
+
+    if (![NSThread isMainThread]) {
+        __weak id this = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            __strong typeof(self) strongThis = this;
+            [strongThis setShowLoader:show];
+        });
+        return;
+    }
+    
+    _selectProjectContainer.hidden = !show;
+    _tablePickerContainerView.hidden = !show;
 }
 
 #pragma mark - Open File
@@ -101,10 +193,10 @@
 - (void)__openFileDialog {
 
     NSOpenPanel *panel = [NSOpenPanel openPanel];
-    
-    [panel setCanChooseFiles:YES];
-    [panel setAllowedFileTypes:@[@"xcodeproj"]];
-    [panel setAllowsMultipleSelection:NO];
+    panel.allowsMultipleSelection = NO;
+    panel.canChooseDirectories = YES;
+    panel.canChooseFiles = NO;
+    panel.title = NSLocalizedString(@"Select", nil);
     
     if ([panel runModal] == NSModalResponseOK) {
         
@@ -114,7 +206,7 @@
             
             [panel close];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self __processProjectAtPath:[[files firstObject] path]];
+                [self __procesDirectorySelectedAtPath:[[files firstObject] path]];
             });            
         }
     }
@@ -150,15 +242,19 @@
 
 #pragma mark - Error Handling
 
-- (void)__presentErrorAlertView:(NSError *)error {
+- (void)__presentErrorAlertView:(NSError *)error resetUI:(BOOL)reset {
 
     if (![NSThread isMainThread]) {
         __weak id this = self;
         dispatch_async(dispatch_get_main_queue(), ^{
             __strong typeof(self) strongThis = this;
-            [strongThis __presentErrorAlertView:error];
+            [strongThis __presentErrorAlertView:error resetUI:reset];
         });
         return;
+    }
+    
+    if (reset) {
+        [self __reset];
     }
     
     NSAlert *alert = [NSAlert alertWithError:error];
@@ -167,15 +263,19 @@
     [alert runModal];
 }
 
-- (void)__presentErrorAlertViewWithMessage:(NSString *)message {
+- (void)__presentErrorAlertViewWithMessage:(NSString *)message resetUI:(BOOL)reset {
     
     if (![NSThread isMainThread]) {
         __weak id this = self;
         dispatch_async(dispatch_get_main_queue(), ^{
             __strong typeof(self) strongThis = this;
-            [strongThis __presentErrorAlertViewWithMessage:message];
+            [strongThis __presentErrorAlertViewWithMessage:message resetUI:reset];
         });
         return;
+    }
+    
+    if (reset) {
+        [self __reset];
     }
     
     NSAlert *alert = [[NSAlert alloc] init];
@@ -183,6 +283,39 @@
     [alert addButtonWithTitle:NSLocalizedString(@"Ok", nil)];
     
     [alert runModal];
+}
+
+#pragma mark - Project Selection
+
+- (void)__procesDirectorySelectedAtPath:(NSString *)path {
+
+    [self setShowLoader:YES];
+    
+    __weak id this = self;
+    [[JBFileController sharedController] loadPossibleProjectFilesInPath:path
+                                                             completion:^(NSArray *results, NSError *error) {
+                                                                 
+                                                                 __strong typeof(self) strongThis = this;
+                                                                 if (error) {
+                                                                     [strongThis __presentErrorAlertView:error resetUI:YES];
+                                                                     return;
+                                                                 }
+                                                                 else if (!results.count) {
+                                                                     [strongThis __presentErrorAlertViewWithMessage:NSLocalizedString(@"Selected filed doesn't contain any Xcode project file", nil) resetUI:YES];
+                                                                     return;
+                                                                 }
+                                                                 strongThis.currentFlow = kContentFlowSelectProject;
+                                                                 [strongThis __toogleContentFlow];
+                                                                 
+                                                                 // Preselect first file
+                                                                 JBFile *file = results[0];
+                                                                 file.selected = YES;
+                                                                 
+                                                                 strongThis.items = results;
+                                                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                                                     [strongThis.tableView reloadData];
+                                                                 });
+                                                             }];
 }
 
 #pragma mark - File Processing
@@ -203,21 +336,28 @@
                                                        
                                                        __strong typeof(self) strongThis = this;
                                                        if (error) {
-                                                           [strongThis __presentErrorAlertView:error];
+                                                           [strongThis __presentErrorAlertView:error resetUI:YES];
+                                                           return;
                                                        }
-                                                       else {
 
-                                                           strongThis.items = items;
-                                                           for (JBFile *file in items) {
-                                                               if ([targetNames containsObject:file.name] && ![file.name hasSuffix:@"Tests"]) {
-                                                                   file.selected = YES;
-                                                               }
+                                                       strongThis.items = items;
+                                                       BOOL hasSelectedFile = NO;
+                                                       
+                                                       for (JBFile *file in items) {
+                                                           if ([targetNames containsObject:[file.name lowercaseString]] && ![file.name hasSuffix:@"Tests"]) {
+                                                               file.selected = YES;
+                                                               hasSelectedFile = YES;
+                                                               break;
                                                            }
-                                                           
-                                                           dispatch_async(dispatch_get_main_queue(), ^{
-                                                               [strongThis.tableView reloadData];
-                                                           });
                                                        }
+                                                       
+                                                       strongThis.currentFlow = kContentFlowSelectTarget;
+                                                       [strongThis __toogleContentFlow];
+                                                       
+                                                       dispatch_async(dispatch_get_main_queue(), ^{
+                                                           strongThis.nextButton.enabled = hasSelectedFile;
+                                                           [strongThis.tableView reloadData];
+                                                       });
                                                    }];
 }
 
@@ -230,14 +370,14 @@
                                                   
                                                    __strong typeof(self) strongThis = this;
                                                    if (error) {
-                                                       [strongThis __presentErrorAlertView:error];
+                                                       [strongThis __presentErrorAlertView:error resetUI:YES];
                                                    }
                                                    else {
                                                        if (result.count) {
                                                            [strongThis __processLocalizableStringsInFolders:result file:file];
                                                        }
                                                        else {
-                                                           [strongThis __presentErrorAlertViewWithMessage:NSLocalizedString(@"Selected folder contains zero Objective-C or Swift files", nil)];
+                                                           [strongThis __presentErrorAlertViewWithMessage:NSLocalizedString(@"Selected folder doesn't contain any Objective-C or Swift files", nil) resetUI:NO];
                                                        }
                                                    }
                                                }];
@@ -247,7 +387,7 @@
 
     __weak id this = self;
     [[JBFileController sharedController] loadAndProcessLocalizableStringsInFiles:result[file]
-                                                                      formatting:([self.commentsButton state] == NSOnState ? JBStringFormattingTypeDefault : JBStringFormattingTypeWithoutComments)
+                                                                      formatting:([self.commentsCheckBox state] == NSOnState ? JBStringFormattingTypeDefault : JBStringFormattingTypeWithoutComments)
                                                                       completion:^(NSString *strings, NSError *error) {
                                                                           
                                                                           __strong typeof(self) strongThis = this;
@@ -259,7 +399,7 @@
                                                                                   [strongThis __presentSaveFileDialog:strings];
                                                                               }
                                                                               else {
-                                                                                  [strongThis __presentErrorAlertViewWithMessage:NSLocalizedString(@"Selected folder contains zero files using NSLocalizedString", nil)];
+                                                                                  [strongThis __presentErrorAlertViewWithMessage:NSLocalizedString(@"Source files in selected folder doesn't contain NSLocalizedString", nil) resetUI:NO];
                                                                               }
                                                                           }
                                                                       }];
@@ -297,20 +437,14 @@
     JBFile *file = self.items[row];
     file.selected = [value boolValue];
     
-    BOOL hasSelectedFile = file.selected;
-    
-    if (!hasSelectedFile) {
-        
-        for (JBFile *otherFile in self.items) {
-            if (otherFile.selected) {
-                hasSelectedFile = YES;
-                break;
-            }
+    for (JBFile *otherFile in self.items) {
+        if (![otherFile isEqual:file]) {
+            otherFile.selected = NO;
         }
     }
 
     [tableView reloadData];
-    [_nextButton setEnabled:hasSelectedFile];
+    [_nextButton setEnabled:file.selected];
 }
 
 @end

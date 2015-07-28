@@ -12,6 +12,7 @@
 #import "JBLoadStringsInFileOperation.h"
 #import "JBPostProcessStringsOperation.h"
 #import "JBLoadRootFilesOperation.h"
+#import "JBFindProjectFileOperation.h"
 #import "JBString.h"
 
 @interface JBFileController ()
@@ -52,6 +53,17 @@
     [self.queue cancelAllOperations];
 }
 
+#pragma Project Directory
+
+- (void)loadPossibleProjectFilesInPath:(NSString * __nonnull)path
+                            completion:(void(^ __nullable )(NSArray * __nullable, NSError * __nullable))completion {
+    NSParameterAssert(path);
+    
+    JBFindProjectFileOperation *operation = [JBFindProjectFileOperation findProjectFile:path
+                                                                             completion:completion];
+    [self.queue addOperation:operation];
+}
+
 #pragma mark - Project
 
 - (BOOL)projectExistsAtPath:(NSString * __nonnull)path {
@@ -72,7 +84,7 @@
     
     NSMutableArray *items = [NSMutableArray array];
     for (XCTarget *target in project.targets) {
-        [items addObject:target.name];
+        [items addObject:[target.name lowercaseString]];
     }
     return items;
 }
@@ -113,6 +125,13 @@
     __block NSInteger counter = 0;
     __block NSInteger count = files.count;
     __block NSError *anError = nil;
+    
+    if (!files.count) {
+        if (completion) {
+            completion([NSArray array], nil);
+        }
+        return;
+    }
     
     for (JBFile *file in files) {
         
@@ -164,6 +183,14 @@
                                  if (error) {
                                      if (completion) {
                                          completion(nil, error);
+                                     }
+                                     return;
+                                 }
+                                 
+                                 if (!strings.count) {
+                                     
+                                     if (completion) {
+                                         completion(@"", nil);
                                      }
                                      return;
                                  }

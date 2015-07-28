@@ -47,19 +47,24 @@
     @autoreleasepool {
         
         NSError *error = nil;
-        NSArray *content = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:self.projectPath error:&error];
+        NSArray *content = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:[NSURL fileURLWithPath:self.projectPath]
+                                                         includingPropertiesForKeys:[NSArray array]
+                                                                            options:NSDirectoryEnumerationSkipsHiddenFiles
+                                                                              error:&error];
         
         if (error) {
             if (self.completionHandler) {
                 self.completionHandler(nil, error);
             }
+            return;
         }
         
         NSMutableArray *items = [NSMutableArray array];
         NSArray *ignoringNames = kIgnoringNames;
         
-        for (NSString *item in content) {
+        for (NSURL *fileURL in content) {
             
+            NSString *item = [fileURL path];
             BOOL contains = NO;
             for (NSString *ignore in ignoringNames) {
                 if ([item containsString:ignore]) {
@@ -68,8 +73,8 @@
                 }
             }
             if (!contains) {
-                [items addObject:[JBFile fileWithName:item
-                                                 path:[self.projectPath stringByAppendingPathComponent:item]
+                [items addObject:[JBFile fileWithName:[item lastPathComponent]
+                                                 path:item
                                             directory:YES]];
             }
         }
